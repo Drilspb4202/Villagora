@@ -1,0 +1,1497 @@
+22:50:53 | Preparing environment
+22:50:53 | Creating base layer
+22:50:53 | Using existing image static-advanced-node-12-ng22:latest
+22:50:53 | Building keys layer
+22:50:53 | DEBUG | 2025/07/01 22:50:53 in: []string{}
+22:50:53 | DEBUG | 2025/07/01 22:50:53 Parsed entitlements: []
+22:50:54 | DEBUG | #0 building with "default" instance using docker driver
+22:50:54 | DEBUG | 
+22:50:54 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:50:54 | DEBUG | #1 transferring dockerfile: 182B done
+22:50:54 | DEBUG | #1 DONE 0.0s
+22:50:54 | DEBUG | 
+22:50:54 | DEBUG | #2 [internal] load metadata for docker.io/library/static-advanced-node-12-ng22:latest
+22:50:54 | DEBUG | #2 DONE 0.0s
+22:50:54 | DEBUG | 
+22:50:54 | DEBUG | #3 [internal] load .dockerignore
+22:50:54 | DEBUG | #3 transferring context: 2B done
+22:50:54 | DEBUG | #3 DONE 0.0s
+22:50:54 | DEBUG | 
+22:50:54 | DEBUG | #4 [1/4] FROM docker.io/library/static-advanced-node-12-ng22:latest
+22:50:54 | DEBUG | #4 DONE 0.0s
+22:50:54 | DEBUG | 
+22:50:54 | DEBUG | #5 [2/4] WORKDIR /opt/build
+22:50:54 | DEBUG | #5 CACHED
+22:50:54 | DEBUG | 
+22:50:54 | DEBUG | #6 [3/4] RUN mkdir -p /root/.ssh
+22:50:54 | DEBUG | #6 DONE 0.3s
+22:50:54 | DEBUG | 
+22:50:54 | DEBUG | #7 [4/4] RUN ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
+22:50:54 | DEBUG | #7 0.615 # github.com:22 SSH-2.0-71625b40
+22:50:55 | DEBUG | #7 DONE 0.9s
+22:50:55 | DEBUG | 
+22:50:55 | DEBUG | #8 exporting to image
+22:50:55 | DEBUG | #8 exporting layers 0.0s done
+22:50:55 | DEBUG | #8 writing image sha256:aafc0281e6311d0c6707d6fa19489cf83f3061587fd073aa4fe7454973b3c197 done
+22:50:55 | DEBUG | #8 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys done
+22:50:55 | DEBUG | #8 DONE 0.1s
+22:50:55 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys built successfully
+22:50:55 | Cloning code
+22:50:55 | Building code layer
+22:50:55 | DEBUG | 2025/07/01 22:50:55 in: []string{}
+22:50:55 | DEBUG | 2025/07/01 22:50:55 Parsed entitlements: []
+22:50:55 | DEBUG | #0 building with "default" instance using docker driver
+22:50:55 | DEBUG | 
+22:50:55 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:50:55 | DEBUG | #1 transferring dockerfile: 372B done
+22:50:55 | DEBUG | #1 DONE 0.0s
+22:50:55 | DEBUG | 
+22:50:55 | DEBUG | #2 [internal] load metadata for docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys:latest
+22:50:55 | DEBUG | #2 DONE 0.0s
+22:50:55 | DEBUG | 
+22:50:55 | DEBUG | #3 [internal] load .dockerignore
+22:50:55 | DEBUG | #3 transferring context: 2B done
+22:50:55 | DEBUG | #3 DONE 0.0s
+22:50:55 | DEBUG | 
+22:50:55 | DEBUG | #4 [1/6] FROM docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys:latest
+22:50:55 | DEBUG | #4 DONE 0.0s
+22:50:55 | DEBUG | 
+22:50:55 | DEBUG | #5 [2/6] WORKDIR /opt/build
+22:50:55 | DEBUG | #5 DONE 0.0s
+22:50:56 | DEBUG | 
+22:50:56 | DEBUG | #6 [3/6] RUN git clone "https://github.com/Drilspb4202/git-github.com-Drilspb4202-Vilagora.git" -b main /opt/build
+22:50:56 | DEBUG | #6 0.253 Cloning into '/opt/build'...
+22:51:03 | DEBUG | #6 DONE 7.3s
+22:51:03 | DEBUG | 
+22:51:03 | DEBUG | #7 [4/6] RUN cd /opt/build
+22:51:03 | DEBUG | #7 DONE 0.3s
+22:51:03 | DEBUG | 
+22:51:03 | DEBUG | #8 [5/6] RUN git remote rm origin
+22:51:03 | DEBUG | #8 DONE 0.5s
+22:51:04 | DEBUG | 
+22:51:04 | DEBUG | #9 [6/6] RUN git checkout 332dbb6301de71b8f098d42178959ed2f7058b98
+22:51:04 | DEBUG | #9 0.851 Note: switching to '332dbb6301de71b8f098d42178959ed2f7058b98'.
+22:51:04 | DEBUG | #9 0.851 
+22:51:04 | DEBUG | #9 0.851 You are in 'detached HEAD' state. You can look around, make experimental
+22:51:04 | DEBUG | #9 0.851 changes and commit them, and you can discard any commits you make in this
+22:51:04 | DEBUG | #9 0.851 state without impacting any branches by switching back to a branch.
+22:51:04 | DEBUG | #9 0.851 
+22:51:04 | DEBUG | #9 0.851 If you want to create a new branch to retain commits you create, you may
+22:51:04 | DEBUG | #9 0.851 do so (now or later) by using -c with the switch command. Example:
+22:51:04 | DEBUG | #9 0.851 
+22:51:04 | DEBUG | #9 0.851   git switch -c <new-branch-name>
+22:51:04 | DEBUG | #9 0.851 
+22:51:04 | DEBUG | #9 0.851 Or undo this operation with:
+22:51:04 | DEBUG | #9 0.851 
+22:51:04 | DEBUG | #9 0.851   git switch -
+22:51:04 | DEBUG | #9 0.851 
+22:51:04 | DEBUG | #9 0.851 Turn off this advice by setting config variable advice.detachedHead to false
+22:51:04 | DEBUG | #9 0.851 
+22:51:04 | DEBUG | #9 0.851 HEAD is now at 332dbb6 feat: SSR/Node.js деплой для Timeweb, возвращены API-роуты, отключён static export
+22:51:05 | DEBUG | #9 DONE 0.9s
+22:51:05 | DEBUG | 
+22:51:05 | DEBUG | #10 exporting to image
+22:51:05 | DEBUG | #10 exporting layers
+22:51:07 | DEBUG | #10 exporting layers 2.2s done
+22:51:07 | DEBUG | #10 writing image sha256:f6b17e2b684ceba84ae32d75df027fb65bc6b32c92d20a5c87acc9b889f832a8 done
+22:51:07 | DEBUG | #10 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code done
+22:51:07 | DEBUG | #10 DONE 2.2s
+22:51:07 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code built successfully
+22:51:07 | Switching to commit 332dbb6301de71b8f098d42178959ed2f7058b98
+22:51:07 | Checking if there any system dependencies
+22:51:07 | DEBUG | [".", "..", ".git", ".gitignore", "FAST_LOADING_IMPLEMENTATION.md", "IMAGES_NEEDED.md", "MOBILE_SEO_OPTIMIZATION_COMPLETE.md", "README.md", "SEO_OPTIMIZATION_COMPLETE.md", "TELEGRAM_SETUP.md", "VERCEL_TELEGRAM_SETUP.md", "YANDEX_METRIKA_SETUP.md", "app", "b86dd808-5ea2-489f-b5e7-55038954225b.txt", "components", "components.json", "hooks", "lib", "next.config.js", "package-lock.json", "package.json", "pnpm-lock.yaml", "postcss.config.mjs", "public", "tailwind.config.ts", "tsconfig.json", "wrangler.toml"]
+22:51:07 | Installing dependencies
+22:51:07 | Building dependencies layer
+22:51:07 | DEBUG | 2025/07/01 22:51:07 in: []string{}
+22:51:07 | DEBUG | 2025/07/01 22:51:07 Parsed entitlements: []
+22:51:08 | DEBUG | #0 building with "default" instance using docker driver
+22:51:08 | DEBUG | 
+22:51:08 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:51:08 | DEBUG | #1 transferring dockerfile: 152B done
+22:51:08 | DEBUG | #1 DONE 0.0s
+22:51:08 | DEBUG | 
+22:51:08 | DEBUG | #2 [internal] load metadata for docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code:latest
+22:51:08 | DEBUG | #2 DONE 0.0s
+22:51:08 | DEBUG | 
+22:51:08 | DEBUG | #3 [internal] load .dockerignore
+22:51:08 | DEBUG | #3 transferring context: 2B done
+22:51:08 | DEBUG | #3 DONE 0.0s
+22:51:08 | DEBUG | 
+22:51:08 | DEBUG | #4 [1/3] FROM docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code:latest
+22:51:08 | DEBUG | #4 DONE 0.1s
+22:51:08 | DEBUG | 
+22:51:08 | DEBUG | #5 [2/3] WORKDIR /opt/build
+22:51:08 | DEBUG | #5 DONE 0.0s
+22:51:08 | DEBUG | 
+22:51:08 | DEBUG | #6 [3/3] RUN cd /opt/build && npm i --verbose
+22:51:08 | DEBUG | #6 0.365 npm verbose cli /usr/bin/node /usr/bin/npm
+22:51:08 | DEBUG | #6 0.365 npm info using npm@10.9.2
+22:51:08 | DEBUG | #6 0.365 npm info using node@v22.17.0
+22:51:08 | DEBUG | #6 0.368 npm verbose title npm i
+22:51:08 | DEBUG | #6 0.368 npm verbose argv "i" "--loglevel" "verbose"
+22:51:08 | DEBUG | #6 0.368 npm verbose logfile logs-max:10 dir:/root/.npm/_logs/2025-07-01T19_51_08_586Z-
+22:51:08 | DEBUG | #6 0.371 npm verbose logfile /root/.npm/_logs/2025-07-01T19_51_08_586Z-debug-0.log
+22:51:09 | DEBUG | #6 0.865 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-win32-x64-msvc
+22:51:09 | DEBUG | #6 0.866 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-win32-arm64-msvc
+22:51:09 | DEBUG | #6 0.867 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-linux-arm64-musl
+22:51:09 | DEBUG | #6 0.867 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-linux-arm64-gnu
+22:51:09 | DEBUG | #6 0.867 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-darwin-x64
+22:51:09 | DEBUG | #6 0.868 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-darwin-arm64
+22:51:09 | DEBUG | #6 0.868 npm verbose reify failed optional dependency /opt/build/node_modules/@img/sharp-win32-x64
+22:51:09 | DEBUG | #6 0.946 npm http cache zod@https://registry.npmjs.org/zod/-/zod-3.25.67.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.948 npm http cache wrap-ansi@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.948 npm http cache which@https://registry.npmjs.org/which/-/which-2.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.948 npm http cache wrap-ansi-cjs@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.949 npm http cache victory-vendor@https://registry.npmjs.org/victory-vendor/-/victory-vendor-37.3.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.949 npm http cache vaul@https://registry.npmjs.org/vaul/-/vaul-1.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.950 npm http cache yaml@https://registry.npmjs.org/yaml/-/yaml-2.8.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.950 npm http cache util-deprecate@https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.950 npm http cache use-sync-external-store@https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.951 npm http cache use-sidecar@https://registry.npmjs.org/use-sidecar/-/use-sidecar-1.1.3.tgz 1ms (cache hit)
+22:51:09 | DEBUG | #6 0.951 npm http cache use-callback-ref@https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.3.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.952 npm http cache update-browserslist-db@https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.952 npm http cache undici-types@https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.952 npm http cache typescript@https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.952 npm http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.952 npm http cache ts-interface-checker@https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.953 npm http cache tiny-invariant@https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.3.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.953 npm http cache to-regex-range@https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.953 npm http cache thenify-all@https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.953 npm http cache tailwindcss-animate@https://registry.npmjs.org/tailwindcss-animate/-/tailwindcss-animate-1.0.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.953 npm http cache thenify@https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.953 npm http cache tailwindcss@https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.954 npm http cache tailwind-merge@https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.954 npm http cache sucrase@https://registry.npmjs.org/sucrase/-/sucrase-3.35.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.954 npm http cache supports-preserve-symlinks-flag@https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.954 npm http cache styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.954 npm http cache strip-ansi-cjs@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.955 npm http cache strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.955 npm http cache string-width-cjs@https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz 1ms (cache hit)
+22:51:09 | DEBUG | #6 0.955 npm http cache string-width@https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.955 npm http cache streamsearch@https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.955 npm http cache source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.955 npm http cache sonner@https://registry.npmjs.org/sonner/-/sonner-2.0.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.955 npm http cache simple-swizzle@https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.956 npm http cache signal-exit@https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.956 npm http cache shebang-regex@https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.956 npm http cache sharp@https://registry.npmjs.org/sharp/-/sharp-0.33.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.956 npm http cache shebang-command@https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.956 npm http cache semver@https://registry.npmjs.org/semver/-/semver-7.7.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.956 npm http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.26.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.957 npm http cache reusify@https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.957 npm http cache run-parallel@https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.957 npm http cache resolve@https://registry.npmjs.org/resolve/-/resolve-1.22.10.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.957 npm http cache reselect@https://registry.npmjs.org/reselect/-/reselect-5.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.957 npm http cache redux-thunk@https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.957 npm http cache redux@https://registry.npmjs.org/redux/-/redux-5.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.958 npm http cache readdirp@https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.958 npm http cache recharts@https://registry.npmjs.org/recharts/-/recharts-3.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.958 npm http cache read-cache@https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.958 npm http cache react-style-singleton@https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.958 npm http cache react-resizable-panels@https://registry.npmjs.org/react-resizable-panels/-/react-resizable-panels-3.0.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.958 npm http cache react-remove-scroll-bar@https://registry.npmjs.org/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.8.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.959 npm http cache react-remove-scroll@https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.7.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.959 npm http cache react-redux@https://registry.npmjs.org/react-redux/-/react-redux-9.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.959 npm http cache react-is@https://registry.npmjs.org/react-is/-/react-is-19.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.959 npm http cache react-hook-form@https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.58.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.959 npm http cache react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.959 npm http cache react-day-picker@https://registry.npmjs.org/react-day-picker/-/react-day-picker-9.7.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.960 npm http cache react@https://registry.npmjs.org/react/-/react-19.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.960 npm http cache queue-microtask@https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.960 npm http cache postcss-value-parser@https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.960 npm http cache postcss-nested@https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.960 npm http cache postcss-selector-parser@https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.960 npm http cache postcss-js@https://registry.npmjs.org/postcss-js/-/postcss-js-4.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.960 npm http cache postcss@https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.961 npm http cache pirates@https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.961 npm http cache postcss-import@https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.961 npm http cache pify@https://registry.npmjs.org/pify/-/pify-2.3.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.961 npm http cache picocolors@https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.961 npm http cache path-scurry@https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.961 npm http cache picomatch@https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.962 npm http cache path-parse@https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.962 npm http cache path-key@https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.962 npm http cache package-json-from-dist@https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.962 npm http cache object-hash@https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.962 npm http cache object-assign@https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.962 npm http cache normalize-range@https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.963 npm http cache normalize-path@https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.963 npm http cache node-releases@https://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.963 npm http cache next-themes@https://registry.npmjs.org/next-themes/-/next-themes-0.4.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.963 npm http cache next-cloudinary@https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-6.16.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.963 npm http cache next@https://registry.npmjs.org/next/-/next-15.2.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.963 npm http cache nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.963 npm http cache minimatch@https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.964 npm http cache minipass@https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.964 npm http cache micromatch@https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.964 npm http cache mz@https://registry.npmjs.org/mz/-/mz-2.7.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.964 npm http cache merge2@https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.964 npm http cache lru-cache@https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.964 npm http cache lucide-react@https://registry.npmjs.org/lucide-react/-/lucide-react-0.454.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.965 npm http cache lines-and-columns@https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.965 npm http cache jiti@https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.965 npm http cache lilconfig@https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.965 npm http cache jackspeak@https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.965 npm http cache is-number@https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.965 npm http cache isexe@https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.966 npm http cache is-glob@https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.966 npm http cache is-core-module@https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.966 npm http cache is-binary-path@https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.966 npm http cache is-fullwidth-code-point@https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.966 npm http cache is-extglob@https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.966 npm http cache is-arrayish@https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.967 npm http cache internmap@https://registry.npmjs.org/internmap/-/internmap-2.0.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.967 npm http cache input-otp@https://registry.npmjs.org/input-otp/-/input-otp-1.4.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.967 npm http cache immer@https://registry.npmjs.org/immer/-/immer-10.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.972 npm http cache hasown@https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.972 npm http cache glob@https://registry.npmjs.org/glob/-/glob-10.4.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.972 npm http cache glob-parent@https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.972 npm http cache get-nonce@https://registry.npmjs.org/get-nonce/-/get-nonce-1.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.972 npm http cache function-bind@https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.972 npm http cache fraction.js@https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.973 npm http cache foreground-child@https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.973 npm http cache fill-range@https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.973 npm http cache fastq@https://registry.npmjs.org/fastq/-/fastq-1.19.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.973 npm http cache fast-glob@https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.973 npm http cache escalade@https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.973 npm http cache eventemitter3@https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.974 npm http cache es-toolkit@https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.39.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.974 npm http cache emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.974 npm http cache embla-carousel-reactive-utils@https://registry.npmjs.org/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.974 npm http cache embla-carousel-react@https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-8.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.974 npm http cache embla-carousel@https://registry.npmjs.org/embla-carousel/-/embla-carousel-8.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.974 npm http cache electron-to-chromium@https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.176.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.975 npm http cache eastasianwidth@https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.975 npm http cache dlv@https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.975 npm http cache detect-node-es@https://registry.npmjs.org/detect-node-es/-/detect-node-es-1.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.975 npm http cache detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.0.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.975 npm http cache decimal.js-light@https://registry.npmjs.org/decimal.js-light/-/decimal.js-light-2.5.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.975 npm http cache didyoumean@https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.976 npm http cache date-fns@https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.976 npm http cache date-fns-jalali@https://registry.npmjs.org/date-fns-jalali/-/date-fns-jalali-4.1.0-0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.976 npm http cache d3-timer@https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.976 npm http cache d3-time-format@https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.976 npm http cache d3-time@https://registry.npmjs.org/d3-time/-/d3-time-3.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.976 npm http cache d3-shape@https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.977 npm http cache d3-scale@https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.977 npm http cache d3-path@https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.977 npm http cache d3-interpolate@https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.977 npm http cache d3-format@https://registry.npmjs.org/d3-format/-/d3-format-3.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.977 npm http cache d3-ease@https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.977 npm http cache d3-array@https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.978 npm http cache d3-color@https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.978 npm http cache csstype@https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.978 npm http cache cross-spawn@https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.978 npm http cache cssesc@https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.978 npm http cache color-string@https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.978 npm http cache color-name@https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.978 npm http cache commander@https://registry.npmjs.org/commander/-/commander-4.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.979 npm http cache color-convert@https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.979 npm http cache color@https://registry.npmjs.org/color/-/color-4.2.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.979 npm http cache cmdk@https://registry.npmjs.org/cmdk/-/cmdk-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.979 npm http cache clsx@https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.979 npm http cache client-only@https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.979 npm http cache chokidar@https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.980 npm http cache class-variance-authority@https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.980 npm http cache caniuse-lite@https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001726.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.980 npm http cache camelcase-css@https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.980 npm http cache busboy@https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.980 npm http cache browserslist@https://registry.npmjs.org/browserslist/-/browserslist-4.25.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.980 npm http cache brace-expansion@https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.980 npm http cache binary-extensions@https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.981 npm http cache braces@https://registry.npmjs.org/braces/-/braces-3.0.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.981 npm http cache balanced-match@https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.981 npm http cache autoprefixer@https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.21.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.981 npm http cache aria-hidden@https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.981 npm http cache arg@https://registry.npmjs.org/arg/-/arg-5.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.981 npm http cache anymatch@https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.982 npm http cache any-promise@https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.982 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.982 npm http cache ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.982 npm http cache @types/react-dom@https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.982 npm http cache @types/use-sync-external-store@https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.982 npm http cache @types/node@https://registry.npmjs.org/@types/node/-/node-22.15.33.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.983 npm http cache @types/react@https://registry.npmjs.org/@types/react/-/react-19.1.8.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.983 npm http cache @types/d3-timer@https://registry.npmjs.org/@types/d3-timer/-/d3-timer-3.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.983 npm http cache @types/d3-time@https://registry.npmjs.org/@types/d3-time/-/d3-time-3.0.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.983 npm http cache @types/d3-shape@https://registry.npmjs.org/@types/d3-shape/-/d3-shape-3.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.983 npm http cache @types/d3-path@https://registry.npmjs.org/@types/d3-path/-/d3-path-3.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.983 npm http cache @types/d3-scale@https://registry.npmjs.org/@types/d3-scale/-/d3-scale-4.0.9.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.984 npm http cache @types/d3-interpolate@https://registry.npmjs.org/@types/d3-interpolate/-/d3-interpolate-3.0.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.984 npm http cache @types/d3-ease@https://registry.npmjs.org/@types/d3-ease/-/d3-ease-3.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.984 npm http cache @types/d3-color@https://registry.npmjs.org/@types/d3-color/-/d3-color-3.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.984 npm http cache @types/d3-array@https://registry.npmjs.org/@types/d3-array/-/d3-array-3.2.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.984 npm http cache @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.984 npm http cache @swc/counter@https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.984 npm http cache @standard-schema/utils@https://registry.npmjs.org/@standard-schema/utils/-/utils-0.3.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.985 npm http cache @standard-schema/spec@https://registry.npmjs.org/@standard-schema/spec/-/spec-1.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.985 npm http cache @reduxjs/toolkit@https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-2.8.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.985 npm http cache @radix-ui/rect@https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.985 npm http cache @radix-ui/react-visually-hidden@https://registry.npmjs.org/@radix-ui/react-visually-hidden/-/react-visually-hidden-1.2.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.985 npm http cache @radix-ui/react-use-rect@https://registry.npmjs.org/@radix-ui/react-use-rect/-/react-use-rect-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.985 npm http cache @radix-ui/react-use-size@https://registry.npmjs.org/@radix-ui/react-use-size/-/react-use-size-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.986 npm http cache @radix-ui/react-use-previous@https://registry.npmjs.org/@radix-ui/react-use-previous/-/react-use-previous-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.986 npm http cache @radix-ui/react-use-is-hydrated@https://registry.npmjs.org/@radix-ui/react-use-is-hydrated/-/react-use-is-hydrated-0.1.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.986 npm http cache @radix-ui/react-use-layout-effect@https://registry.npmjs.org/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.986 npm http cache @radix-ui/react-use-escape-keydown@https://registry.npmjs.org/@radix-ui/react-use-escape-keydown/-/react-use-escape-keydown-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.986 npm http cache @radix-ui/react-use-effect-event@https://registry.npmjs.org/@radix-ui/react-use-effect-event/-/react-use-effect-event-0.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.986 npm http cache @radix-ui/react-tooltip@https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.2.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.987 npm http cache @radix-ui/react-use-callback-ref@https://registry.npmjs.org/@radix-ui/react-use-callback-ref/-/react-use-callback-ref-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.987 npm http cache @radix-ui/react-toggle-group@https://registry.npmjs.org/@radix-ui/react-toggle-group/-/react-toggle-group-1.1.10.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.987 npm http cache @radix-ui/react-toggle@https://registry.npmjs.org/@radix-ui/react-toggle/-/react-toggle-1.1.9.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.987 npm http cache @radix-ui/react-use-controllable-state@https://registry.npmjs.org/@radix-ui/react-use-controllable-state/-/react-use-controllable-state-1.2.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.987 npm http cache @radix-ui/react-switch@https://registry.npmjs.org/@radix-ui/react-switch/-/react-switch-1.2.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.987 npm http cache @radix-ui/react-toast@https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.14.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.988 npm http cache @radix-ui/react-tabs@https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.12.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.988 npm http cache @radix-ui/react-slot@https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.2.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.988 npm http cache @radix-ui/react-slider@https://registry.npmjs.org/@radix-ui/react-slider/-/react-slider-1.3.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.988 npm http cache @radix-ui/react-separator@https://registry.npmjs.org/@radix-ui/react-separator/-/react-separator-1.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.988 npm http cache @radix-ui/react-scroll-area@https://registry.npmjs.org/@radix-ui/react-scroll-area/-/react-scroll-area-1.2.9.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.988 npm http cache @radix-ui/react-select@https://registry.npmjs.org/@radix-ui/react-select/-/react-select-2.2.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.988 npm http cache @radix-ui/react-progress@https://registry.npmjs.org/@radix-ui/react-progress/-/react-progress-1.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.989 npm http cache @radix-ui/react-radio-group@https://registry.npmjs.org/@radix-ui/react-radio-group/-/react-radio-group-1.3.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.989 npm http cache @radix-ui/react-presence@https://registry.npmjs.org/@radix-ui/react-presence/-/react-presence-1.1.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.989 npm http cache @radix-ui/react-roving-focus@https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.10.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.989 npm http cache @radix-ui/react-primitive@https://registry.npmjs.org/@radix-ui/react-primitive/-/react-primitive-2.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.989 npm http cache @radix-ui/react-portal@https://registry.npmjs.org/@radix-ui/react-portal/-/react-portal-1.1.9.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.990 npm http cache @radix-ui/react-popper@https://registry.npmjs.org/@radix-ui/react-popper/-/react-popper-1.2.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.990 npm http cache @radix-ui/react-popover@https://registry.npmjs.org/@radix-ui/react-popover/-/react-popover-1.1.14.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.990 npm http cache @radix-ui/react-navigation-menu@https://registry.npmjs.org/@radix-ui/react-navigation-menu/-/react-navigation-menu-1.2.13.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.990 npm http cache @radix-ui/react-menubar@https://registry.npmjs.org/@radix-ui/react-menubar/-/react-menubar-1.1.15.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.990 npm http cache @radix-ui/react-menu@https://registry.npmjs.org/@radix-ui/react-menu/-/react-menu-2.1.15.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.990 npm http cache @radix-ui/react-id@https://registry.npmjs.org/@radix-ui/react-id/-/react-id-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.991 npm http cache @radix-ui/react-hover-card@https://registry.npmjs.org/@radix-ui/react-hover-card/-/react-hover-card-1.1.14.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.991 npm http cache @radix-ui/react-focus-scope@https://registry.npmjs.org/@radix-ui/react-focus-scope/-/react-focus-scope-1.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.991 npm http cache @radix-ui/react-label@https://registry.npmjs.org/@radix-ui/react-label/-/react-label-2.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.991 npm http cache @radix-ui/react-focus-guards@https://registry.npmjs.org/@radix-ui/react-focus-guards/-/react-focus-guards-1.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.991 npm http cache @radix-ui/react-dropdown-menu@https://registry.npmjs.org/@radix-ui/react-dropdown-menu/-/react-dropdown-menu-2.1.15.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.991 npm http cache @radix-ui/react-dismissable-layer@https://registry.npmjs.org/@radix-ui/react-dismissable-layer/-/react-dismissable-layer-1.1.10.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.991 npm http cache @radix-ui/react-direction@https://registry.npmjs.org/@radix-ui/react-direction/-/react-direction-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.992 npm http cache @radix-ui/react-dialog@https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.14.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.992 npm http cache @radix-ui/react-context-menu@https://registry.npmjs.org/@radix-ui/react-context-menu/-/react-context-menu-2.2.15.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.992 npm http cache @radix-ui/react-context@https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.992 npm http cache @radix-ui/react-compose-refs@https://registry.npmjs.org/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.992 npm http cache @radix-ui/react-collapsible@https://registry.npmjs.org/@radix-ui/react-collapsible/-/react-collapsible-1.1.11.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.992 npm http cache @radix-ui/react-checkbox@https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.3.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.993 npm http cache @radix-ui/react-collection@https://registry.npmjs.org/@radix-ui/react-collection/-/react-collection-1.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.993 npm http cache @radix-ui/react-avatar@https://registry.npmjs.org/@radix-ui/react-avatar/-/react-avatar-1.1.10.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.993 npm http cache @radix-ui/react-aspect-ratio@https://registry.npmjs.org/@radix-ui/react-aspect-ratio/-/react-aspect-ratio-1.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.993 npm http cache @radix-ui/react-arrow@https://registry.npmjs.org/@radix-ui/react-arrow/-/react-arrow-1.1.7.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.993 npm http cache @radix-ui/react-alert-dialog@https://registry.npmjs.org/@radix-ui/react-alert-dialog/-/react-alert-dialog-1.1.14.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.993 npm http cache @radix-ui/react-accordion@https://registry.npmjs.org/@radix-ui/react-accordion/-/react-accordion-1.2.11.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.994 npm http cache @radix-ui/primitive@https://registry.npmjs.org/@radix-ui/primitive/-/primitive-1.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.994 npm http cache @radix-ui/number@https://registry.npmjs.org/@radix-ui/number/-/number-1.1.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.994 npm http cache @pkgjs/parseargs@https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.994 npm http cache @nodelib/fs.walk@https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.994 npm http cache @nodelib/fs.stat@https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.994 npm http cache @next/swc-linux-x64-musl@https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-15.2.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.995 npm http cache @next/swc-linux-x64-gnu@https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-15.2.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.995 npm http cache @next/env@https://registry.npmjs.org/@next/env/-/env-15.2.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.995 npm http cache @nodelib/fs.scandir@https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.995 npm http cache @jridgewell/trace-mapping@https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.995 npm http cache @jridgewell/sourcemap-codec@https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.995 npm http cache @jridgewell/resolve-uri@https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.995 npm http cache @jridgewell/set-array@https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.996 npm http cache @jridgewell/gen-mapping@https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.8.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.996 npm http cache @hookform/resolvers@https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.10.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.996 npm http cache @isaacs/cliui@https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.996 npm http cache @floating-ui/utils@https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.996 npm http cache @floating-ui/dom@https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.996 npm http cache @floating-ui/core@https://registry.npmjs.org/@floating-ui/core/-/core-1.7.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.997 npm http cache @floating-ui/react-dom@https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.997 npm http cache @cloudinary/transformation-builder-sdk@https://registry.npmjs.org/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.17.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.997 npm http cache @cloudinary-util/util@https://registry.npmjs.org/@cloudinary-util/util/-/util-4.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.997 npm http cache @date-fns/tz@https://registry.npmjs.org/@date-fns/tz/-/tz-1.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.997 npm http cache @cloudinary-util/url-loader@https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-5.10.4.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.997 npm http cache @cloudinary-util/types@https://registry.npmjs.org/@cloudinary-util/types/-/types-1.5.10.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.998 npm http cache @cloudinary/url-gen@https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.15.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.998 npm http cache @alloc/quick-lru@https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.998 npm http cache strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.998 npm http cache emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.998 npm http cache ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.998 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.999 npm http cache string-width@https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.999 npm http cache postcss-load-config@https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.999 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.999 npm http cache strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.999 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.999 npm http cache emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 0.999 npm http cache postcss@https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 1.000 npm http cache glob-parent@https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 1.000 npm http cache glob-parent@https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 1.000 npm http cache @cloudinary-util/util@https://registry.npmjs.org/@cloudinary-util/util/-/util-3.3.2.tgz 0ms (cache hit)
+22:51:09 | DEBUG | #6 1.706 npm http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 879ms
+22:51:10 | DEBUG | #6 1.764 npm http fetch GET 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz 756ms (cache miss)
+22:51:10 | DEBUG | #6 1.835 npm http fetch GET 200 https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz 822ms (cache miss)
+22:51:10 | DEBUG | #6 1.885 npm http fetch GET 200 https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz 871ms (cache miss)
+22:51:10 | DEBUG | #6 1.906 npm http fetch GET 200 https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.3.3.tgz 893ms (cache miss)
+22:51:10 | DEBUG | #6 1.907 npm http fetch GET 200 https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz 894ms (cache miss)
+22:51:10 | DEBUG | #6 1.910 npm http fetch GET 200 https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz 887ms (cache miss)
+22:51:10 | DEBUG | #6 1.923 npm http fetch GET 200 https://registry.npmjs.org/tailwindcss-animate/-/tailwindcss-animate-1.0.7.tgz 909ms (cache miss)
+22:51:10 | DEBUG | #6 1.926 npm http fetch GET 200 https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz 906ms (cache miss)
+22:51:10 | DEBUG | #6 1.965 npm http fetch GET 200 https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz 941ms (cache miss)
+22:51:10 | DEBUG | #6 1.991 npm http fetch GET 200 https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz 966ms (cache miss)
+22:51:10 | DEBUG | #6 2.008 npm http fetch GET 200 https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz 1001ms (cache miss)
+22:51:10 | DEBUG | #6 2.056 npm http fetch GET 200 https://registry.npmjs.org/react-is/-/react-is-19.1.0.tgz 1028ms (cache miss)
+22:51:10 | DEBUG | #6 2.057 npm http fetch GET 200 https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz 1026ms (cache miss)
+22:51:10 | DEBUG | #6 2.090 npm http fetch GET 200 https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz 1071ms (cache miss)
+22:51:10 | DEBUG | #6 2.135 npm http fetch GET 200 https://registry.npmjs.org/postcss-js/-/postcss-js-4.0.1.tgz 1102ms (cache miss)
+22:51:10 | DEBUG | #6 2.136 npm http fetch GET 200 https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz 1101ms (cache miss)
+22:51:10 | DEBUG | #6 2.180 npm http fetch GET 200 https://registry.npmjs.org/pify/-/pify-2.3.0.tgz 1144ms (cache miss)
+22:51:10 | DEBUG | #6 2.180 npm http fetch GET 200 https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz 1143ms (cache miss)
+22:51:10 | DEBUG | #6 2.181 npm http fetch GET 200 https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz 1144ms (cache miss)
+22:51:10 | DEBUG | #6 2.208 npm http fetch GET 200 https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz 1196ms (cache miss)
+22:51:10 | DEBUG | #6 2.210 npm http fetch GET 200 https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz 1178ms (cache miss)
+22:51:10 | DEBUG | #6 2.212 npm http fetch GET 200 https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz 1177ms (cache miss)
+22:51:10 | DEBUG | #6 2.212 npm http fetch GET 200 https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz 1176ms (cache miss)
+22:51:10 | DEBUG | #6 2.212 npm http fetch GET 200 https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz 1174ms (cache miss)
+22:51:10 | DEBUG | #6 2.242 npm http fetch GET 200 https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz 1202ms (cache miss)
+22:51:10 | DEBUG | #6 2.261 npm http fetch GET 200 https://registry.npmjs.org/mz/-/mz-2.7.0.tgz 1219ms (cache miss)
+22:51:10 | DEBUG | #6 2.261 npm http fetch GET 200 https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz 1220ms (cache miss)
+22:51:10 | DEBUG | #6 2.262 npm http fetch GET 200 https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz 1218ms (cache miss)
+22:51:10 | DEBUG | #6 2.262 npm http fetch GET 200 https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz 1220ms (cache miss)
+22:51:10 | DEBUG | #6 2.284 npm http fetch GET 200 https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz 1249ms (cache miss)
+22:51:10 | DEBUG | #6 2.285 npm http fetch GET 200 https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz 1239ms (cache miss)
+22:51:10 | DEBUG | #6 2.286 npm http fetch GET 200 https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz 1240ms (cache miss)
+22:51:10 | DEBUG | #6 2.286 npm http fetch GET 200 https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz 1242ms (cache miss)
+22:51:10 | DEBUG | #6 2.286 npm http fetch GET 200 https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz 1240ms (cache miss)
+22:51:10 | DEBUG | #6 2.312 npm http fetch GET 200 https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz 1267ms (cache miss)
+22:51:10 | DEBUG | #6 2.313 npm http fetch GET 200 https://registry.npmjs.org/internmap/-/internmap-2.0.3.tgz 1265ms (cache miss)
+22:51:10 | DEBUG | #6 2.335 npm http fetch GET 200 https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz 1312ms (cache miss)
+22:51:10 | DEBUG | #6 2.337 npm http fetch GET 200 https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz 1290ms (cache miss)
+22:51:10 | DEBUG | #6 2.338 npm http fetch GET 200 https://registry.npmjs.org/get-nonce/-/get-nonce-1.0.1.tgz 1288ms (cache miss)
+22:51:10 | DEBUG | #6 2.383 npm http fetch GET 200 https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz 1332ms (cache miss)
+22:51:10 | DEBUG | #6 2.383 npm http fetch GET 200 https://registry.npmjs.org/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.6.0.tgz 1330ms (cache miss)
+22:51:10 | DEBUG | #6 2.384 npm http fetch GET 200 https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-8.6.0.tgz 1329ms (cache miss)
+22:51:10 | DEBUG | #6 2.401 npm http fetch GET 200 https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz 1352ms (cache miss)
+22:51:10 | DEBUG | #6 2.403 npm http fetch GET 200 https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz 1347ms (cache miss)
+22:51:10 | DEBUG | #6 2.418 npm http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.26.0.tgz 1397ms (cache miss)
+22:51:10 | DEBUG | #6 2.420 npm http fetch GET 200 https://registry.npmjs.org/next-themes/-/next-themes-0.4.6.tgz 1381ms (cache miss)
+22:51:10 | DEBUG | #6 2.422 npm http fetch GET 200 https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz 1365ms (cache miss)
+22:51:10 | DEBUG | #6 2.422 npm http fetch GET 200 https://registry.npmjs.org/detect-node-es/-/detect-node-es-1.1.0.tgz 1366ms (cache miss)
+22:51:10 | DEBUG | #6 2.445 npm http fetch GET 200 https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz 1414ms (cache miss)
+22:51:10 | DEBUG | #6 2.447 npm http fetch GET 200 https://registry.npmjs.org/input-otp/-/input-otp-1.4.2.tgz 1399ms (cache miss)
+22:51:10 | DEBUG | #6 2.449 npm http fetch GET 200 https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.1.tgz 1390ms (cache miss)
+22:51:10 | DEBUG | #6 2.473 npm http fetch GET 200 https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz 1412ms (cache miss)
+22:51:10 | DEBUG | #6 2.474 npm http fetch GET 200 https://registry.npmjs.org/d3-format/-/d3-format-3.1.0.tgz 1411ms (cache miss)
+22:51:10 | DEBUG | #6 2.475 npm http fetch GET 200 https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz 1412ms (cache miss)
+22:51:10 | DEBUG | #6 2.475 npm http fetch GET 200 https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz 1412ms (cache miss)
+22:51:10 | DEBUG | #6 2.476 npm http fetch GET 200 https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz 1410ms (cache miss)
+22:51:10 | DEBUG | #6 2.490 npm http fetch GET 200 https://registry.npmjs.org/vaul/-/vaul-1.1.2.tgz 1485ms (cache miss)
+22:51:10 | DEBUG | #6 2.496 npm http fetch GET 200 https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz 1431ms (cache miss)
+22:51:10 | DEBUG | #6 2.497 npm http fetch GET 200 https://registry.npmjs.org/color/-/color-4.2.3.tgz 1430ms (cache miss)
+22:51:10 | DEBUG | #6 2.515 npm http fetch GET 200 https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz 1448ms (cache miss)
+22:51:10 | DEBUG | #6 2.515 npm http fetch GET 200 https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz 1446ms (cache miss)
+22:51:10 | DEBUG | #6 2.530 npm http fetch GET 200 https://registry.npmjs.org/commander/-/commander-4.1.1.tgz 1464ms (cache miss)
+22:51:10 | DEBUG | #6 2.531 npm http fetch GET 200 https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz 1461ms (cache miss)
+22:51:10 | DEBUG | #6 2.531 npm http fetch GET 200 https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 1463ms (cache miss)
+22:51:10 | DEBUG | #6 2.532 npm http fetch GET 200 https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.6.tgz 1455ms (cache miss)
+22:51:10 | DEBUG | #6 2.532 npm http fetch GET 200 https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz 1461ms (cache miss)
+22:51:10 | DEBUG | #6 2.532 npm http fetch GET 200 https://registry.npmjs.org/braces/-/braces-3.0.3.tgz 1457ms (cache miss)
+22:51:10 | DEBUG | #6 2.542 npm http fetch GET 200 https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz 1492ms (cache miss)
+22:51:10 | DEBUG | #6 2.545 npm http fetch GET 200 https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz 1468ms (cache miss)
+22:51:10 | DEBUG | #6 2.546 npm http fetch GET 200 https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz 1467ms (cache miss)
+22:51:10 | DEBUG | #6 2.546 npm http fetch GET 200 https://registry.npmjs.org/arg/-/arg-5.0.2.tgz 1468ms (cache miss)
+22:51:10 | DEBUG | #6 2.572 npm http fetch GET 200 https://registry.npmjs.org/sonner/-/sonner-2.0.5.tgz 1552ms (cache miss)
+22:51:10 | DEBUG | #6 2.575 npm http fetch GET 200 https://registry.npmjs.org/d3-time/-/d3-time-3.1.0.tgz 1516ms (cache miss)
+22:51:10 | DEBUG | #6 2.577 npm http fetch GET 200 https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.6.tgz 1499ms (cache miss)
+22:51:10 | DEBUG | #6 2.578 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-timer/-/d3-timer-3.0.2.tgz 1497ms (cache miss)
+22:51:10 | DEBUG | #6 2.578 npm http fetch GET 200 https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz 1499ms (cache miss)
+22:51:10 | DEBUG | #6 2.578 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-time/-/d3-time-3.0.4.tgz 1498ms (cache miss)
+22:51:10 | DEBUG | #6 2.589 npm http fetch GET 200 https://registry.npmjs.org/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.8.tgz 1562ms (cache miss)
+22:51:10 | DEBUG | #6 2.592 npm http fetch GET 200 https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.176.tgz 1537ms (cache miss)
+22:51:10 | DEBUG | #6 2.594 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-color/-/d3-color-3.1.3.tgz 1511ms (cache miss)
+22:51:10 | DEBUG | #6 2.595 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-path/-/d3-path-3.1.1.tgz 1513ms (cache miss)
+22:51:10 | DEBUG | #6 2.595 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-scale/-/d3-scale-4.0.9.tgz 1513ms (cache miss)
+22:51:10 | DEBUG | #6 2.609 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-interpolate/-/d3-interpolate-3.0.4.tgz 1527ms (cache miss)
+22:51:10 | DEBUG | #6 2.610 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-array/-/d3-array-3.2.1.tgz 1526ms (cache miss)
+22:51:10 | DEBUG | #6 2.623 npm http fetch GET 200 https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz 1555ms (cache miss)
+22:51:10 | DEBUG | #6 2.625 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-ease/-/d3-ease-3.0.2.tgz 1542ms (cache miss)
+22:51:10 | DEBUG | #6 2.625 npm http fetch GET 200 https://registry.npmjs.org/@standard-schema/utils/-/utils-0.3.0.tgz 1540ms (cache miss)
+22:51:10 | DEBUG | #6 2.642 npm http fetch GET 200 https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz 1557ms (cache miss)
+22:51:11 | DEBUG | #6 2.651 npm http fetch GET 200 https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.3.tgz 1626ms (cache miss)
+22:51:11 | DEBUG | #6 2.655 npm http fetch GET 200 https://registry.npmjs.org/cmdk/-/cmdk-1.1.1.tgz 1588ms (cache miss)
+22:51:11 | DEBUG | #6 2.656 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-rect/-/react-use-rect-1.1.1.tgz 1569ms (cache miss)
+22:51:11 | DEBUG | #6 2.657 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-previous/-/react-use-previous-1.1.1.tgz 1569ms (cache miss)
+22:51:11 | DEBUG | #6 2.682 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-1.1.1.tgz 1594ms (cache miss)
+22:51:11 | DEBUG | #6 2.683 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-effect-event/-/react-use-effect-event-0.0.2.tgz 1593ms (cache miss)
+22:51:11 | DEBUG | #6 2.683 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.1.tgz 1597ms (cache miss)
+22:51:11 | DEBUG | #6 2.683 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-size/-/react-use-size-1.1.1.tgz 1596ms (cache miss)
+22:51:11 | DEBUG | #6 2.684 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-toggle-group/-/react-toggle-group-1.1.10.tgz 1592ms (cache miss)
+22:51:11 | DEBUG | #6 2.684 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-callback-ref/-/react-use-callback-ref-1.1.1.tgz 1594ms (cache miss)
+22:51:11 | DEBUG | #6 2.695 npm http fetch GET 200 https://registry.npmjs.org/react/-/react-19.1.0.tgz 1665ms (cache miss)
+22:51:11 | DEBUG | #6 2.697 npm http fetch GET 200 https://registry.npmjs.org/decimal.js-light/-/decimal.js-light-2.5.1.tgz 1640ms (cache miss)
+22:51:11 | DEBUG | #6 2.700 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-visually-hidden/-/react-visually-hidden-1.2.3.tgz 1613ms (cache miss)
+22:51:11 | DEBUG | #6 2.700 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-escape-keydown/-/react-use-escape-keydown-1.1.1.tgz 1611ms (cache miss)
+22:51:11 | DEBUG | #6 2.700 npm http fetch GET 200 https://registry.npmjs.org/@standard-schema/spec/-/spec-1.0.0.tgz 1615ms (cache miss)
+22:51:11 | DEBUG | #6 2.700 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-is-hydrated/-/react-use-is-hydrated-0.1.0.tgz 1612ms (cache miss)
+22:51:11 | DEBUG | #6 2.710 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-toggle/-/react-toggle-1.1.9.tgz 1619ms (cache miss)
+22:51:11 | DEBUG | #6 2.710 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-controllable-state/-/react-use-controllable-state-1.2.2.tgz 1619ms (cache miss)
+22:51:11 | DEBUG | #6 2.722 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-shape/-/d3-shape-3.1.7.tgz 1640ms (cache miss)
+22:51:11 | DEBUG | #6 2.736 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-switch/-/react-switch-1.2.5.tgz 1644ms (cache miss)
+22:51:11 | DEBUG | #6 2.749 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.12.tgz 1655ms (cache miss)
+22:51:11 | DEBUG | #6 2.749 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.2.3.tgz 1656ms (cache miss)
+22:51:11 | DEBUG | #6 2.763 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-presence/-/react-presence-1.1.4.tgz 1667ms (cache miss)
+22:51:11 | DEBUG | #6 2.776 npm http fetch GET 200 https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-6.16.0.tgz 1737ms (cache miss)
+22:51:11 | DEBUG | #6 2.779 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-primitive/-/react-primitive-2.1.3.tgz 1682ms (cache miss)
+22:51:11 | DEBUG | #6 2.791 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.2.7.tgz 1700ms (cache miss)
+22:51:11 | DEBUG | #6 2.791 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-portal/-/react-portal-1.1.9.tgz 1694ms (cache miss)
+22:51:11 | DEBUG | #6 2.802 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-popper/-/react-popper-1.2.7.tgz 1704ms (cache miss)
+22:51:11 | DEBUG | #6 2.815 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-separator/-/react-separator-1.1.7.tgz 1720ms (cache miss)
+22:51:11 | DEBUG | #6 2.816 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.10.tgz 1718ms (cache miss)
+22:51:11 | DEBUG | #6 2.816 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-radio-group/-/react-radio-group-1.3.7.tgz 1720ms (cache miss)
+22:51:11 | DEBUG | #6 2.834 npm http fetch GET 200 https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz 1824ms (cache miss)
+22:51:11 | DEBUG | #6 2.840 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-focus-scope/-/react-focus-scope-1.1.7.tgz 1739ms (cache miss)
+22:51:11 | DEBUG | #6 2.841 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-progress/-/react-progress-1.1.7.tgz 1745ms (cache miss)
+22:51:11 | DEBUG | #6 2.857 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-id/-/react-id-1.1.1.tgz 1756ms (cache miss)
+22:51:11 | DEBUG | #6 2.857 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-focus-guards/-/react-focus-guards-1.1.2.tgz 1755ms (cache miss)
+22:51:11 | DEBUG | #6 2.868 npm http fetch GET 200 https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 1849ms (cache miss)
+22:51:11 | DEBUG | #6 2.873 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-popover/-/react-popover-1.1.14.tgz 1775ms (cache miss)
+22:51:11 | DEBUG | #6 2.874 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-direction/-/react-direction-1.1.1.tgz 1770ms (cache miss)
+22:51:11 | DEBUG | #6 2.914 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-dropdown-menu/-/react-dropdown-menu-2.1.15.tgz 1810ms (cache miss)
+22:51:11 | DEBUG | #6 2.939 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-slider/-/react-slider-1.3.5.tgz 1845ms (cache miss)
+22:51:11 | DEBUG | #6 2.967 npm http fetch GET 200 https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz 1907ms (cache miss)
+22:51:11 | DEBUG | #6 2.968 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.2.tgz 1862ms (cache miss)
+22:51:11 | DEBUG | #6 2.988 npm http fetch GET 200 https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz 1917ms (cache miss)
+22:51:11 | DEBUG | #6 2.989 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-scroll-area/-/react-scroll-area-1.2.9.tgz 1894ms (cache miss)
+22:51:11 | DEBUG | #6 2.989 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-collapsible/-/react-collapsible-1.1.11.tgz 1883ms (cache miss)
+22:51:11 | DEBUG | #6 2.990 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.1.2.tgz 1885ms (cache miss)
+22:51:11 | DEBUG | #6 3.011 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-label/-/react-label-2.1.7.tgz 1909ms (cache miss)
+22:51:11 | DEBUG | #6 3.012 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-hover-card/-/react-hover-card-1.1.14.tgz 1911ms (cache miss)
+22:51:11 | DEBUG | #6 3.028 npm http fetch GET 200 https://registry.npmjs.org/use-sidecar/-/use-sidecar-1.1.3.tgz 2020ms (cache miss)
+22:51:11 | DEBUG | #6 3.029 npm http fetch GET 200 https://registry.npmjs.org/redux/-/redux-5.0.1.tgz 2006ms (cache miss)
+22:51:11 | DEBUG | #6 3.034 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.14.tgz 1941ms (cache miss)
+22:51:11 | DEBUG | #6 3.034 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-arrow/-/react-arrow-1.1.7.tgz 1925ms (cache miss)
+22:51:11 | DEBUG | #6 3.051 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-avatar/-/react-avatar-1.1.10.tgz 1943ms (cache miss)
+22:51:11 | DEBUG | #6 3.052 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-dismissable-layer/-/react-dismissable-layer-1.1.10.tgz 1948ms (cache miss)
+22:51:11 | DEBUG | #6 3.052 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-accordion/-/react-accordion-1.2.11.tgz 1942ms (cache miss)
+22:51:11 | DEBUG | #6 3.059 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.14.tgz 1955ms (cache miss)
+22:51:11 | DEBUG | #6 3.065 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-aspect-ratio/-/react-aspect-ratio-1.1.7.tgz 1957ms (cache miss)
+22:51:11 | DEBUG | #6 3.076 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-menu/-/react-menu-2.1.15.tgz 1975ms (cache miss)
+22:51:11 | DEBUG | #6 3.076 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-menubar/-/react-menubar-1.1.15.tgz 1976ms (cache miss)
+22:51:11 | DEBUG | #6 3.077 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/number/-/number-1.1.1.tgz 1965ms (cache miss)
+22:51:11 | DEBUG | #6 3.090 npm http fetch GET 200 https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.3.3.tgz 2080ms (cache miss)
+22:51:11 | DEBUG | #6 3.094 npm http fetch GET 200 https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz 1982ms (cache miss)
+22:51:11 | DEBUG | #6 3.105 npm http fetch GET 200 https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.1.tgz 2043ms (cache miss)
+22:51:11 | DEBUG | #6 3.107 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-context-menu/-/react-context-menu-2.2.15.tgz 2002ms (cache miss)
+22:51:11 | DEBUG | #6 3.117 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/primitive/-/primitive-1.1.2.tgz 2007ms (cache miss)
+22:51:11 | DEBUG | #6 3.124 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-collection/-/react-collection-1.1.7.tgz 2017ms (cache miss)
+22:51:11 | DEBUG | #6 3.125 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.3.2.tgz 2018ms (cache miss)
+22:51:11 | DEBUG | #6 3.125 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz 2009ms (cache miss)
+22:51:11 | DEBUG | #6 3.134 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-select/-/react-select-2.2.5.tgz 2038ms (cache miss)
+22:51:11 | DEBUG | #6 3.135 npm http fetch GET 200 https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz 2021ms (cache miss)
+22:51:11 | DEBUG | #6 3.144 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.8.tgz 2028ms (cache miss)
+22:51:11 | DEBUG | #6 3.144 npm http fetch GET 200 https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz 2032ms (cache miss)
+22:51:11 | DEBUG | #6 3.162 npm http fetch GET 200 https://registry.npmjs.org/@next/env/-/env-15.2.4.tgz 2048ms (cache miss)
+22:51:11 | DEBUG | #6 3.163 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz 2044ms (cache miss)
+22:51:11 | DEBUG | #6 3.169 npm http fetch GET 200 https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.0.tgz 2110ms (cache miss)
+22:51:11 | DEBUG | #6 3.182 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-navigation-menu/-/react-navigation-menu-1.2.13.tgz 2083ms (cache miss)
+22:51:11 | DEBUG | #6 3.183 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.3.tgz 2063ms (cache miss)
+22:51:11 | DEBUG | #6 3.184 npm http fetch GET 200 https://registry.npmjs.org/@date-fns/tz/-/tz-1.2.0.tgz 2061ms (cache miss)
+22:51:11 | DEBUG | #6 3.195 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-alert-dialog/-/react-alert-dialog-1.1.14.tgz 2086ms (cache miss)
+22:51:11 | DEBUG | #6 3.197 npm http fetch GET 200 https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz 2073ms (cache miss)
+22:51:11 | DEBUG | #6 3.198 npm http fetch GET 200 https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz 2073ms (cache miss)
+22:51:11 | DEBUG | #6 3.208 npm http fetch GET 200 https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 2082ms (cache miss)
+22:51:11 | DEBUG | #6 3.225 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.0.tgz 2110ms (cache miss)
+22:51:11 | DEBUG | #6 3.228 npm http fetch GET 200 https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz 2196ms (cache miss)
+22:51:11 | DEBUG | #6 3.241 npm http fetch GET 200 https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 2113ms (cache miss)
+22:51:11 | DEBUG | #6 3.280 npm http fetch GET 200 https://registry.npmjs.org/react-resizable-panels/-/react-resizable-panels-3.0.3.tgz 2253ms (cache miss)
+22:51:11 | DEBUG | #6 3.297 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.1.tgz 2178ms (cache miss)
+22:51:11 | DEBUG | #6 3.305 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz 2190ms (cache miss)
+22:51:11 | DEBUG | #6 3.327 npm http fetch GET 200 https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.7.1.tgz 2300ms (cache miss)
+22:51:11 | DEBUG | #6 3.334 npm http fetch GET 200 https://registry.npmjs.org/sharp/-/sharp-0.33.5.tgz 2312ms (cache miss)
+22:51:11 | DEBUG | #6 3.334 npm http fetch GET 200 https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz 2300ms (cache miss)
+22:51:11 | DEBUG | #6 3.339 npm http fetch GET 200 https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz 2288ms (cache miss)
+22:51:11 | DEBUG | #6 3.358 npm http fetch GET 200 https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz 2294ms (cache miss)
+22:51:11 | DEBUG | #6 3.373 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/core/-/core-1.7.1.tgz 2252ms (cache miss)
+22:51:11 | DEBUG | #6 3.455 npm http fetch GET 200 https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz 2394ms (cache miss)
+22:51:11 | DEBUG | #6 3.467 npm http fetch GET 200 https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.0.tgz 2450ms (cache miss)
+22:51:11 | DEBUG | #6 3.467 npm http fetch GET 200 https://registry.npmjs.org/immer/-/immer-10.1.1.tgz 2419ms (cache miss)
+22:51:11 | DEBUG | #6 3.474 npm http fetch GET 200 https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz 2410ms (cache miss)
+22:51:11 | DEBUG | #6 3.480 npm http fetch GET 200 https://registry.npmjs.org/@types/react/-/react-19.1.8.tgz 2400ms (cache miss)
+22:51:11 | DEBUG | #6 3.512 npm http fetch GET 200 https://registry.npmjs.org/reselect/-/reselect-5.1.1.tgz 2489ms (cache miss)
+22:51:11 | DEBUG | #6 3.545 npm http fetch GET 200 https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 2527ms (cache miss)
+22:51:11 | DEBUG | #6 3.568 npm http fetch GET 200 https://registry.npmjs.org/react-redux/-/react-redux-9.2.0.tgz 2541ms (cache miss)
+22:51:11 | DEBUG | #6 3.613 npm http fetch GET 200 https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.21.tgz 2537ms (cache miss)
+22:51:11 | DEBUG | #6 3.645 npm http fetch GET 200 https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 2519ms (cache miss)
+22:51:11 | DEBUG | #6 3.719 npm http fetch GET 200 https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz 2675ms (cache miss)
+22:51:12 | DEBUG | #6 3.786 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/util/-/util-4.0.0.tgz 2664ms (cache miss)
+22:51:12 | DEBUG | #6 3.789 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/types/-/types-1.5.10.tgz 2666ms (cache miss)
+22:51:12 | DEBUG | #6 3.807 npm http fetch GET 200 https://registry.npmjs.org/embla-carousel/-/embla-carousel-8.6.0.tgz 2753ms (cache miss)
+22:51:12 | DEBUG | #6 3.825 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/util/-/util-3.3.2.tgz 2698ms (cache miss)
+22:51:12 | DEBUG | #6 4.056 npm http fetch GET 200 https://registry.npmjs.org/@types/node/-/node-22.15.33.tgz 2977ms (cache miss)
+22:51:12 | DEBUG | #6 4.101 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-5.10.4.tgz 2979ms (cache miss)
+22:51:12 | DEBUG | #6 4.174 npm http fetch GET 200 https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.58.1.tgz 3144ms (cache miss)
+22:51:12 | DEBUG | #6 4.292 npm http fetch GET 200 https://registry.npmjs.org/sucrase/-/sucrase-3.35.0.tgz 3275ms (cache miss)
+22:51:12 | DEBUG | #6 4.321 npm http fetch GET 200 https://registry.npmjs.org/yaml/-/yaml-2.8.0.tgz 3314ms (cache miss)
+22:51:12 | DEBUG | #6 4.412 npm http fetch GET 200 https://registry.npmjs.org/victory-vendor/-/victory-vendor-37.3.6.tgz 3406ms (cache miss)
+22:51:12 | DEBUG | #6 4.520 npm http fetch GET 200 https://registry.npmjs.org/react-dom/-/react-dom-19.1.0.tgz 3491ms (cache miss)
+22:51:13 | DEBUG | #6 4.813 npm http fetch GET 200 https://registry.npmjs.org/zod/-/zod-3.25.67.tgz 3812ms (cache miss)
+22:51:13 | DEBUG | #6 4.976 npm http fetch GET 200 https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz 3960ms (cache miss)
+22:51:13 | DEBUG | #6 5.054 npm http fetch GET 200 https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 3970ms (cache miss)
+22:51:13 | DEBUG | #6 5.103 npm http fetch GET 200 https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.10.0.tgz 3986ms (cache miss)
+22:51:13 | DEBUG | #6 5.165 npm http fetch GET 200 https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-2.8.2.tgz 4079ms (cache miss)
+22:51:13 | DEBUG | #6 5.433 npm http fetch GET 200 https://registry.npmjs.org/react-day-picker/-/react-day-picker-9.7.0.tgz 4402ms (cache miss)
+22:51:13 | DEBUG | #6 5.648 npm http fetch GET 200 https://registry.npmjs.org/recharts/-/recharts-3.0.0.tgz 4624ms (cache miss)
+22:51:14 | DEBUG | #6 5.983 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.17.0.tgz 4861ms (cache miss)
+22:51:14 | DEBUG | #6 5.994 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.15.0.tgz 4871ms (cache miss)
+22:51:14 | DEBUG | #6 6.210 npm http fetch GET 200 https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz 5199ms (cache miss)
+22:51:15 | DEBUG | #6 7.227 npm http fetch GET 200 https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.39.5.tgz 6174ms (cache miss)
+22:51:15 | DEBUG | #6 7.548 npm http fetch GET 200 https://registry.npmjs.org/date-fns-jalali/-/date-fns-jalali-4.1.0-0.tgz 6489ms (cache miss)
+22:51:17 | DEBUG | #6 8.768 npm http fetch GET 200 https://registry.npmjs.org/lucide-react/-/lucide-react-0.454.0.tgz 7726ms (cache miss)
+22:51:18 | DEBUG | #6 10.23 npm http fetch GET 200 https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz 9172ms (cache miss)
+22:51:19 | DEBUG | #6 11.19 npm http fetch GET 200 https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-15.2.4.tgz 10081ms (cache miss)
+22:51:19 | DEBUG | #6 11.22 npm http fetch GET 200 https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-15.2.4.tgz 10104ms (cache miss)
+22:51:22 | DEBUG | #6 14.30 npm http fetch GET 200 https://registry.npmjs.org/next/-/next-15.2.4.tgz 13262ms (cache miss)
+22:51:22 | DEBUG | #6 14.32 npm info run sharp@0.33.5 install node_modules/sharp node install/check
+22:51:22 | DEBUG | #6 14.39 npm info run sharp@0.33.5 install { code: 0, signal: null }
+22:51:22 | DEBUG | #6 14.59 
+22:51:22 | DEBUG | #6 14.59 added 282 packages, and audited 283 packages in 14s
+22:51:22 | DEBUG | #6 14.59 
+22:51:23 | DEBUG | #6 14.59 43 packages are looking for funding
+22:51:23 | DEBUG | #6 14.59   run `npm fund` for details
+22:51:23 | DEBUG | #6 14.59 
+22:51:23 | DEBUG | #6 14.59 found 0 vulnerabilities
+22:51:23 | DEBUG | #6 14.59 npm verbose cwd /opt/build
+22:51:23 | DEBUG | #6 14.59 npm verbose os Linux 5.15.0-91-generic
+22:51:23 | DEBUG | #6 14.59 npm verbose node v22.17.0
+22:51:23 | DEBUG | #6 14.59 npm verbose npm  v10.9.2
+22:51:23 | DEBUG | #6 14.59 npm verbose exit 0
+22:51:23 | DEBUG | #6 14.59 npm info ok
+22:51:25 | DEBUG | #6 DONE 17.6s
+22:51:25 | DEBUG | 
+22:51:25 | DEBUG | #7 exporting to image
+22:51:25 | DEBUG | #7 exporting layers
+22:51:33 | DEBUG | #7 exporting layers 7.2s done
+22:51:33 | DEBUG | #7 writing image sha256:693a82e6f9b797b98380d9fe6d3cf47f7deb3823b573e0190d6ce068d3b2b78b done
+22:51:33 | DEBUG | #7 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies done
+22:51:33 | DEBUG | #7 DONE 7.2s
+22:51:33 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies built successfully
+22:51:33 | Building final layer
+22:51:33 | DEBUG | 2025/07/01 22:51:33 in: []string{}
+22:51:33 | DEBUG | 2025/07/01 22:51:33 Parsed entitlements: []
+22:51:34 | DEBUG | #0 building with "default" instance using docker driver
+22:51:34 | DEBUG | 
+22:51:34 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:51:34 | DEBUG | #1 transferring dockerfile: 159B done
+22:51:34 | DEBUG | #1 DONE 0.0s
+22:51:34 | DEBUG | 
+22:51:34 | DEBUG | #2 [internal] load metadata for docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies:latest
+22:51:34 | DEBUG | #2 DONE 0.0s
+22:51:34 | DEBUG | 
+22:51:34 | DEBUG | #3 [internal] load .dockerignore
+22:51:34 | DEBUG | #3 transferring context: 2B done
+22:51:34 | DEBUG | #3 DONE 0.0s
+22:51:34 | DEBUG | 
+22:51:34 | DEBUG | #4 [1/4] FROM docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies:latest
+22:51:34 | DEBUG | #4 DONE 0.1s
+22:51:34 | DEBUG | 
+22:51:34 | DEBUG | #5 [2/4] WORKDIR /opt/build
+22:51:34 | DEBUG | #5 DONE 0.1s
+22:51:34 | DEBUG | 
+22:51:34 | DEBUG | #6 [3/4] RUN cd /opt/build
+22:51:34 | DEBUG | #6 DONE 0.3s
+22:51:34 | DEBUG | 
+22:51:34 | DEBUG | #7 [4/4] RUN npm run build
+22:51:35 | DEBUG | #7 0.442 
+22:51:35 | DEBUG | #7 0.442 > villagora-retreat-karelia@1.0.0 build
+22:51:35 | DEBUG | #7 0.442 > next build
+22:51:35 | DEBUG | #7 0.442 
+22:51:35 | DEBUG | #7 1.233 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+22:51:36 | DEBUG | #7 1.233 This information is used to shape Next.js' roadmap and prioritize features.
+22:51:36 | DEBUG | #7 1.233 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+22:51:36 | DEBUG | #7 1.233 https://nextjs.org/telemetry
+22:51:36 | DEBUG | #7 1.233 
+22:51:36 | DEBUG | #7 1.318    ▲ Next.js 15.2.4
+22:51:36 | DEBUG | #7 1.318 
+22:51:36 | DEBUG | #7 1.431    Creating an optimized production build ...
+22:51:52 | DEBUG | #7 18.19  ✓ Compiled successfully
+22:51:52 | DEBUG | #7 18.19    Linting and checking validity of types ...
+22:52:01 | DEBUG | #7 26.83    Collecting page data ...
+22:52:03 | DEBUG | #7 29.09    Generating static pages (0/7) ...
+22:52:05 | DEBUG | #7 30.47    Generating static pages (1/7) 
+22:52:05 | DEBUG | #7 30.47    Generating static pages (3/7) 
+22:52:05 | DEBUG | #7 30.47    Generating static pages (5/7) 
+22:52:05 | DEBUG | #7 30.47  ✓ Generating static pages (7/7)
+22:52:05 | DEBUG | #7 31.10    Finalizing page optimization ...
+22:52:05 | DEBUG | #7 31.10    Collecting build traces ...
+22:52:15 | DEBUG | #7 40.67 
+22:52:15 | DEBUG | #7 40.68 Route (app)                                Size  First Load JS  Revalidate  Expire
+22:52:15 | DEBUG | #7 40.68 ┌ ○ /                                   17.8 kB         282 kB
+22:52:15 | DEBUG | #7 40.68 ├ ○ /_not-found                           192 B         265 kB
+22:52:15 | DEBUG | #7 40.68 ├ ƒ /api/clear-cache                      139 B         265 kB
+22:52:15 | DEBUG | #7 40.68 ├ ƒ /api/telegram                         139 B         265 kB
+22:52:15 | DEBUG | #7 40.68 └ ○ /sitemap.xml                          139 B         265 kB          1d      1y
+22:52:15 | DEBUG | #7 40.68 + First Load JS shared by all            264 kB
+22:52:15 | DEBUG | #7 40.68   └ chunks/vendors-c448f47ce5c70ec6.js   262 kB
+22:52:15 | DEBUG | #7 40.68   └ other shared chunks (total)         1.91 kB
+22:52:15 | DEBUG | #7 40.68 
+22:52:15 | DEBUG | #7 40.68 
+22:52:15 | DEBUG | #7 40.68 ○  (Static)   prerendered as static content
+22:52:15 | DEBUG | #7 40.68 ƒ  (Dynamic)  server-rendered on demand
+22:52:15 | DEBUG | #7 40.68 
+22:52:20 | DEBUG | #7 DONE 45.5s
+22:52:20 | DEBUG | 
+22:52:20 | DEBUG | #8 exporting to image
+22:52:20 | DEBUG | #8 exporting layers
+22:52:21 | DEBUG | #8 exporting layers 0.9s done
+22:52:21 | DEBUG | #8 writing image sha256:5a12159814467fd45f7063a79012619dbe86974184b183d99c411c674873cbae done
+22:52:21 | DEBUG | #8 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-build 0.0s done
+22:52:21 | DEBUG | #8 DONE 0.9s
+22:52:21 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-build built successfully
+22:52:21 | Copying the code
+22:52:22 | Setting up nginx
+22:52:22 | Using /out as default folder for index.html
+22:52:22 | Index dir contents: []
+22:52:22 | ERROR | index.html or index.htm not found in the /out
+22:52:22 | ERROR | Deploy error
+22:52:22 | Preparing environment
+22:52:22 | Creating base layer
+22:52:22 | Using existing image static-advanced-node-12-ng22:latest
+22:52:22 | Building keys layer
+22:52:22 | DEBUG | 2025/07/01 22:52:22 in: []string{}
+22:52:22 | DEBUG | 2025/07/01 22:52:22 Parsed entitlements: []
+22:52:22 | DEBUG | #0 building with "default" instance using docker driver
+22:52:22 | DEBUG | 
+22:52:22 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:52:22 | DEBUG | #1 transferring dockerfile: 182B 0.0s done
+22:52:22 | DEBUG | #1 DONE 0.0s
+22:52:22 | DEBUG | 
+22:52:22 | DEBUG | #2 [internal] load metadata for docker.io/library/static-advanced-node-12-ng22:latest
+22:52:22 | DEBUG | #2 DONE 0.0s
+22:52:22 | DEBUG | 
+22:52:22 | DEBUG | #3 [internal] load .dockerignore
+22:52:22 | DEBUG | #3 transferring context: 2B done
+22:52:22 | DEBUG | #3 DONE 0.0s
+22:52:22 | DEBUG | 
+22:52:22 | DEBUG | #4 [1/4] FROM docker.io/library/static-advanced-node-12-ng22:latest
+22:52:22 | DEBUG | #4 DONE 0.0s
+22:52:22 | DEBUG | 
+22:52:22 | DEBUG | #5 [2/4] WORKDIR /opt/build
+22:52:22 | DEBUG | #5 DONE 0.1s
+22:52:23 | DEBUG | 
+22:52:23 | DEBUG | #6 [3/4] RUN mkdir -p /root/.ssh
+22:52:23 | DEBUG | #6 DONE 0.4s
+22:52:23 | DEBUG | 
+22:52:23 | DEBUG | #7 [4/4] RUN ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
+22:52:24 | DEBUG | #7 0.739 # github.com:22 SSH-2.0-71625b40
+22:52:24 | DEBUG | #7 DONE 1.1s
+22:52:24 | DEBUG | 
+22:52:24 | DEBUG | #8 exporting to image
+22:52:24 | DEBUG | #8 exporting layers 0.0s done
+22:52:24 | DEBUG | #8 writing image sha256:ae82d1d7941fd1ed7b06a30e78d45a63baeace8ed4a4225dfacd3e9516137ce5 done
+22:52:24 | DEBUG | #8 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys done
+22:52:24 | DEBUG | #8 DONE 0.0s
+22:52:24 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys built successfully
+22:52:24 | Cloning code
+22:52:24 | Building code layer
+22:52:24 | DEBUG | 2025/07/01 22:52:24 in: []string{}
+22:52:24 | DEBUG | 2025/07/01 22:52:24 Parsed entitlements: []
+22:52:24 | DEBUG | #0 building with "default" instance using docker driver
+22:52:24 | DEBUG | 
+22:52:24 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:52:24 | DEBUG | #1 transferring dockerfile: 372B done
+22:52:24 | DEBUG | #1 DONE 0.0s
+22:52:24 | DEBUG | 
+22:52:24 | DEBUG | #2 [internal] load metadata for docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys:latest
+22:52:24 | DEBUG | #2 DONE 0.0s
+22:52:24 | DEBUG | 
+22:52:24 | DEBUG | #3 [internal] load .dockerignore
+22:52:24 | DEBUG | #3 transferring context: 2B done
+22:52:24 | DEBUG | #3 DONE 0.0s
+22:52:24 | DEBUG | 
+22:52:24 | DEBUG | #4 [1/6] FROM docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-keys:latest
+22:52:24 | DEBUG | #4 DONE 0.0s
+22:52:24 | DEBUG | 
+22:52:24 | DEBUG | #5 [2/6] WORKDIR /opt/build
+22:52:24 | DEBUG | #5 DONE 0.1s
+22:52:25 | DEBUG | 
+22:52:25 | DEBUG | #6 [3/6] RUN git clone "https://github.com/Drilspb4202/git-github.com-Drilspb4202-Vilagora.git" -b main /opt/build
+22:52:25 | DEBUG | #6 0.285 Cloning into '/opt/build'...
+22:52:33 | DEBUG | #6 DONE 8.1s
+22:52:33 | DEBUG | 
+22:52:33 | DEBUG | #7 [4/6] RUN cd /opt/build
+22:52:33 | DEBUG | #7 DONE 0.3s
+22:52:33 | DEBUG | 
+22:52:33 | DEBUG | #8 [5/6] RUN git remote rm origin
+22:52:33 | DEBUG | #8 DONE 0.4s
+22:52:33 | DEBUG | 
+22:52:33 | DEBUG | #9 [6/6] RUN git checkout adb30fa2471682fed507bedbfceb074f752f088b
+22:52:34 | DEBUG | #9 1.038 Note: switching to 'adb30fa2471682fed507bedbfceb074f752f088b'.
+22:52:34 | DEBUG | #9 1.038 
+22:52:34 | DEBUG | #9 1.038 You are in 'detached HEAD' state. You can look around, make experimental
+22:52:34 | DEBUG | #9 1.038 changes and commit them, and you can discard any commits you make in this
+22:52:34 | DEBUG | #9 1.038 state without impacting any branches by switching back to a branch.
+22:52:34 | DEBUG | #9 1.038 
+22:52:34 | DEBUG | #9 1.038 If you want to create a new branch to retain commits you create, you may
+22:52:34 | DEBUG | #9 1.038 do so (now or later) by using -c with the switch command. Example:
+22:52:34 | DEBUG | #9 1.038 
+22:52:34 | DEBUG | #9 1.038   git switch -c <new-branch-name>
+22:52:34 | DEBUG | #9 1.038 
+22:52:34 | DEBUG | #9 1.038 Or undo this operation with:
+22:52:34 | DEBUG | #9 1.038 
+22:52:34 | DEBUG | #9 1.038   git switch -
+22:52:34 | DEBUG | #9 1.038 
+22:52:34 | DEBUG | #9 1.038 Turn off this advice by setting config variable advice.detachedHead to false
+22:52:34 | DEBUG | #9 1.038 
+22:52:34 | DEBUG | #9 1.038 HEAD is now at adb30fa fix: статический экспорт для Timeweb, временно убраны API-роуты, исправлен sitemap.xml, обновлен build-скрипт
+22:52:35 | DEBUG | #9 DONE 1.1s
+22:52:35 | DEBUG | 
+22:52:35 | DEBUG | #10 exporting to image
+22:52:35 | DEBUG | #10 exporting layers
+22:52:37 | DEBUG | #10 exporting layers 2.2s done
+22:52:37 | DEBUG | #10 writing image sha256:a2d53bd789e04e9ebc7838fa13606eefdd3a1433bee9b32cc1eb699c07d9eddd done
+22:52:37 | DEBUG | #10 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code done
+22:52:37 | DEBUG | #10 DONE 2.2s
+22:52:37 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code built successfully
+22:52:37 | Switching to commit adb30fa2471682fed507bedbfceb074f752f088b
+22:52:37 | Checking if there any system dependencies
+22:52:37 | DEBUG | [".", "..", ".git", ".gitignore", "FAST_LOADING_IMPLEMENTATION.md", "IMAGES_NEEDED.md", "MOBILE_SEO_OPTIMIZATION_COMPLETE.md", "README.md", "SEO_OPTIMIZATION_COMPLETE.md", "TELEGRAM_SETUP.md", "VERCEL_TELEGRAM_SETUP.md", "YANDEX_METRIKA_SETUP.md", "_api_backup", "app", "b86dd808-5ea2-489f-b5e7-55038954225b.txt", "components", "components.json", "hooks", "lib", "next.config.js", "package-lock.json", "package.json", "pnpm-lock.yaml", "postcss.config.mjs", "public", "tailwind.config.ts", "tsconfig.json", "wrangler.toml"]
+22:52:37 | Installing dependencies
+22:52:38 | Building dependencies layer
+22:52:38 | DEBUG | 2025/07/01 22:52:38 in: []string{}
+22:52:38 | DEBUG | 2025/07/01 22:52:38 Parsed entitlements: []
+22:52:38 | DEBUG | #0 building with "default" instance using docker driver
+22:52:38 | DEBUG | 
+22:52:38 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:52:38 | DEBUG | #1 transferring dockerfile: 152B done
+22:52:38 | DEBUG | #1 DONE 0.0s
+22:52:38 | DEBUG | 
+22:52:38 | DEBUG | #2 [internal] load metadata for docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code:latest
+22:52:38 | DEBUG | #2 DONE 0.0s
+22:52:38 | DEBUG | 
+22:52:38 | DEBUG | #3 [internal] load .dockerignore
+22:52:38 | DEBUG | #3 transferring context: 2B done
+22:52:38 | DEBUG | #3 DONE 0.0s
+22:52:38 | DEBUG | 
+22:52:38 | DEBUG | #4 [1/3] FROM docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-code:latest
+22:52:38 | DEBUG | #4 DONE 0.1s
+22:52:38 | DEBUG | 
+22:52:38 | DEBUG | #5 [2/3] WORKDIR /opt/build
+22:52:38 | DEBUG | #5 DONE 0.0s
+22:52:38 | DEBUG | 
+22:52:38 | DEBUG | #6 [3/3] RUN cd /opt/build && npm i --verbose
+22:52:38 | DEBUG | #6 0.451 npm verbose cli /usr/bin/node /usr/bin/npm
+22:52:39 | DEBUG | #6 0.452 npm info using npm@10.9.2
+22:52:39 | DEBUG | #6 0.455 npm info using node@v22.17.0
+22:52:39 | DEBUG | #6 0.455 npm verbose title npm i
+22:52:39 | DEBUG | #6 0.455 npm verbose argv "i" "--loglevel" "verbose"
+22:52:39 | DEBUG | #6 0.455 npm verbose logfile logs-max:10 dir:/root/.npm/_logs/2025-07-01T19_52_38_866Z-
+22:52:39 | DEBUG | #6 0.457 npm verbose logfile /root/.npm/_logs/2025-07-01T19_52_38_866Z-debug-0.log
+22:52:39 | DEBUG | #6 1.005 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-win32-x64-msvc
+22:52:39 | DEBUG | #6 1.005 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-win32-arm64-msvc
+22:52:39 | DEBUG | #6 1.006 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-linux-arm64-musl
+22:52:39 | DEBUG | #6 1.006 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-linux-arm64-gnu
+22:52:39 | DEBUG | #6 1.006 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-darwin-x64
+22:52:39 | DEBUG | #6 1.007 npm verbose reify failed optional dependency /opt/build/node_modules/@next/swc-darwin-arm64
+22:52:39 | DEBUG | #6 1.008 npm verbose reify failed optional dependency /opt/build/node_modules/@img/sharp-win32-x64
+22:52:39 | DEBUG | #6 1.090 npm http cache zod@https://registry.npmjs.org/zod/-/zod-3.25.67.tgz 1ms (cache hit)
+22:52:39 | DEBUG | #6 1.092 npm http cache wrap-ansi-cjs@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.093 npm http cache yaml@https://registry.npmjs.org/yaml/-/yaml-2.8.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.093 npm http cache which@https://registry.npmjs.org/which/-/which-2.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.094 npm http cache wrap-ansi@https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.094 npm http cache victory-vendor@https://registry.npmjs.org/victory-vendor/-/victory-vendor-37.3.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.094 npm http cache use-sync-external-store@https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.094 npm http cache vaul@https://registry.npmjs.org/vaul/-/vaul-1.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.095 npm http cache use-sidecar@https://registry.npmjs.org/use-sidecar/-/use-sidecar-1.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.095 npm http cache util-deprecate@https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.096 npm http cache use-callback-ref@https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.3.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.096 npm http cache update-browserslist-db@https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.096 npm http cache undici-types@https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.097 npm http cache typescript@https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.097 npm http cache tslib@https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.097 npm http cache to-regex-range@https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.097 npm http cache ts-interface-checker@https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.097 npm http cache tiny-invariant@https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.3.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.097 npm http cache thenify-all@https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.098 npm http cache thenify@https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.098 npm http cache tailwindcss-animate@https://registry.npmjs.org/tailwindcss-animate/-/tailwindcss-animate-1.0.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.098 npm http cache tailwind-merge@https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.098 npm http cache tailwindcss@https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.098 npm http cache supports-preserve-symlinks-flag@https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.098 npm http cache styled-jsx@https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.099 npm http cache sucrase@https://registry.npmjs.org/sucrase/-/sucrase-3.35.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.099 npm http cache strip-ansi-cjs@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.099 npm http cache strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.099 npm http cache string-width@https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.099 npm http cache string-width-cjs@https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.099 npm http cache streamsearch@https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.100 npm http cache sonner@https://registry.npmjs.org/sonner/-/sonner-2.0.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.100 npm http cache simple-swizzle@https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.100 npm http cache source-map-js@https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.100 npm http cache signal-exit@https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.100 npm http cache shebang-regex@https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.100 npm http cache shebang-command@https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.101 npm http cache sharp@https://registry.npmjs.org/sharp/-/sharp-0.33.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.101 npm http cache scheduler@https://registry.npmjs.org/scheduler/-/scheduler-0.26.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.101 npm http cache semver@https://registry.npmjs.org/semver/-/semver-7.7.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.101 npm http cache run-parallel@https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.101 npm http cache reusify@https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.101 npm http cache resolve@https://registry.npmjs.org/resolve/-/resolve-1.22.10.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.102 npm http cache reselect@https://registry.npmjs.org/reselect/-/reselect-5.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.102 npm http cache redux@https://registry.npmjs.org/redux/-/redux-5.0.1.tgz 1ms (cache hit)
+22:52:39 | DEBUG | #6 1.102 npm http cache redux-thunk@https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.102 npm http cache readdirp@https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.102 npm http cache recharts@https://registry.npmjs.org/recharts/-/recharts-3.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.102 npm http cache react-style-singleton@https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.103 npm http cache read-cache@https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.103 npm http cache react-remove-scroll@https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.7.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.103 npm http cache react-resizable-panels@https://registry.npmjs.org/react-resizable-panels/-/react-resizable-panels-3.0.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.103 npm http cache react-remove-scroll-bar@https://registry.npmjs.org/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.8.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.103 npm http cache react-redux@https://registry.npmjs.org/react-redux/-/react-redux-9.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.103 npm http cache react-is@https://registry.npmjs.org/react-is/-/react-is-19.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.104 npm http cache react-hook-form@https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.58.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.104 npm http cache react-dom@https://registry.npmjs.org/react-dom/-/react-dom-19.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.104 npm http cache react-day-picker@https://registry.npmjs.org/react-day-picker/-/react-day-picker-9.7.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.104 npm http cache react@https://registry.npmjs.org/react/-/react-19.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.104 npm http cache postcss-value-parser@https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.104 npm http cache postcss-selector-parser@https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.104 npm http cache queue-microtask@https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.105 npm http cache postcss-nested@https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.105 npm http cache postcss-js@https://registry.npmjs.org/postcss-js/-/postcss-js-4.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.105 npm http cache postcss-import@https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.105 npm http cache pirates@https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.105 npm http cache pify@https://registry.npmjs.org/pify/-/pify-2.3.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.105 npm http cache postcss@https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.106 npm http cache path-scurry@https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.106 npm http cache picocolors@https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.106 npm http cache picomatch@https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.106 npm http cache path-parse@https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.106 npm http cache path-key@https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.106 npm http cache object-hash@https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.107 npm http cache package-json-from-dist@https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.107 npm http cache normalize-range@https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.107 npm http cache object-assign@https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.107 npm http cache node-releases@https://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.107 npm http cache normalize-path@https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.107 npm http cache next-cloudinary@https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-6.16.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.107 npm http cache next@https://registry.npmjs.org/next/-/next-15.2.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.108 npm http cache nanoid@https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.108 npm http cache next-themes@https://registry.npmjs.org/next-themes/-/next-themes-0.4.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.108 npm http cache mz@https://registry.npmjs.org/mz/-/mz-2.7.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.108 npm http cache minipass@https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.108 npm http cache minimatch@https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.108 npm http cache merge2@https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.109 npm http cache micromatch@https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.109 npm http cache lru-cache@https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz 1ms (cache hit)
+22:52:39 | DEBUG | #6 1.109 npm http cache lucide-react@https://registry.npmjs.org/lucide-react/-/lucide-react-0.454.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.109 npm http cache lines-and-columns@https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.109 npm http cache lilconfig@https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.109 npm http cache jiti@https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.110 npm http cache jackspeak@https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.110 npm http cache isexe@https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.110 npm http cache is-number@https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.110 npm http cache is-glob@https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.110 npm http cache is-extglob@https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.110 npm http cache is-fullwidth-code-point@https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.110 npm http cache is-core-module@https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.111 npm http cache is-binary-path@https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.111 npm http cache is-arrayish@https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.111 npm http cache input-otp@https://registry.npmjs.org/input-otp/-/input-otp-1.4.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.111 npm http cache internmap@https://registry.npmjs.org/internmap/-/internmap-2.0.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache immer@https://registry.npmjs.org/immer/-/immer-10.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache hasown@https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache glob-parent@https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache glob@https://registry.npmjs.org/glob/-/glob-10.4.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache get-nonce@https://registry.npmjs.org/get-nonce/-/get-nonce-1.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache function-bind@https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache fraction.js@https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache fill-range@https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.112 npm http cache fastq@https://registry.npmjs.org/fastq/-/fastq-1.19.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.113 npm http cache foreground-child@https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.113 npm http cache eventemitter3@https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.113 npm http cache fast-glob@https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.113 npm http cache escalade@https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.113 npm http cache es-toolkit@https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.39.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.113 npm http cache emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.114 npm http cache embla-carousel-reactive-utils@https://registry.npmjs.org/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.114 npm http cache embla-carousel-react@https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-8.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.114 npm http cache electron-to-chromium@https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.176.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.114 npm http cache embla-carousel@https://registry.npmjs.org/embla-carousel/-/embla-carousel-8.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.115 npm http cache eastasianwidth@https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.115 npm http cache dlv@https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.115 npm http cache didyoumean@https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.115 npm http cache detect-node-es@https://registry.npmjs.org/detect-node-es/-/detect-node-es-1.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.115 npm http cache decimal.js-light@https://registry.npmjs.org/decimal.js-light/-/decimal.js-light-2.5.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.116 npm http cache date-fns-jalali@https://registry.npmjs.org/date-fns-jalali/-/date-fns-jalali-4.1.0-0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.116 npm http cache detect-libc@https://registry.npmjs.org/detect-libc/-/detect-libc-2.0.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.116 npm http cache date-fns@https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.116 npm http cache d3-timer@https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.116 npm http cache d3-time-format@https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.116 npm http cache d3-time@https://registry.npmjs.org/d3-time/-/d3-time-3.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.117 npm http cache d3-shape@https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.117 npm http cache d3-scale@https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache d3-path@https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache d3-format@https://registry.npmjs.org/d3-format/-/d3-format-3.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache d3-interpolate@https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache d3-ease@https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache d3-array@https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache d3-color@https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache csstype@https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache cssesc@https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache cross-spawn@https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache commander@https://registry.npmjs.org/commander/-/commander-4.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache color-string@https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache color-name@https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache color-convert@https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache cmdk@https://registry.npmjs.org/cmdk/-/cmdk-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache clsx@https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache client-only@https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache color@https://registry.npmjs.org/color/-/color-4.2.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache class-variance-authority@https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache busboy@https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache caniuse-lite@https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001726.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache camelcase-css@https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache chokidar@https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache browserslist@https://registry.npmjs.org/browserslist/-/browserslist-4.25.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache braces@https://registry.npmjs.org/braces/-/braces-3.0.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache brace-expansion@https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache balanced-match@https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.121 npm http cache aria-hidden@https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.122 npm http cache autoprefixer@https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.21.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.122 npm http cache binary-extensions@https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.122 npm http cache arg@https://registry.npmjs.org/arg/-/arg-5.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.122 npm http cache anymatch@https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.122 npm http cache ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.122 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.123 npm http cache any-promise@https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.123 npm http cache @types/react-dom@https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.123 npm http cache @types/react@https://registry.npmjs.org/@types/react/-/react-19.1.8.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.123 npm http cache @types/node@https://registry.npmjs.org/@types/node/-/node-22.15.33.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.123 npm http cache @types/use-sync-external-store@https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.123 npm http cache @types/d3-timer@https://registry.npmjs.org/@types/d3-timer/-/d3-timer-3.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.124 npm http cache @types/d3-time@https://registry.npmjs.org/@types/d3-time/-/d3-time-3.0.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.124 npm http cache @types/d3-scale@https://registry.npmjs.org/@types/d3-scale/-/d3-scale-4.0.9.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.124 npm http cache @types/d3-path@https://registry.npmjs.org/@types/d3-path/-/d3-path-3.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.124 npm http cache @types/d3-shape@https://registry.npmjs.org/@types/d3-shape/-/d3-shape-3.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.124 npm http cache @types/d3-interpolate@https://registry.npmjs.org/@types/d3-interpolate/-/d3-interpolate-3.0.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.124 npm http cache @types/d3-color@https://registry.npmjs.org/@types/d3-color/-/d3-color-3.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.125 npm http cache @types/d3-ease@https://registry.npmjs.org/@types/d3-ease/-/d3-ease-3.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.125 npm http cache @types/d3-array@https://registry.npmjs.org/@types/d3-array/-/d3-array-3.2.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.125 npm http cache @swc/helpers@https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.125 npm http cache @swc/counter@https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.125 npm http cache @standard-schema/utils@https://registry.npmjs.org/@standard-schema/utils/-/utils-0.3.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.125 npm http cache @standard-schema/spec@https://registry.npmjs.org/@standard-schema/spec/-/spec-1.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.126 npm http cache @reduxjs/toolkit@https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-2.8.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.126 npm http cache @radix-ui/rect@https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.126 npm http cache @radix-ui/react-visually-hidden@https://registry.npmjs.org/@radix-ui/react-visually-hidden/-/react-visually-hidden-1.2.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.126 npm http cache @radix-ui/react-use-size@https://registry.npmjs.org/@radix-ui/react-use-size/-/react-use-size-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.126 npm http cache @radix-ui/react-use-previous@https://registry.npmjs.org/@radix-ui/react-use-previous/-/react-use-previous-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.126 npm http cache @radix-ui/react-use-layout-effect@https://registry.npmjs.org/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.127 npm http cache @radix-ui/react-use-is-hydrated@https://registry.npmjs.org/@radix-ui/react-use-is-hydrated/-/react-use-is-hydrated-0.1.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.127 npm http cache @radix-ui/react-use-rect@https://registry.npmjs.org/@radix-ui/react-use-rect/-/react-use-rect-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.127 npm http cache @radix-ui/react-use-escape-keydown@https://registry.npmjs.org/@radix-ui/react-use-escape-keydown/-/react-use-escape-keydown-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.127 npm http cache @radix-ui/react-use-effect-event@https://registry.npmjs.org/@radix-ui/react-use-effect-event/-/react-use-effect-event-0.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.127 npm http cache @radix-ui/react-use-callback-ref@https://registry.npmjs.org/@radix-ui/react-use-callback-ref/-/react-use-callback-ref-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.128 npm http cache @radix-ui/react-use-controllable-state@https://registry.npmjs.org/@radix-ui/react-use-controllable-state/-/react-use-controllable-state-1.2.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.128 npm http cache @radix-ui/react-tooltip@https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.2.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.128 npm http cache @radix-ui/react-toggle-group@https://registry.npmjs.org/@radix-ui/react-toggle-group/-/react-toggle-group-1.1.10.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.128 npm http cache @radix-ui/react-toast@https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.14.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.128 npm http cache @radix-ui/react-toggle@https://registry.npmjs.org/@radix-ui/react-toggle/-/react-toggle-1.1.9.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.128 npm http cache @radix-ui/react-tabs@https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.12.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.129 npm http cache @radix-ui/react-switch@https://registry.npmjs.org/@radix-ui/react-switch/-/react-switch-1.2.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.129 npm http cache @radix-ui/react-slot@https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.2.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.129 npm http cache @radix-ui/react-slider@https://registry.npmjs.org/@radix-ui/react-slider/-/react-slider-1.3.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.129 npm http cache @radix-ui/react-separator@https://registry.npmjs.org/@radix-ui/react-separator/-/react-separator-1.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.129 npm http cache @radix-ui/react-scroll-area@https://registry.npmjs.org/@radix-ui/react-scroll-area/-/react-scroll-area-1.2.9.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.129 npm http cache @radix-ui/react-roving-focus@https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.10.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.130 npm http cache @radix-ui/react-radio-group@https://registry.npmjs.org/@radix-ui/react-radio-group/-/react-radio-group-1.3.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.130 npm http cache @radix-ui/react-select@https://registry.npmjs.org/@radix-ui/react-select/-/react-select-2.2.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.130 npm http cache @radix-ui/react-progress@https://registry.npmjs.org/@radix-ui/react-progress/-/react-progress-1.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.130 npm http cache @radix-ui/react-primitive@https://registry.npmjs.org/@radix-ui/react-primitive/-/react-primitive-2.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.130 npm http cache @radix-ui/react-presence@https://registry.npmjs.org/@radix-ui/react-presence/-/react-presence-1.1.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.130 npm http cache @radix-ui/react-popover@https://registry.npmjs.org/@radix-ui/react-popover/-/react-popover-1.1.14.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.131 npm http cache @radix-ui/react-popper@https://registry.npmjs.org/@radix-ui/react-popper/-/react-popper-1.2.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.131 npm http cache @radix-ui/react-portal@https://registry.npmjs.org/@radix-ui/react-portal/-/react-portal-1.1.9.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.131 npm http cache @radix-ui/react-menubar@https://registry.npmjs.org/@radix-ui/react-menubar/-/react-menubar-1.1.15.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.131 npm http cache @radix-ui/react-navigation-menu@https://registry.npmjs.org/@radix-ui/react-navigation-menu/-/react-navigation-menu-1.2.13.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.131 npm http cache @radix-ui/react-menu@https://registry.npmjs.org/@radix-ui/react-menu/-/react-menu-2.1.15.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.132 npm http cache @radix-ui/react-label@https://registry.npmjs.org/@radix-ui/react-label/-/react-label-2.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.132 npm http cache @radix-ui/react-id@https://registry.npmjs.org/@radix-ui/react-id/-/react-id-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.132 npm http cache @radix-ui/react-focus-scope@https://registry.npmjs.org/@radix-ui/react-focus-scope/-/react-focus-scope-1.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.132 npm http cache @radix-ui/react-dropdown-menu@https://registry.npmjs.org/@radix-ui/react-dropdown-menu/-/react-dropdown-menu-2.1.15.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.132 npm http cache @radix-ui/react-hover-card@https://registry.npmjs.org/@radix-ui/react-hover-card/-/react-hover-card-1.1.14.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.132 npm http cache @radix-ui/react-dismissable-layer@https://registry.npmjs.org/@radix-ui/react-dismissable-layer/-/react-dismissable-layer-1.1.10.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.133 npm http cache @radix-ui/react-direction@https://registry.npmjs.org/@radix-ui/react-direction/-/react-direction-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.133 npm http cache @radix-ui/react-dialog@https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.14.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.133 npm http cache @radix-ui/react-focus-guards@https://registry.npmjs.org/@radix-ui/react-focus-guards/-/react-focus-guards-1.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.133 npm http cache @radix-ui/react-context-menu@https://registry.npmjs.org/@radix-ui/react-context-menu/-/react-context-menu-2.2.15.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.133 npm http cache @radix-ui/react-context@https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.133 npm http cache @radix-ui/react-collection@https://registry.npmjs.org/@radix-ui/react-collection/-/react-collection-1.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.134 npm http cache @radix-ui/react-collapsible@https://registry.npmjs.org/@radix-ui/react-collapsible/-/react-collapsible-1.1.11.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.134 npm http cache @radix-ui/react-compose-refs@https://registry.npmjs.org/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.134 npm http cache @radix-ui/react-checkbox@https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.3.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.134 npm http cache @radix-ui/react-aspect-ratio@https://registry.npmjs.org/@radix-ui/react-aspect-ratio/-/react-aspect-ratio-1.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.134 npm http cache @radix-ui/react-avatar@https://registry.npmjs.org/@radix-ui/react-avatar/-/react-avatar-1.1.10.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.134 npm http cache @radix-ui/react-arrow@https://registry.npmjs.org/@radix-ui/react-arrow/-/react-arrow-1.1.7.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.135 npm http cache @radix-ui/react-alert-dialog@https://registry.npmjs.org/@radix-ui/react-alert-dialog/-/react-alert-dialog-1.1.14.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.135 npm http cache @radix-ui/react-accordion@https://registry.npmjs.org/@radix-ui/react-accordion/-/react-accordion-1.2.11.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.135 npm http cache @radix-ui/primitive@https://registry.npmjs.org/@radix-ui/primitive/-/primitive-1.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.135 npm http cache @pkgjs/parseargs@https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.135 npm http cache @radix-ui/number@https://registry.npmjs.org/@radix-ui/number/-/number-1.1.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.136 npm http cache @nodelib/fs.stat@https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.136 npm http cache @nodelib/fs.walk@https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.136 npm http cache @nodelib/fs.scandir@https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.136 npm http cache @next/swc-linux-x64-gnu@https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-15.2.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.136 npm http cache @next/swc-linux-x64-musl@https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-15.2.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.137 npm http cache @next/env@https://registry.npmjs.org/@next/env/-/env-15.2.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.137 npm http cache @jridgewell/trace-mapping@https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.137 npm http cache @jridgewell/sourcemap-codec@https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.137 npm http cache @jridgewell/set-array@https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.137 npm http cache @jridgewell/resolve-uri@https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.137 npm http cache @jridgewell/gen-mapping@https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.8.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.138 npm http cache @isaacs/cliui@https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.138 npm http cache @floating-ui/react-dom@https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.138 npm http cache @floating-ui/utils@https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.138 npm http cache @floating-ui/dom@https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.138 npm http cache @floating-ui/core@https://registry.npmjs.org/@floating-ui/core/-/core-1.7.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.138 npm http cache @hookform/resolvers@https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.10.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.139 npm http cache @date-fns/tz@https://registry.npmjs.org/@date-fns/tz/-/tz-1.2.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.139 npm http cache @cloudinary/url-gen@https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.15.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.139 npm http cache @cloudinary/transformation-builder-sdk@https://registry.npmjs.org/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.17.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.139 npm http cache @cloudinary-util/url-loader@https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-5.10.4.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.139 npm http cache @cloudinary-util/util@https://registry.npmjs.org/@cloudinary-util/util/-/util-4.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.140 npm http cache @cloudinary-util/types@https://registry.npmjs.org/@cloudinary-util/types/-/types-1.5.10.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.140 npm http cache @alloc/quick-lru@https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz 1ms (cache hit)
+22:52:39 | DEBUG | #6 1.140 npm http cache strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.140 npm http cache string-width@https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.140 npm http cache ansi-styles@https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.140 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.141 npm http cache emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.141 npm http cache postcss-load-config@https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz 1ms (cache hit)
+22:52:39 | DEBUG | #6 1.141 npm http cache strip-ansi@https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.141 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.141 npm http cache emoji-regex@https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.141 npm http cache ansi-regex@https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.142 npm http cache glob-parent@https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.142 npm http cache postcss@https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 1ms (cache hit)
+22:52:39 | DEBUG | #6 1.142 npm http cache glob-parent@https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 0ms (cache hit)
+22:52:39 | DEBUG | #6 1.142 npm http cache @cloudinary-util/util@https://registry.npmjs.org/@cloudinary-util/util/-/util-3.3.2.tgz 0ms (cache hit)
+22:52:40 | DEBUG | #6 1.911 npm http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 947ms
+22:52:40 | DEBUG | #6 2.023 npm http fetch GET 200 https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz 867ms (cache miss)
+22:52:40 | DEBUG | #6 2.040 npm http fetch GET 200 https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz 889ms (cache miss)
+22:52:40 | DEBUG | #6 2.085 npm http fetch GET 200 https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz 928ms (cache miss)
+22:52:40 | DEBUG | #6 2.158 npm http fetch GET 200 https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz 1004ms (cache miss)
+22:52:40 | DEBUG | #6 2.160 npm http fetch GET 200 https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz 999ms (cache miss)
+22:52:40 | DEBUG | #6 2.187 npm http fetch GET 200 https://registry.npmjs.org/tailwindcss-animate/-/tailwindcss-animate-1.0.7.tgz 1030ms (cache miss)
+22:52:40 | DEBUG | #6 2.258 npm http fetch GET 200 https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.3.3.tgz 1103ms (cache miss)
+22:52:40 | DEBUG | #6 2.261 npm http fetch GET 200 https://registry.npmjs.org/scheduler/-/scheduler-0.26.0.tgz 1097ms (cache miss)
+22:52:40 | DEBUG | #6 2.261 npm http fetch GET 200 https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz 1097ms (cache miss)
+22:52:40 | DEBUG | #6 2.262 npm http fetch GET 200 https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz 1095ms (cache miss)
+22:52:40 | DEBUG | #6 2.358 npm http fetch GET 200 https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.5.0.tgz 1210ms (cache miss)
+22:52:40 | DEBUG | #6 2.361 npm http fetch GET 200 https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz 1193ms (cache miss)
+22:52:40 | DEBUG | #6 2.362 npm http fetch GET 200 https://registry.npmjs.org/react-is/-/react-is-19.1.0.tgz 1191ms (cache miss)
+22:52:40 | DEBUG | #6 2.462 npm http fetch GET 200 https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz 1287ms (cache miss)
+22:52:40 | DEBUG | #6 2.462 npm http fetch GET 200 https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz 1286ms (cache miss)
+22:52:40 | DEBUG | #6 2.463 npm http fetch GET 200 https://registry.npmjs.org/pify/-/pify-2.3.0.tgz 1285ms (cache miss)
+22:52:40 | DEBUG | #6 2.488 npm http fetch GET 200 https://registry.npmjs.org/streamsearch/-/streamsearch-1.1.0.tgz 1327ms (cache miss)
+22:52:41 | DEBUG | #6 2.492 npm http fetch GET 200 https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz 1314ms (cache miss)
+22:52:41 | DEBUG | #6 2.498 npm http fetch GET 200 https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz 1312ms (cache miss)
+22:52:41 | DEBUG | #6 2.498 npm http fetch GET 200 https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz 1312ms (cache miss)
+22:52:41 | DEBUG | #6 2.522 npm http fetch GET 200 https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz 1347ms (cache miss)
+22:52:41 | DEBUG | #6 2.523 npm http fetch GET 200 https://registry.npmjs.org/postcss-js/-/postcss-js-4.0.1.tgz 1346ms (cache miss)
+22:52:41 | DEBUG | #6 2.523 npm http fetch GET 200 https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz 1343ms (cache miss)
+22:52:41 | DEBUG | #6 2.561 npm http fetch GET 200 https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz 1378ms (cache miss)
+22:52:41 | DEBUG | #6 2.589 npm http fetch GET 200 https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz 1404ms (cache miss)
+22:52:41 | DEBUG | #6 2.590 npm http fetch GET 200 https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz 1402ms (cache miss)
+22:52:41 | DEBUG | #6 2.590 npm http fetch GET 200 https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz 1404ms (cache miss)
+22:52:41 | DEBUG | #6 2.619 npm http fetch GET 200 https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz 1437ms (cache miss)
+22:52:41 | DEBUG | #6 2.620 npm http fetch GET 200 https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz 1432ms (cache miss)
+22:52:41 | DEBUG | #6 2.620 npm http fetch GET 200 https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz 1432ms (cache miss)
+22:52:41 | DEBUG | #6 2.621 npm http fetch GET 200 https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz 1431ms (cache miss)
+22:52:41 | DEBUG | #6 2.621 npm http fetch GET 200 https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz 1431ms (cache miss)
+22:52:41 | DEBUG | #6 2.621 npm http fetch GET 200 https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz 1431ms (cache miss)
+22:52:41 | DEBUG | #6 2.649 npm http fetch GET 200 https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz 1469ms (cache miss)
+22:52:41 | DEBUG | #6 2.650 npm http fetch GET 200 https://registry.npmjs.org/mz/-/mz-2.7.0.tgz 1465ms (cache miss)
+22:52:41 | DEBUG | #6 2.676 npm http fetch GET 200 https://registry.npmjs.org/get-nonce/-/get-nonce-1.0.1.tgz 1482ms (cache miss)
+22:52:41 | DEBUG | #6 2.700 npm http fetch GET 200 https://registry.npmjs.org/embla-carousel-reactive-utils/-/embla-carousel-reactive-utils-8.6.0.tgz 1503ms (cache miss)
+22:52:41 | DEBUG | #6 2.701 npm http fetch GET 200 https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz 1505ms (cache miss)
+22:52:41 | DEBUG | #6 2.722 npm http fetch GET 200 https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz 1567ms (cache miss)
+22:52:41 | DEBUG | #6 2.728 npm http fetch GET 200 https://registry.npmjs.org/internmap/-/internmap-2.0.3.tgz 1535ms (cache miss)
+22:52:41 | DEBUG | #6 2.728 npm http fetch GET 200 https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz 1533ms (cache miss)
+22:52:41 | DEBUG | #6 2.729 npm http fetch GET 200 https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz 1535ms (cache miss)
+22:52:41 | DEBUG | #6 2.730 npm http fetch GET 200 https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz 1529ms (cache miss)
+22:52:41 | DEBUG | #6 2.730 npm http fetch GET 200 https://registry.npmjs.org/detect-node-es/-/detect-node-es-1.1.0.tgz 1529ms (cache miss)
+22:52:41 | DEBUG | #6 2.745 npm http fetch GET 200 https://registry.npmjs.org/redux-thunk/-/redux-thunk-3.1.0.tgz 1579ms (cache miss)
+22:52:41 | DEBUG | #6 2.749 npm http fetch GET 200 https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz 1549ms (cache miss)
+22:52:41 | DEBUG | #6 2.750 npm http fetch GET 200 https://registry.npmjs.org/d3-timer/-/d3-timer-3.0.1.tgz 1546ms (cache miss)
+22:52:41 | DEBUG | #6 2.770 npm http fetch GET 200 https://registry.npmjs.org/input-otp/-/input-otp-1.4.2.tgz 1579ms (cache miss)
+22:52:41 | DEBUG | #6 2.772 npm http fetch GET 200 https://registry.npmjs.org/d3-time/-/d3-time-3.1.0.tgz 1568ms (cache miss)
+22:52:41 | DEBUG | #6 2.773 npm http fetch GET 200 https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz 1566ms (cache miss)
+22:52:41 | DEBUG | #6 2.792 npm http fetch GET 200 https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz 1617ms (cache miss)
+22:52:41 | DEBUG | #6 2.796 npm http fetch GET 200 https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz 1587ms (cache miss)
+22:52:41 | DEBUG | #6 2.821 npm http fetch GET 200 https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz 1611ms (cache miss)
+22:52:41 | DEBUG | #6 2.840 npm http fetch GET 200 https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz 1628ms (cache miss)
+22:52:41 | DEBUG | #6 2.841 npm http fetch GET 200 https://registry.npmjs.org/class-variance-authority/-/class-variance-authority-0.7.1.tgz 1627ms (cache miss)
+22:52:41 | DEBUG | #6 2.841 npm http fetch GET 200 https://registry.npmjs.org/color/-/color-4.2.3.tgz 1628ms (cache miss)
+22:52:41 | DEBUG | #6 2.841 npm http fetch GET 200 https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz 1630ms (cache miss)
+22:52:41 | DEBUG | #6 2.842 npm http fetch GET 200 https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz 1626ms (cache miss)
+22:52:41 | DEBUG | #6 2.842 npm http fetch GET 200 https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz 1630ms (cache miss)
+22:52:41 | DEBUG | #6 2.858 npm http fetch GET 200 https://registry.npmjs.org/braces/-/braces-3.0.3.tgz 1641ms (cache miss)
+22:52:41 | DEBUG | #6 2.858 npm http fetch GET 200 https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.6.tgz 1638ms (cache miss)
+22:52:41 | DEBUG | #6 2.858 npm http fetch GET 200 https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz 1637ms (cache miss)
+22:52:41 | DEBUG | #6 2.877 npm http fetch GET 200 https://registry.npmjs.org/arg/-/arg-5.0.2.tgz 1654ms (cache miss)
+22:52:41 | DEBUG | #6 2.889 npm http fetch GET 200 https://registry.npmjs.org/next-themes/-/next-themes-0.4.6.tgz 1705ms (cache miss)
+22:52:41 | DEBUG | #6 2.893 npm http fetch GET 200 https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz 1671ms (cache miss)
+22:52:41 | DEBUG | #6 2.894 npm http fetch GET 200 https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz 1670ms (cache miss)
+22:52:41 | DEBUG | #6 2.894 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-path/-/d3-path-3.1.1.tgz 1668ms (cache miss)
+22:52:41 | DEBUG | #6 2.895 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-timer/-/d3-timer-3.0.2.tgz 1669ms (cache miss)
+22:52:41 | DEBUG | #6 2.914 npm http fetch GET 200 https://registry.npmjs.org/cmdk/-/cmdk-1.1.1.tgz 1703ms (cache miss)
+22:52:41 | DEBUG | #6 2.915 npm http fetch GET 200 https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz 1699ms (cache miss)
+22:52:41 | DEBUG | #6 2.915 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-scale/-/d3-scale-4.0.9.tgz 1689ms (cache miss)
+22:52:41 | DEBUG | #6 2.916 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-color/-/d3-color-3.1.3.tgz 1687ms (cache miss)
+22:52:41 | DEBUG | #6 2.916 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-interpolate/-/d3-interpolate-3.0.4.tgz 1689ms (cache miss)
+22:52:41 | DEBUG | #6 2.937 npm http fetch GET 200 https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.176.tgz 1739ms (cache miss)
+22:52:41 | DEBUG | #6 2.939 npm http fetch GET 200 https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.6.tgz 1716ms (cache miss)
+22:52:41 | DEBUG | #6 2.940 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-array/-/d3-array-3.2.1.tgz 1711ms (cache miss)
+22:52:41 | DEBUG | #6 2.940 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-time/-/d3-time-3.0.4.tgz 1715ms (cache miss)
+22:52:41 | DEBUG | #6 2.956 npm http fetch GET 200 https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz 1765ms (cache miss)
+22:52:41 | DEBUG | #6 2.958 npm http fetch GET 200 https://registry.npmjs.org/d3-ease/-/d3-ease-3.0.1.tgz 1750ms (cache miss)
+22:52:41 | DEBUG | #6 2.959 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-ease/-/d3-ease-3.0.2.tgz 1731ms (cache miss)
+22:52:41 | DEBUG | #6 2.973 npm http fetch GET 200 https://registry.npmjs.org/sonner/-/sonner-2.0.5.tgz 1811ms (cache miss)
+22:52:41 | DEBUG | #6 2.974 npm http fetch GET 200 https://registry.npmjs.org/react-remove-scroll-bar/-/react-remove-scroll-bar-2.3.8.tgz 1804ms (cache miss)
+22:52:41 | DEBUG | #6 2.979 npm http fetch GET 200 https://registry.npmjs.org/@types/d3-shape/-/d3-shape-3.1.7.tgz 1751ms (cache miss)
+22:52:41 | DEBUG | #6 2.979 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-size/-/react-use-size-1.1.1.tgz 1747ms (cache miss)
+22:52:41 | DEBUG | #6 2.979 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.1.tgz 1748ms (cache miss)
+22:52:41 | DEBUG | #6 2.985 npm http fetch GET 200 https://registry.npmjs.org/vaul/-/vaul-1.1.2.tgz 1836ms (cache miss)
+22:52:41 | DEBUG | #6 2.988 npm http fetch GET 200 https://registry.npmjs.org/react-style-singleton/-/react-style-singleton-2.2.3.tgz 1820ms (cache miss)
+22:52:41 | DEBUG | #6 2.990 npm http fetch GET 200 https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-8.6.0.tgz 1792ms (cache miss)
+22:52:41 | DEBUG | #6 2.992 npm http fetch GET 200 https://registry.npmjs.org/commander/-/commander-4.1.1.tgz 1781ms (cache miss)
+22:52:41 | DEBUG | #6 2.993 npm http fetch GET 200 https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz 1763ms (cache miss)
+22:52:41 | DEBUG | #6 2.993 npm http fetch GET 200 https://registry.npmjs.org/@standard-schema/spec/-/spec-1.0.0.tgz 1763ms (cache miss)
+22:52:41 | DEBUG | #6 2.994 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-is-hydrated/-/react-use-is-hydrated-0.1.0.tgz 1760ms (cache miss)
+22:52:41 | DEBUG | #6 2.994 npm http fetch GET 200 https://registry.npmjs.org/@standard-schema/utils/-/utils-0.3.0.tgz 1764ms (cache miss)
+22:52:41 | DEBUG | #6 3.013 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-previous/-/react-use-previous-1.1.1.tgz 1780ms (cache miss)
+22:52:41 | DEBUG | #6 3.013 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-visually-hidden/-/react-visually-hidden-1.2.3.tgz 1781ms (cache miss)
+22:52:41 | DEBUG | #6 3.013 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-escape-keydown/-/react-use-escape-keydown-1.1.1.tgz 1779ms (cache miss)
+22:52:41 | DEBUG | #6 3.031 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-layout-effect/-/react-use-layout-effect-1.1.1.tgz 1798ms (cache miss)
+22:52:41 | DEBUG | #6 3.032 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-effect-event/-/react-use-effect-event-0.0.2.tgz 1796ms (cache miss)
+22:52:41 | DEBUG | #6 3.032 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-rect/-/react-use-rect-1.1.1.tgz 1798ms (cache miss)
+22:52:41 | DEBUG | #6 3.053 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-callback-ref/-/react-use-callback-ref-1.1.1.tgz 1817ms (cache miss)
+22:52:41 | DEBUG | #6 3.053 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-use-controllable-state/-/react-use-controllable-state-1.2.2.tgz 1817ms (cache miss)
+22:52:41 | DEBUG | #6 3.070 npm http fetch GET 200 https://registry.npmjs.org/decimal.js-light/-/decimal.js-light-2.5.1.tgz 1869ms (cache miss)
+22:52:41 | DEBUG | #6 3.073 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-toggle-group/-/react-toggle-group-1.1.10.tgz 1836ms (cache miss)
+22:52:41 | DEBUG | #6 3.096 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-toggle/-/react-toggle-1.1.9.tgz 1850ms (cache miss)
+22:52:41 | DEBUG | #6 3.096 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.10.tgz 1856ms (cache miss)
+22:52:41 | DEBUG | #6 3.114 npm http fetch GET 200 https://registry.npmjs.org/react/-/react-19.1.0.tgz 1940ms (cache miss)
+22:52:41 | DEBUG | #6 3.118 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-slot/-/react-slot-1.2.3.tgz 1879ms (cache miss)
+22:52:41 | DEBUG | #6 3.124 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-switch/-/react-switch-1.2.5.tgz 1880ms (cache miss)
+22:52:41 | DEBUG | #6 3.142 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-separator/-/react-separator-1.1.7.tgz 1903ms (cache miss)
+22:52:41 | DEBUG | #6 3.167 npm http fetch GET 200 https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-6.16.0.tgz 1985ms (cache miss)
+22:52:41 | DEBUG | #6 3.171 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.12.tgz 1933ms (cache miss)
+22:52:41 | DEBUG | #6 3.172 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-progress/-/react-progress-1.1.7.tgz 1930ms (cache miss)
+22:52:41 | DEBUG | #6 3.218 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-radio-group/-/react-radio-group-1.3.7.tgz 1976ms (cache miss)
+22:52:41 | DEBUG | #6 3.218 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-presence/-/react-presence-1.1.4.tgz 1975ms (cache miss)
+22:52:41 | DEBUG | #6 3.268 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-primitive/-/react-primitive-2.1.3.tgz 2026ms (cache miss)
+22:52:41 | DEBUG | #6 3.268 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-portal/-/react-portal-1.1.9.tgz 2025ms (cache miss)
+22:52:41 | DEBUG | #6 3.269 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-popper/-/react-popper-1.2.7.tgz 2025ms (cache miss)
+22:52:41 | DEBUG | #6 3.269 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-popover/-/react-popover-1.1.14.tgz 2026ms (cache miss)
+22:52:41 | DEBUG | #6 3.300 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.2.7.tgz 2063ms (cache miss)
+22:52:41 | DEBUG | #6 3.302 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-label/-/react-label-2.1.7.tgz 2056ms (cache miss)
+22:52:41 | DEBUG | #6 3.330 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-id/-/react-id-1.1.1.tgz 2084ms (cache miss)
+22:52:41 | DEBUG | #6 3.331 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-focus-scope/-/react-focus-scope-1.1.7.tgz 2084ms (cache miss)
+22:52:41 | DEBUG | #6 3.331 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-dropdown-menu/-/react-dropdown-menu-2.1.15.tgz 2083ms (cache miss)
+22:52:41 | DEBUG | #6 3.373 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-direction/-/react-direction-1.1.1.tgz 2124ms (cache miss)
+22:52:41 | DEBUG | #6 3.373 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-dismissable-layer/-/react-dismissable-layer-1.1.10.tgz 2125ms (cache miss)
+22:52:41 | DEBUG | #6 3.433 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-slider/-/react-slider-1.3.5.tgz 2194ms (cache miss)
+22:52:41 | DEBUG | #6 3.435 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-context/-/react-context-1.1.2.tgz 2184ms (cache miss)
+22:52:41 | DEBUG | #6 3.435 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-focus-guards/-/react-focus-guards-1.1.2.tgz 2185ms (cache miss)
+22:52:41 | DEBUG | #6 3.435 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-context-menu/-/react-context-menu-2.2.15.tgz 2185ms (cache miss)
+22:52:41 | DEBUG | #6 3.455 npm http fetch GET 200 https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz 2303ms (cache miss)
+22:52:41 | DEBUG | #6 3.462 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-scroll-area/-/react-scroll-area-1.2.9.tgz 2222ms (cache miss)
+22:52:41 | DEBUG | #6 3.463 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-collapsible/-/react-collapsible-1.1.11.tgz 2211ms (cache miss)
+22:52:41 | DEBUG | #6 3.464 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-hover-card/-/react-hover-card-1.1.14.tgz 2217ms (cache miss)
+22:52:41 | DEBUG | #6 3.497 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-avatar/-/react-avatar-1.1.10.tgz 2242ms (cache miss)
+22:52:42 | DEBUG | #6 3.497 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-compose-refs/-/react-compose-refs-1.1.2.tgz 2245ms (cache miss)
+22:52:42 | DEBUG | #6 3.497 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-aspect-ratio/-/react-aspect-ratio-1.1.7.tgz 2244ms (cache miss)
+22:52:42 | DEBUG | #6 3.498 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-arrow/-/react-arrow-1.1.7.tgz 2243ms (cache miss)
+22:52:42 | DEBUG | #6 3.498 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.14.tgz 2249ms (cache miss)
+22:52:42 | DEBUG | #6 3.518 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-accordion/-/react-accordion-1.2.11.tgz 2261ms (cache miss)
+22:52:42 | DEBUG | #6 3.541 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.3.2.tgz 2287ms (cache miss)
+22:52:42 | DEBUG | #6 3.561 npm http fetch GET 200 https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz 2399ms (cache miss)
+22:52:42 | DEBUG | #6 3.564 npm http fetch GET 200 https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz 2359ms (cache miss)
+22:52:42 | DEBUG | #6 3.567 npm http fetch GET 200 https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz 2309ms (cache miss)
+22:52:42 | DEBUG | #6 3.568 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/number/-/number-1.1.1.tgz 2310ms (cache miss)
+22:52:42 | DEBUG | #6 3.568 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-alert-dialog/-/react-alert-dialog-1.1.14.tgz 2313ms (cache miss)
+22:52:42 | DEBUG | #6 3.568 npm http fetch GET 200 https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz 2310ms (cache miss)
+22:52:42 | DEBUG | #6 3.592 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-menubar/-/react-menubar-1.1.15.tgz 2348ms (cache miss)
+22:52:42 | DEBUG | #6 3.594 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/primitive/-/primitive-1.1.2.tgz 2337ms (cache miss)
+22:52:42 | DEBUG | #6 3.617 npm http fetch GET 200 https://registry.npmjs.org/busboy/-/busboy-1.6.0.tgz 2403ms (cache miss)
+22:52:42 | DEBUG | #6 3.618 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.14.tgz 2381ms (cache miss)
+22:52:42 | DEBUG | #6 3.620 npm http fetch GET 200 https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz 2361ms (cache miss)
+22:52:42 | DEBUG | #6 3.620 npm http fetch GET 200 https://registry.npmjs.org/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz 2394ms (cache miss)
+22:52:42 | DEBUG | #6 3.638 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-navigation-menu/-/react-navigation-menu-1.2.13.tgz 2393ms (cache miss)
+22:52:42 | DEBUG | #6 3.639 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.8.tgz 2375ms (cache miss)
+22:52:42 | DEBUG | #6 3.652 npm http fetch GET 200 https://registry.npmjs.org/use-sidecar/-/use-sidecar-1.1.3.tgz 2502ms (cache miss)
+22:52:42 | DEBUG | #6 3.657 npm http fetch GET 200 https://registry.npmjs.org/d3-interpolate/-/d3-interpolate-3.0.1.tgz 2449ms (cache miss)
+22:52:42 | DEBUG | #6 3.658 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-collection/-/react-collection-1.1.7.tgz 2407ms (cache miss)
+22:52:42 | DEBUG | #6 3.659 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz 2397ms (cache miss)
+22:52:42 | DEBUG | #6 3.660 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz 2394ms (cache miss)
+22:52:42 | DEBUG | #6 3.660 npm http fetch GET 200 https://registry.npmjs.org/@next/env/-/env-15.2.4.tgz 2400ms (cache miss)
+22:52:42 | DEBUG | #6 3.685 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.3.tgz 2420ms (cache miss)
+22:52:42 | DEBUG | #6 3.685 npm http fetch GET 200 https://registry.npmjs.org/@date-fns/tz/-/tz-1.2.0.tgz 2418ms (cache miss)
+22:52:42 | DEBUG | #6 3.724 npm http fetch GET 200 https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz 2453ms (cache miss)
+22:52:42 | DEBUG | #6 3.725 npm http fetch GET 200 https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 2452ms (cache miss)
+22:52:42 | DEBUG | #6 3.725 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/types/-/types-1.5.10.tgz 2455ms (cache miss)
+22:52:42 | DEBUG | #6 3.725 npm http fetch GET 200 https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz 2455ms (cache miss)
+22:52:42 | DEBUG | #6 3.743 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-select/-/react-select-2.2.5.tgz 2501ms (cache miss)
+22:52:42 | DEBUG | #6 3.755 npm http fetch GET 200 https://registry.npmjs.org/use-callback-ref/-/use-callback-ref-1.3.3.tgz 2603ms (cache miss)
+22:52:42 | DEBUG | #6 3.763 npm http fetch GET 200 https://registry.npmjs.org/@radix-ui/react-menu/-/react-menu-2.1.15.tgz 2517ms (cache miss)
+22:52:42 | DEBUG | #6 3.794 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.0.tgz 2532ms (cache miss)
+22:52:42 | DEBUG | #6 3.822 npm http fetch GET 200 https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz 2549ms (cache miss)
+22:52:42 | DEBUG | #6 3.823 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/util/-/util-4.0.0.tgz 2553ms (cache miss)
+22:52:42 | DEBUG | #6 3.835 npm http fetch GET 200 https://registry.npmjs.org/d3-time-format/-/d3-time-format-4.1.0.tgz 2632ms (cache miss)
+22:52:42 | DEBUG | #6 3.838 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/util/-/util-3.3.2.tgz 2563ms (cache miss)
+22:52:42 | DEBUG | #6 3.848 npm http fetch GET 200 https://registry.npmjs.org/redux/-/redux-5.0.1.tgz 2682ms (cache miss)
+22:52:42 | DEBUG | #6 3.894 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.1.tgz 2628ms (cache miss)
+22:52:42 | DEBUG | #6 3.919 npm http fetch GET 200 https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz 2745ms (cache miss)
+22:52:42 | DEBUG | #6 3.938 npm http fetch GET 200 https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz 2677ms (cache miss)
+22:52:42 | DEBUG | #6 3.974 npm http fetch GET 200 https://registry.npmjs.org/@floating-ui/core/-/core-1.7.1.tgz 2707ms (cache miss)
+22:52:42 | DEBUG | #6 3.979 npm http fetch GET 200 https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz 2800ms (cache miss)
+22:52:42 | DEBUG | #6 4.038 npm http fetch GET 200 https://registry.npmjs.org/react-resizable-panels/-/react-resizable-panels-3.0.3.tgz 2868ms (cache miss)
+22:52:42 | DEBUG | #6 4.095 npm http fetch GET 200 https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz 2898ms (cache miss)
+22:52:42 | DEBUG | #6 4.099 npm http fetch GET 200 https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.7.1.tgz 2930ms (cache miss)
+22:52:42 | DEBUG | #6 4.116 npm http fetch GET 200 https://registry.npmjs.org/d3-array/-/d3-array-3.2.4.tgz 2907ms (cache miss)
+22:52:42 | DEBUG | #6 4.128 npm http fetch GET 200 https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.6.0.tgz 2971ms (cache miss)
+22:52:42 | DEBUG | #6 4.178 npm http fetch GET 200 https://registry.npmjs.org/d3-format/-/d3-format-3.1.0.tgz 2971ms (cache miss)
+22:52:42 | DEBUG | #6 4.186 npm http fetch GET 200 https://registry.npmjs.org/d3-shape/-/d3-shape-3.2.0.tgz 2980ms (cache miss)
+22:52:42 | DEBUG | #6 4.190 npm http fetch GET 200 https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz 2980ms (cache miss)
+22:52:42 | DEBUG | #6 4.194 npm http fetch GET 200 https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz 3035ms (cache miss)
+22:52:42 | DEBUG | #6 4.213 npm http fetch GET 200 https://registry.npmjs.org/@types/react/-/react-19.1.8.tgz 2988ms (cache miss)
+22:52:42 | DEBUG | #6 4.215 npm http fetch GET 200 https://registry.npmjs.org/sharp/-/sharp-0.33.5.tgz 3052ms (cache miss)
+22:52:42 | DEBUG | #6 4.229 npm http fetch GET 200 https://registry.npmjs.org/immer/-/immer-10.1.1.tgz 3036ms (cache miss)
+22:52:42 | DEBUG | #6 4.246 npm http fetch GET 200 https://registry.npmjs.org/react-redux/-/react-redux-9.2.0.tgz 3075ms (cache miss)
+22:52:42 | DEBUG | #6 4.251 npm http fetch GET 200 https://registry.npmjs.org/reselect/-/reselect-5.1.1.tgz 3086ms (cache miss)
+22:52:42 | DEBUG | #6 4.278 npm http fetch GET 200 https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.21.tgz 3057ms (cache miss)
+22:52:42 | DEBUG | #6 4.279 npm http fetch GET 200 https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz 3006ms (cache miss)
+22:52:42 | DEBUG | #6 4.356 npm http fetch GET 200 https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz 3168ms (cache miss)
+22:52:42 | DEBUG | #6 4.471 npm http fetch GET 200 https://registry.npmjs.org/embla-carousel/-/embla-carousel-8.6.0.tgz 3271ms (cache miss)
+22:52:43 | DEBUG | #6 4.479 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-5.10.4.tgz 3210ms (cache miss)
+22:52:43 | DEBUG | #6 4.670 npm http fetch GET 200 https://registry.npmjs.org/@types/node/-/node-22.15.33.tgz 3446ms (cache miss)
+22:52:43 | DEBUG | #6 4.838 npm http fetch GET 200 https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.58.1.tgz 3666ms (cache miss)
+22:52:43 | DEBUG | #6 4.976 npm http fetch GET 200 https://registry.npmjs.org/sucrase/-/sucrase-3.35.0.tgz 3816ms (cache miss)
+22:52:43 | DEBUG | #6 5.053 npm http fetch GET 200 https://registry.npmjs.org/yaml/-/yaml-2.8.0.tgz 3906ms (cache miss)
+22:52:43 | DEBUG | #6 5.164 npm http fetch GET 200 https://registry.npmjs.org/victory-vendor/-/victory-vendor-37.3.6.tgz 4015ms (cache miss)
+22:52:43 | DEBUG | #6 5.327 npm http fetch GET 200 https://registry.npmjs.org/react-dom/-/react-dom-19.1.0.tgz 4154ms (cache miss)
+22:52:44 | DEBUG | #6 5.744 npm http fetch GET 200 https://registry.npmjs.org/zod/-/zod-3.25.67.tgz 4600ms (cache miss)
+22:52:44 | DEBUG | #6 5.975 npm http fetch GET 200 https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.17.tgz 4817ms (cache miss)
+22:52:44 | DEBUG | #6 6.052 npm http fetch GET 200 https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz 4823ms (cache miss)
+22:52:44 | DEBUG | #6 6.097 npm http fetch GET 200 https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.10.0.tgz 4831ms (cache miss)
+22:52:44 | DEBUG | #6 6.238 npm http fetch GET 200 https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-2.8.2.tgz 5007ms (cache miss)
+22:52:44 | DEBUG | #6 6.544 npm http fetch GET 200 https://registry.npmjs.org/react-day-picker/-/react-day-picker-9.7.0.tgz 5371ms (cache miss)
+22:52:45 | DEBUG | #6 6.845 npm http fetch GET 200 https://registry.npmjs.org/recharts/-/recharts-3.0.0.tgz 5677ms (cache miss)
+22:52:45 | DEBUG | #6 6.954 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary/transformation-builder-sdk/-/transformation-builder-sdk-1.17.0.tgz 5686ms (cache miss)
+22:52:45 | DEBUG | #6 6.996 npm http fetch GET 200 https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.15.0.tgz 5728ms (cache miss)
+22:52:45 | DEBUG | #6 7.334 npm http fetch GET 200 https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz 6179ms (cache miss)
+22:52:47 | DEBUG | #6 8.579 npm http fetch GET 200 https://registry.npmjs.org/es-toolkit/-/es-toolkit-1.39.5.tgz 7382ms (cache miss)
+22:52:47 | DEBUG | #6 8.891 npm http fetch GET 200 https://registry.npmjs.org/date-fns-jalali/-/date-fns-jalali-4.1.0-0.tgz 7689ms (cache miss)
+22:52:49 | DEBUG | #6 10.70 npm http fetch GET 200 https://registry.npmjs.org/lucide-react/-/lucide-react-0.454.0.tgz 9513ms (cache miss)
+22:52:50 | DEBUG | #6 12.41 npm http fetch GET 200 https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz 11202ms (cache miss)
+22:52:51 | DEBUG | #6 13.36 npm http fetch GET 200 https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-15.2.4.tgz 12099ms (cache miss)
+22:52:52 | DEBUG | #6 13.40 npm http fetch GET 200 https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-15.2.4.tgz 12144ms (cache miss)
+22:52:55 | DEBUG | #6 17.23 npm http fetch GET 200 https://registry.npmjs.org/next/-/next-15.2.4.tgz 16047ms (cache miss)
+22:52:55 | DEBUG | #6 17.25 npm info run sharp@0.33.5 install node_modules/sharp node install/check
+22:52:55 | DEBUG | #6 17.32 npm info run sharp@0.33.5 install { code: 0, signal: null }
+22:52:55 | DEBUG | #6 17.54 
+22:52:55 | DEBUG | #6 17.54 added 282 packages, and audited 283 packages in 17s
+22:52:55 | DEBUG | #6 17.54 
+22:52:55 | DEBUG | #6 17.54 43 packages are looking for funding
+22:52:56 | DEBUG | #6 17.54   run `npm fund` for details
+22:52:56 | DEBUG | #6 17.54 
+22:52:56 | DEBUG | #6 17.54 found 0 vulnerabilities
+22:52:56 | DEBUG | #6 17.54 npm verbose cwd /opt/build
+22:52:56 | DEBUG | #6 17.54 npm verbose os Linux 5.15.0-91-generic
+22:52:56 | DEBUG | #6 17.54 npm verbose node v22.17.0
+22:52:56 | DEBUG | #6 17.54 npm verbose npm  v10.9.2
+22:52:56 | DEBUG | #6 17.54 npm verbose exit 0
+22:52:56 | DEBUG | #6 17.54 npm info ok
+22:52:57 | DEBUG | #6 DONE 19.3s
+22:52:57 | DEBUG | 
+22:52:57 | DEBUG | #7 exporting to image
+22:52:57 | DEBUG | #7 exporting layers
+22:53:05 | DEBUG | #7 exporting layers 7.3s done
+22:53:05 | DEBUG | #7 writing image sha256:8e37e6a7a5888f3d6166228d23727d49dd4061284d54be8f6ee0cf03d5605676 done
+22:53:05 | DEBUG | #7 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies done
+22:53:05 | DEBUG | #7 DONE 7.3s
+22:53:05 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies built successfully
+22:53:06 | Building final layer
+22:53:06 | DEBUG | 2025/07/01 22:53:06 in: []string{}
+22:53:06 | DEBUG | 2025/07/01 22:53:06 Parsed entitlements: []
+22:53:06 | DEBUG | #0 building with "default" instance using docker driver
+22:53:06 | DEBUG | 
+22:53:06 | DEBUG | #1 [internal] load build definition from Dockerfile
+22:53:06 | DEBUG | #1 transferring dockerfile: 159B done
+22:53:06 | DEBUG | #1 DONE 0.0s
+22:53:06 | DEBUG | 
+22:53:06 | DEBUG | #2 [internal] load metadata for docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies:latest
+22:53:06 | DEBUG | #2 DONE 0.0s
+22:53:06 | DEBUG | 
+22:53:06 | DEBUG | #3 [internal] load .dockerignore
+22:53:06 | DEBUG | #3 transferring context: 2B done
+22:53:06 | DEBUG | #3 DONE 0.0s
+22:53:06 | DEBUG | 
+22:53:06 | DEBUG | #4 [1/4] FROM docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-dependencies:latest
+22:53:06 | DEBUG | #4 DONE 0.1s
+22:53:06 | DEBUG | 
+22:53:06 | DEBUG | #5 [2/4] WORKDIR /opt/build
+22:53:06 | DEBUG | #5 DONE 0.0s
+22:53:06 | DEBUG | 
+22:53:06 | DEBUG | #6 [3/4] RUN cd /opt/build
+22:53:06 | DEBUG | #6 DONE 0.3s
+22:53:06 | DEBUG | 
+22:53:06 | DEBUG | #7 [4/4] RUN npm run build
+22:53:07 | DEBUG | #7 0.447 
+22:53:07 | DEBUG | #7 0.447 > villagora-retreat-karelia@1.0.0 build
+22:53:07 | DEBUG | #7 0.447 > next build
+22:53:07 | DEBUG | #7 0.447 
+22:53:07 | DEBUG | #7 1.204  ⚠ Specified "rewrites" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+22:53:08 | DEBUG | #7 1.204  ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+22:53:08 | DEBUG | #7 1.222 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+22:53:08 | DEBUG | #7 1.222 This information is used to shape Next.js' roadmap and prioritize features.
+22:53:08 | DEBUG | #7 1.222 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+22:53:08 | DEBUG | #7 1.222 https://nextjs.org/telemetry
+22:53:08 | DEBUG | #7 1.222 
+22:53:08 | DEBUG | #7 1.303  ⚠ Specified "rewrites" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+22:53:08 | DEBUG | #7 1.303  ⚠ Specified "headers" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+22:53:08 | DEBUG | #7 1.303    ▲ Next.js 15.2.4
+22:53:08 | DEBUG | #7 1.303 
+22:53:08 | DEBUG | #7 1.447    Creating an optimized production build ...
+22:53:21 | DEBUG | #7 15.07  ✓ Compiled successfully
+22:53:21 | DEBUG | #7 15.07    Linting and checking validity of types ...
+22:53:29 | DEBUG | #7 22.71    Collecting page data ...
+22:53:31 | DEBUG | #7 24.88    Generating static pages (0/5) ...
+22:53:32 | DEBUG | #7 26.10    Generating static pages (1/5) 
+22:53:32 | DEBUG | #7 26.10    Generating static pages (2/5) 
+22:53:32 | DEBUG | #7 26.10    Generating static pages (3/5) 
+22:53:32 | DEBUG | #7 26.10  ✓ Generating static pages (5/5)
+22:53:33 | DEBUG | #7 26.69    Finalizing page optimization ...
+22:53:33 | DEBUG | #7 26.69    Collecting build traces ...
+22:53:43 | DEBUG | #7 37.10  ⚠ rewrites, redirects, and headers are not applied when exporting your application, detected (rewrites, headers). See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+22:53:44 | DEBUG | #7 37.17    Exporting (0/3) ...
+22:53:45 | DEBUG | #7 38.26  ✓ Exporting (3/3)
+22:53:45 | DEBUG | #7 38.31 
+22:53:45 | DEBUG | #7 38.32 Route (app)                                Size  First Load JS  Revalidate  Expire
+22:53:45 | DEBUG | #7 38.32 ┌ ○ /                                   17.8 kB         282 kB
+22:53:45 | DEBUG | #7 38.32 ├ ○ /_not-found                           192 B         265 kB
+22:53:45 | DEBUG | #7 38.32 └ ○ /sitemap.xml                          132 B         265 kB          1d      1y
+22:53:45 | DEBUG | #7 38.32 + First Load JS shared by all            264 kB
+22:53:45 | DEBUG | #7 38.32   └ chunks/vendors-dd25a56ca3c571ce.js   263 kB
+22:53:45 | DEBUG | #7 38.32   └ other shared chunks (total)         1.91 kB
+22:53:45 | DEBUG | #7 38.32 
+22:53:45 | DEBUG | #7 38.32 
+22:53:45 | DEBUG | #7 38.32 ○  (Static)  prerendered as static content
+22:53:45 | DEBUG | #7 38.32 
+22:53:46 | DEBUG | #7 DONE 39.5s
+22:53:46 | DEBUG | 
+22:53:46 | DEBUG | #8 exporting to image
+22:53:46 | DEBUG | #8 exporting layers
+22:53:47 | DEBUG | #8 exporting layers 1.8s done
+22:53:48 | DEBUG | #8 writing image sha256:5ce6b835aee13ad831beea6a09d235ef2d79de97d9afa056629f455013311037 done
+22:53:48 | DEBUG | #8 naming to docker.io/library/final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-build done
+22:53:48 | DEBUG | #8 DONE 1.8s
+22:53:48 | Layer final-image-db6a3cb7-8b29-455b-9a5b-291fec34801c-build built successfully
+22:53:48 | Copying the code
+22:53:49 | Setting up nginx
+22:53:49 | Using /out as default folder for index.html
+22:53:49 | Index dir contents: ['404.html', 'favicon-512x512.png', 'favicon-192x192.png', 'sitemap.xml', 'index.html', 'structured-data.json', 'index.txt', 'local-business.json', 'manifest.json', 'refresh-cache.html', 'google71af140f47e6ae4c.html', 'favicon.ico', 'yandex_f50dc52975e186f5.html', 'images', 'robots.txt', 'telegram-preview.html', '_next', 'favicon.svg']
+22:53:50 | Cleaning up

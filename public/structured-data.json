@@ -1,0 +1,194 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.villagora.ru/#website",
+      "url": "https://www.villagora.ru",
+      "name": "Отдых Карелия Дом Ретрит - Виллагора",
+      "description": "Отдых в Карелии в доме-ретрите Виллагора у озера Сямозеро",
+      "publisher": {
+        "@id": "https://www.villagora.ru/#person"
+      },
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.villagora.ru/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      ],
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.villagora.ru/#webpage",
+      "url": "https://www.villagora.ru",
+      "name": "Отдых Карелия Дом Ретрит | Виллагора | Аренда дома у озера Сямозеро",
+      "isPartOf": {
+        "@id": "https://www.villagora.ru/#website"
+      },
+      "about": {
+        "@id": "https://www.villagora.ru/#business"
+      },
+      "description": "Отдых в Карелии в уютном доме-ретрите Виллагора у озера Сямозеро. Аренда загородного дома с баней на дровах, карельской кухней и экотурами.",
+      "breadcrumb": {
+        "@id": "https://www.villagora.ru/#breadcrumb"
+      },
+      "inLanguage": "ru-RU",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://www.villagora.ru"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.villagora.ru/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://www.villagora.ru"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.villagora.ru/#person",
+      "name": "Радмила Яковлева",
+      "image": {
+        "@type": "ImageObject",
+        "inLanguage": "ru-RU",
+        "@id": "https://www.villagora.ru/#personlogo",
+        "url": "https://www.villagora.ru/images/author/radmila.jpg",
+        "contentUrl": "https://www.villagora.ru/images/author/radmila.jpg",
+        "caption": "Радмила Яковлева"
+      },
+      "description": "Организатор ретритов в Карелии, создатель уникальных программ отдыха на природе",
+      "sameAs": [
+        "https://t.me/RadmilaYakovleva"
+      ],
+      "url": "https://www.villagora.ru",
+      "worksFor": {
+        "@id": "https://www.villagora.ru/#business"
+      }
+    },
+    {
+      "@type": "TouristDestination",
+      "@id": "https://www.villagora.ru/#destination",
+      "name": "Виллагора, Карелия",
+      "description": "Живописная деревня в Карелии на берегу озера Сямозеро, идеальное место для отдыха на природе",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 61.89101283682342,
+        "longitude": 33.68979055651442
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Виллагора",
+        "addressRegion": "Республика Карелия",
+        "addressCountry": "RU"
+      },
+      "touristType": [
+        "Эко-туризм",
+        "Wellness туризм",
+        "Природный туризм",
+        "Ретрит туризм"
+      ],
+      "includesAttraction": [
+        {
+          "@type": "TouristAttraction",
+          "name": "Озеро Сямозеро",
+          "description": "Чистейшее карельское озеро для отдыха и рыбалки"
+        },
+        {
+          "@type": "TouristAttraction", 
+          "name": "Карельские леса",
+          "description": "Хвойные леса для экотуров и лесных прогулок"
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.villagora.ru/#product",
+      "name": "Отдых в доме-ретрите Виллагора",
+      "description": "Полноценный отдых в Карелии с проживанием в загородном доме, баней на дровах, карельской кухней и экотурами",
+      "image": [
+        "https://www.villagora.ru/images/hero/hero.jpg",
+        "https://www.villagora.ru/images/accommodation/house-1.jpg",
+        "https://www.villagora.ru/images/wellness/sauna-1.jpg"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.villagora.ru",
+        "priceCurrency": "RUB",
+        "price": "13000",
+        "priceValidUntil": "2024-12-31",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://www.villagora.ru/#business"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "13000",
+          "priceCurrency": "RUB",
+          "unitText": "за человека в день"
+        }
+      },
+      "brand": {
+        "@type": "Brand",
+        "name": "Виллагора Ретрит"
+      },
+      "category": "Туризм и отдых",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Взрослые, ищущие отдых на природе"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.villagora.ru/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько стоит отдых в доме Виллагора?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стоимость отдыха в доме-ретрите Виллагора составляет от 13,000 рублей за человека в день. В стоимость включено проживание, питание, баня на дровах и экотуры."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Где находится дом Виллагора в Карелии?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Дом Виллагора расположен в живописной деревне Виллагора в Республике Карелия, на берегу озера Сямозеро. Координаты: 61.89101283682342, 33.68979055651442."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что включено в отдых в Карелии?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В отдых включено: проживание в уютном загородном доме, карельская кухня, баня на дровах, экотуры по лесам и озерам, ароматерапия, доступ к озеру Сямозеро."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "На сколько человек рассчитан дом в Виллагоре?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Загородный дом в Виллагоре рассчитан на размещение до 8 человек. Идеально подходит для семейного отдыха, корпоративных ретритов или отдыха с друзьями."
+          }
+        }
+      ]
+    }
+  ]
+}

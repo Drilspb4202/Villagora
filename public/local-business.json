@@ -1,0 +1,212 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.villagora.ru/#business",
+  "name": "Отдых Карелия Дом Ретрит - Виллагора",
+  "alternateName": [
+    "Виллагора Ретрит",
+    "Дом отдыха Виллагора",
+    "Ретрит в Карелии",
+    "Карелия отдых дом"
+  ],
+  "description": "Отдых в Карелии в загородном доме-ретрите Виллагора у озера Сямозеро. Аренда уютного дома с баней на дровах, карельской кухней и экотурами для восстановления сил на природе.",
+  "url": "https://www.villagora.ru",
+  "sameAs": [
+    "https://t.me/RadmilaYakovleva"
+  ],
+  "logo": "https://www.villagora.ru/favicon.svg",
+  "image": [
+    "https://www.villagora.ru/images/hero/hero.jpg",
+    "https://www.villagora.ru/images/syamozero/syamozero-1.jpg",
+    "https://www.villagora.ru/images/accommodation/house-1.jpg",
+    "https://www.villagora.ru/images/wellness/sauna-1.jpg"
+  ],
+  "telephone": "+7 921 646 5545",
+  "email": "info@villagora.ru",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "деревня Виллагора",
+    "addressLocality": "Виллагора",
+    "addressRegion": "Республика Карелия",
+    "postalCode": "186350",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 61.89101283682342,
+    "longitude": 33.68979055651442
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Республика Карелия"
+    },
+    {
+      "@type": "City",
+      "name": "Петрозаводск"
+    },
+    {
+      "@type": "City", 
+      "name": "Пряжа"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 61.89101283682342,
+      "longitude": 33.68979055651442
+    },
+    "geoRadius": "100000"
+  },
+  "openingHours": "Mo-Su 00:00-24:00",
+  "priceRange": "13000-20000 RUB",
+  "currenciesAccepted": "RUB",
+  "paymentAccepted": [
+    "Cash",
+    "Credit Card",
+    "Bank Transfer"
+  ],
+  "category": [
+    "Туризм и отдых",
+    "Загородный отдых",
+    "Ретрит центр",
+    "Аренда жилья"
+  ],
+  "keywords": "отдых карелия, дом ретрит, карелия отдых, загородный дом, баня на дровах, озеро сямозеро, виллагора, экотуры, ароматерапия, карельская кухня",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Услуги отдыха в Карелии",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Проживание в доме",
+          "description": "Размещение в уютном загородном доме до 8 человек"
+        },
+        "price": "13000",
+        "priceCurrency": "RUB",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "13000",
+          "priceCurrency": "RUB",
+          "unitText": "за человека в день"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Баня на дровах",
+          "description": "Традиционная карельская баня с дровяной печью"
+        },
+        "price": "0",
+        "priceCurrency": "RUB",
+        "description": "Включено в стоимость проживания"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Карельская кухня",
+          "description": "Питание из местных продуктов и традиционных карельских блюд"
+        },
+        "price": "0",
+        "priceCurrency": "RUB",
+        "description": "Включено в стоимость проживания"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Экотуры",
+          "description": "Экологические туры по карельским лесам и озерам"
+        },
+        "price": "0",
+        "priceCurrency": "RUB",
+        "description": "Включено в стоимость проживания"
+      }
+    ]
+  },
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Баня на дровах",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification", 
+      "name": "Проживание в доме",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Карельская кухня",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Экотуры",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Ароматерапия",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Доступ к озеру Сямозеро",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Лесные прогулки",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Рыбалка",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Сбор ягод и грибов",
+      "value": true
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "25",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Анна М."
+      },
+      "reviewBody": "Прекрасный отдых в Карелии! Дом очень уютный, баня отличная, природа потрясающая. Радмила - замечательная хозяйка."
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Радмила Яковлева",
+    "url": "https://t.me/RadmilaYakovleva"
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "Радмила Яковлева",
+    "jobTitle": "Организатор ретритов",
+    "url": "https://t.me/RadmilaYakovleva"
+  }
+}

@@ -1,0 +1,16 @@
+name = "vilagora"
+compatibility_date = "2024-06-01"
+
+[env.production]
+routes = [
+  "villagora.ru/*",
+  "www.villagora.ru/*"
+]
+
+[[env.production.route]]
+pattern = "villagora.ru/*"
+custom_domain = true
+
+[[env.production.route]]
+pattern = "www.villagora.ru/*"
+custom_domain = true
