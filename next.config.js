@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
+  output: 'standalone',
+  // Добавляем поддержку статического экспорта для Timeweb Cloud
+  distDir: '.next',
   // Оптимизация изображений
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -9,6 +11,7 @@ const nextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 дней
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: process.env.NODE_ENV === 'development', // Отключаем оптимизацию в режиме разработки
   },
 
   // Оптимизация производительности

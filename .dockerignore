@@ -1,0 +1,52 @@
+# Зависимости
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Локальные файлы среды
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Системные файлы
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Кэш и временные файлы
+.next/
+out/
+build/
+.vercel/
+.coverage/
+.nyc_output/
+coverage/
+dist/
+
+# Git
+.git/
+.github/
+.gitignore
+
+# Инструменты разработчика
+*.log
+*.tsbuildinfo
+.eslintcache
+.prettierignore
+README.md
+LICENSE
+
+# Тесты
+__tests__/
+**/tests/
+**/*.test.*
+**/*.spec.*
+jest.config.* 
