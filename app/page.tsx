@@ -168,8 +168,8 @@ export default function KareliaRetreatLanding() {
       name: "Минимальный",
       duration: "3 дня",
       days: 3,
-      price: "39 000 ₽",
-      pricePerPersonPerDay: 13000,
+      price: "33 000 ₽",
+      pricePerPersonPerDay: 11000,
       description: "Идеально для первого знакомства",
       gradient: "from-forest-600 to-forest-700",
       features: ["Проживание", "Питание", "Трансфер", "Баня"],
@@ -178,8 +178,8 @@ export default function KareliaRetreatLanding() {
       name: "Средний",
       duration: "5 дней",
       days: 5,
-      price: "65 000 ₽",
-      pricePerPersonPerDay: 13000,
+      price: "52 000 ₽",
+      pricePerPersonPerDay: 10400,
       description: "Оптимальный баланс отдыха",
       popular: true,
       gradient: "from-forest-500 to-forest-600",
@@ -189,8 +189,8 @@ export default function KareliaRetreatLanding() {
       name: "Комфортный",
       duration: "7 дней",
       days: 7,
-      price: "91 000 ₽",
-      pricePerPersonPerDay: 13000,
+      price: "68 000 ₽",
+      pricePerPersonPerDay: 9415,
       description: "Полное погружение в природу",
       gradient: "from-forest-400 to-forest-500",
       features: ["Проживание", "Питание", "Трансфер", "Баня", "Экотуры", "Ароматерапия", "Рыбалка"],
@@ -199,8 +199,8 @@ export default function KareliaRetreatLanding() {
       name: "Максимальный",
       duration: "10 дней",
       days: 10,
-      price: "130 000 ₽",
-      pricePerPersonPerDay: 13000,
+      price: "89 000 ₽",
+      pricePerPersonPerDay: 8900,
       description: "Глубокая перезагрузка души",
       gradient: "from-amber-600 to-forest-600",
       features: ["Все включено", "Персональный гид", "Индивидуальные экскурсии", "Спа-процедуры"],
@@ -272,7 +272,7 @@ export default function KareliaRetreatLanding() {
         "/images/syamozero/syamozero-4.jpg",
       ],
       fullDescription:
-        "Одно из красивейших озер Карелии с кристально чистой водой и песчаными пляжами. Наслаждайтесь рассветами и закатами над водной гладью, купайтесь в чистейшей воде, медитируйте на берегу под шум волн. Идеальное место для рыбалки, водных процедур и созерцания природы. Организуем регулярные трансферы к самым живописным и уединенным местам озера, где можно полностью погрузиться в атмосферу карельской природы.",
+        "Одно из красивейших озер Карелии с кристально чистой водой и песчаными пляжами. Наслаждайтесь рассветами и закатами над водной гладью, купайтесь в чистейшей воде, медитируйте на берегу под шум волн. Идеальное место для рыбалки, водных процедур и созерцания природы. Организуем регулярные трансферы к самым живописным местам озера, где можно полностью погрузиться в атмосферу карельской природы.",
     },
     {
       id: "ecotours",
@@ -293,7 +293,7 @@ export default function KareliaRetreatLanding() {
         "/images/ecotours/mushroom-picking.jpg",
       ],
       fullDescription:
-        "Увлекательные экологические туры по карельским лесам и озерам. Изучаем местную флору и фауну, собираем сезонные ягоды и грибы, учимся рыбачить на озере Сямозеро. Прогулки по древним карельским лесам с изучением лекарственных растений и следов диких животных. Все туры проводятся с опытным гидом-экологом, который расскажет о природе Карелии, научит различать съедобные грибы и ягоды, покажет лучшие места для рыбалки.",
+        "Увлекательные туры по карельским лесам и озерам. Изучаем местную флору и фауну, собираем сезонные ягоды и грибы, учимся рыбачить на озере Сямозеро. Прогулки по древним карельским лесам с изучением лекарственных растений и следов диких животных. Все туры проводятся с опытным гидом-экологом, который расскажет о природе Карелии, научит различать съедобные грибы и ягоды, покажет лучшие места для рыбалки.",
     },
     {
       id: "aromatherapy",
@@ -324,7 +324,7 @@ export default function KareliaRetreatLanding() {
         "/images/wellness/sauna-5.JPG",
       ],
       fullDescription:
-        "Традиционная русская баня на дровах с панорамными окнами и выходом к озеру. Вечерние банные процедуры под звездным небом, ароматные веники из березы и дуба, возможность окунуться в прохладное озеро после парной. Баня включает: парную с печью-каменкой, комнату отдыха с травяными чаями, террасу с видом на карельскую природу. Работает ежедневно с 16:00 до 22:00. Все необходимые принадлежности предоставляются.",
+        "Традиционная русская баня на дровах.\nВечерние банные процедуры под звёздным небом, ароматные веники из берёзы и дуба, густой жаркий пар из печи-каменки. После парения можно выйти и насладиться тишиной и ароматом карельского леса.\n\nБаня включает:\n— парную с печью-каменкой,\n— комнату отдыха с травяными чаями,\n— уличную зону для расслабления на свежем воздухе.\n\nРаботает ежедневно \nВсе необходимые принадлежности предоставляются.",
     },
     {
       id: "transfer",
@@ -537,7 +537,7 @@ export default function KareliaRetreatLanding() {
             className="object-cover"
             sizes="100vw"
             placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             itemProp="image"
           />
 
@@ -590,7 +590,7 @@ export default function KareliaRetreatLanding() {
             </Badge>
             <Badge className="text-sm sm:text-lg py-2 px-4 sm:py-3 sm:px-6 bg-black/30 backdrop-blur-md border-white/20 hover:bg-black/40 transition-all duration-300 transform hover:scale-105 text-white shadow-xl">
               <CalendarIcon className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
-              5-14 июля
+              от 3 до 10 дней
             </Badge>
             <Badge className="text-sm sm:text-lg py-2 px-4 sm:py-3 sm:px-6 bg-black/30 backdrop-blur-md border-white/20 hover:bg-black/40 transition-all duration-300 transform hover:scale-105 text-white shadow-xl">
               <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
@@ -641,7 +641,7 @@ export default function KareliaRetreatLanding() {
             <p className="text-lg sm:text-xl text-stone-300 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto px-4">
               Ты чувствуешь, что пора перезагрузиться? Отпустить суету и, наконец, услышать себя?
               <br />
-              Приглашаю тебя на <span className="font-semibold text-amber-300">КАМЕРНЫЙ РЕТРИТ В ЗАГОРОДНЫЙ ДОМ ВИЛЛАГОРЕ</span> — живописной деревне на берегу ламбушки, в окружении карельских лесов и озёр.
+              ПриглашаЕМ тебя на <span className="font-semibold text-amber-300">КАМЕРНЫЙ РЕТРИТ В ЗАГОРОДНЫЙ ДОМ ВИЛЛАГОРЕ</span> — живописной деревне на берегу ламбушки, в окружении карельских лесов и озёр.
             </p>
           </div>
 
@@ -692,9 +692,9 @@ export default function KareliaRetreatLanding() {
           <meta itemProp="name" content="Ретрит в Карелии - Виллагора" />
           <meta
             itemProp="description"
-            content="Уникальный ретрит на природе в Карелии с экскурсиями, баней и отдыхом на озере Сямозеро"
+            content="Уникальный ретрит на природе в Карелии с экскурсиями, банями и отдыхом на озере Сямозеро"
           />
-          <meta itemProp="telephone" content="+79216465545" />
+          <meta itemProp="telephone" content="+79522010778" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => (
@@ -734,10 +734,11 @@ export default function KareliaRetreatLanding() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {[
-                { icon: ShoppingCart, text: "Магазин 24/7 в 3 минутах от дома" },
+                { icon: ShoppingCart, text: "Магазин 24/7 в 3х минутах от дома" },
                 { icon: Droplets, text: "Чистая родниковая вода" },
                 { icon: "🏀", text: "Большой батут" },
-                { icon: Flame, text: "Мангал для вечерних посиделок" },
+                { icon: Flame, text: "Мангал для дневных и вечерних посиделок" },
+                { icon: "📶", text: "Безлимитный Wi-Fi" },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -756,6 +757,81 @@ export default function KareliaRetreatLanding() {
                   <span className="text-stone-300 text-base sm:text-lg">{item.text}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Услуги за доп плату */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-stone-100 to-stone-300 bg-clip-text text-transparent">
+            УСЛУГИ ЗА ДОП ПЛАТУ
+          </h2>
+          
+          <div className="bg-forest-900/30 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-forest-700/30 shadow-2xl relative overflow-hidden group hover:shadow-forest-500/20 hover:border-forest-600/40 transition-all duration-500">
+            {/* Декоративные элементы фона */}
+            <div className="absolute inset-0 bg-gradient-to-br from-forest-800/20 via-forest-700/10 to-forest-900/30 z-0"></div>
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-forest-500/10 rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-all duration-700"></div>
+            <div className="absolute -bottom-16 -left-16 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-all duration-700 group-hover:scale-125"></div>
+            
+            {/* Декоративная карта */}
+            <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-700 pointer-events-none">
+              <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,10 Q50,20 90,10 T10,50 T90,90 T10,10" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-forest-300" />
+                <path d="M20,20 Q60,30 80,20 T20,60 T80,80 T20,20" fill="none" stroke="currentColor" strokeWidth="0.2" className="text-amber-300" />
+              </svg>
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-center gap-6 mb-6 relative z-10">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 relative group-hover:scale-110 transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-forest-500/30 to-amber-500/30 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-all duration-500"></div>
+                <svg viewBox="0 0 24 24" className="w-full h-full text-forest-400 relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  <path d="M2 12h20" />
+                </svg>
+              </div>
+              <p className="text-lg sm:text-xl text-stone-300 leading-relaxed backdrop-blur-sm bg-forest-900/10 p-3 rounded-lg border border-forest-700/20 shadow-inner">
+                Выездные экскурсии в Петрозаводск, Сортавалу, Мраморный каньон и т.д. обсуждаются индивидуально с учетом ваших пожеланий.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 relative z-10">
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-forest-800/40 backdrop-blur-sm hover:bg-forest-700/50 transition-all duration-300 transform hover:scale-105 border border-forest-700/30 hover:border-forest-600/50 shadow-lg hover:shadow-xl">
+                <div className="w-10 h-10 flex-shrink-0 relative">
+                  <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-md"></div>
+                  <svg viewBox="0 0 24 24" className="w-full h-full text-amber-400 relative z-10 drop-shadow" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
+                    <path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4" />
+                    <path d="M13 13h4" />
+                    <path d="M13 17h4" />
+                  </svg>
+                </div>
+                <span className="text-stone-300 font-medium">Петрозаводск</span>
+              </div>
+              
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-forest-800/40 backdrop-blur-sm hover:bg-forest-700/50 transition-all duration-300 transform hover:scale-105 border border-forest-700/30 hover:border-forest-600/50 shadow-lg hover:shadow-xl">
+                <div className="w-10 h-10 flex-shrink-0 relative">
+                  <div className="absolute inset-0 bg-forest-500/20 rounded-full blur-md"></div>
+                  <svg viewBox="0 0 24 24" className="w-full h-full text-forest-400 relative z-10 drop-shadow" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+                    <path d="M14 11a2 2 0 0 0-2-2" />
+                    <path d="M14 11a2 2 0 0 1-2 2" />
+                  </svg>
+                </div>
+                <span className="text-stone-300 font-medium">Сортавала</span>
+              </div>
+              
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-forest-800/40 backdrop-blur-sm hover:bg-forest-700/50 transition-all duration-300 transform hover:scale-105 border border-forest-700/30 hover:border-forest-600/50 shadow-lg hover:shadow-xl">
+                <div className="w-10 h-10 flex-shrink-0 relative">
+                  <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-md"></div>
+                  <svg viewBox="0 0 24 24" className="w-full h-full text-blue-400 relative z-10 drop-shadow" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </div>
+                <span className="text-stone-300 font-medium">Мраморный каньон</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1054,10 +1130,10 @@ export default function KareliaRetreatLanding() {
                         )}
 
                         <h4 className="font-semibold text-forest-400 mb-1 text-sm">Условия:</h4>
-                        <ul className="text-xs text-stone-300 space-y-0.5">
-                          <li>• Предоплата 10 000 ₽ за человека</li>
-                          <li>• Отмена за 7 дней без штрафа</li>
-                          <li>• Всё включено: проживание, питание, трансфер</li>
+                        <ul className="list-disc pl-4 text-xs text-stone-400">
+                          <li>Предоплата 10 000 ₽ за человека</li>
+                          <li>В стоимость включено: проживание, питание, трансфер, все активности</li>
+                          <li>Заезд с 14:00, выезд до 12:00</li>
                         </ul>
                       </div>
 
@@ -1105,8 +1181,6 @@ export default function KareliaRetreatLanding() {
             Место силы — Карелия
           </h2>
 
-
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
@@ -1141,9 +1215,11 @@ export default function KareliaRetreatLanding() {
                 key={index}
                 className="group relative h-64 sm:h-80 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500"
               >
-                <OptimizedImage
+                <OptimizedImage 
                   src={item.images[0]}
                   alt={item.title}
+                  width={800} 
+                  height={600}
                   priority={index === 0}
                   className="w-full h-full group-hover:scale-110 transition-transform duration-700"
                 />
@@ -1168,14 +1244,14 @@ export default function KareliaRetreatLanding() {
             Готов к перезагрузке?
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-stone-300 leading-relaxed max-w-4xl mx-auto px-4">
-            Это не просто поездка — это отдых для души. Радушие, лёгкость, искренние разговоры и ощущение, что ты
-            наконец возвращаешься к себе.
+            Это не просто поездка — это отдых для души. Радушие, лёгкость, искренние разговоры и ощущение, что ты,
+            наконец, возвращаешься к себе.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <Card
               className="group bg-forest-900/30 backdrop-blur-sm border-forest-700/30 hover:bg-forest-800/40 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl cursor-pointer"
-              onClick={() => window.open("tel:+79216465545")}
+              onClick={() => window.open("tel:+79522010778")}
             >
               <CardHeader>
                 <div className="flex items-center justify-center mb-4 sm:mb-6">
@@ -1186,7 +1262,7 @@ export default function KareliaRetreatLanding() {
                 <CardTitle className="text-xl sm:text-2xl text-stone-100">Позвони</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-xl sm:text-2xl font-bold text-forest-400 mb-2">+7 921 646 5545</p>
+                <p className="text-xl sm:text-2xl font-bold text-forest-400 mb-2">+7 952 201 0778</p>
                 <p className="text-stone-300 text-sm sm:text-base">Детали и бронь по телефону</p>
               </CardContent>
             </Card>
@@ -1235,10 +1311,10 @@ export default function KareliaRetreatLanding() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-forest-600 to-forest-700 hover:from-forest-500 hover:to-forest-600 text-white text-lg sm:text-xl px-8 sm:px-12 py-3 sm:py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 group border-0 w-full sm:w-auto"
-              onClick={() => window.open("tel:+79216465545")}
+              onClick={() => window.open("tel:+79522010778")}
             >
               <Phone className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
-              Позвонить сейчас
+              Позвонить
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
@@ -1276,7 +1352,7 @@ export default function KareliaRetreatLanding() {
             Камерный ретрит в Карелии
           </p>
           <p className="text-stone-400 mb-4 sm:mb-6 text-base sm:text-lg">
-            Деревня Виллагора • 5-14 июля • До 5 человек
+            Деревня Виллагора • 3 - 10 дней • До 5 человек
           </p>
           <p className="text-stone-500 text-base sm:text-lg italic px-4">
             Это про дыхание полной грудью. Про тишину и природу. Про возвращение к себе.
@@ -1286,10 +1362,10 @@ export default function KareliaRetreatLanding() {
 
       {/* Feature Gallery Modal */}
       <Dialog open={!!selectedFeature} onOpenChange={closeFeatureGallery}>
-        <DialogContent className="w-[95vw] sm:max-w-[90vw] md:max-w-[900px] bg-forest-900/95 backdrop-blur-sm border-forest-700/30 text-stone-100 p-0 max-h-[95vh] sm:max-h-[90vh] overflow-hidden mobile-modal">
+        <DialogContent className="w-[95vw] sm:max-w-[90vw] md:max-w-[900px] bg-forest-900/95 backdrop-blur-sm border-forest-700/30 text-stone-100 p-0 flex flex-col max-h-[90vh] overflow-hidden">
           {selectedFeatureData && (
             <>
-              <DialogHeader className="p-3 sm:p-4 md:p-6 pb-0 flex-shrink-0">
+              <DialogHeader className="p-3 sm:p-4 md:p-6 pb-0">
                 <DialogTitle className="text-lg sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-forest-400 to-amber-400 bg-clip-text text-transparent flex items-center gap-2 sm:gap-3">
                   <div
                     className={`bg-gradient-to-r ${selectedFeatureData.color} w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0`}
@@ -1303,15 +1379,10 @@ export default function KareliaRetreatLanding() {
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="relative flex-1 overflow-hidden">
+              {/* Главное изображение */}
+              <div className="flex-grow overflow-hidden relative bg-forest-800/20">
                 <div
-                  className={`relative bg-forest-800/20 cursor-pointer select-none flex items-center justify-center mobile-optimized touch-optimized ${
-                    imageOrientation === 'portrait'
-                      ? 'h-[60vh] sm:h-[65vh] md:h-[70vh] max-h-[500px] sm:max-h-[600px]'
-                      : imageOrientation === 'square'
-                      ? 'h-56 sm:h-64 md:h-80 lg:h-96'
-                      : 'h-48 sm:h-64 md:h-80 lg:h-96'
-                  }`}
+                  className="w-full h-[50vh] relative"
                   onTouchStart={(e) => {
                     const touch = e.touches[0]
                     setTouchStart(touch.clientX)
@@ -1335,154 +1406,58 @@ export default function KareliaRetreatLanding() {
                     src={selectedFeatureData.images[currentImageIndex] || "/placeholder.svg"}
                     alt={`${selectedFeatureData.title} ${currentImageIndex + 1}`}
                     fill
-                    className={`${
-                      imageOrientation === 'portrait'
-                        ? 'object-contain'
-                        : 'object-cover'
-                    }`}
-                    onError={(e) => {
-                      console.log(`Ошибка загрузки изображения: ${selectedFeatureData.images[currentImageIndex]}`)
-                      // Можно добавить fallback изображение
-                    }}
-                    priority={currentImageIndex === 0}
+                    priority
+                    className="object-contain"
                   />
-
-                  {/* Navigation buttons - оптимизированы для мобильных */}
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-forest-900/90 backdrop-blur-sm border-forest-600/30 text-stone-200 hover:bg-forest-800/95 transition-all duration-200 shadow-lg w-10 h-10 sm:w-12 sm:h-12 rounded-full touch-manipulation"
-                    onClick={prevImage}
+                  
+                  {/* Кнопки навигации */}
+                  <button 
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 rounded-full p-2 text-white"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      prevImage()
+                    }}
                   >
-                    <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-forest-900/90 backdrop-blur-sm border-forest-600/30 text-stone-200 hover:bg-forest-800/95 transition-all duration-200 shadow-lg w-10 h-10 sm:w-12 sm:h-12 rounded-full touch-manipulation"
-                    onClick={nextImage}
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  
+                  <button 
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 rounded-full p-2 text-white"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      nextImage()
+                    }}
                   >
-                    <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
-                  </Button>
-
-                  {/* Image counter with orientation indicator - мобильно-оптимизированный */}
-                  <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 bg-forest-900/90 backdrop-blur-sm rounded-full px-2 py-1 sm:px-4 sm:py-2 text-stone-200 text-xs sm:text-sm flex items-center gap-1 sm:gap-2 shadow-lg">
-                    <span className="font-medium">{currentImageIndex + 1} / {selectedFeatureData.images.length}</span>
-                    {imageOrientation === 'portrait' && (
-                      <span className="text-xs text-forest-300" title="Вертикальное фото">📱</span>
-                    )}
-                    {imageOrientation === 'landscape' && (
-                      <span className="text-xs text-forest-300" title="Горизонтальное фото">🖼️</span>
-                    )}
-                    {imageOrientation === 'square' && (
-                      <span className="text-xs text-forest-300" title="Квадратное фото">⬜</span>
-                    )}
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                  
+                  {/* Индикатор */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 px-3 py-1 rounded-full text-white text-sm">
+                    {currentImageIndex + 1} / {selectedFeatureData.images.length}
                   </div>
                 </div>
-
-                {/* Optimized Thumbnails Carousel - мобильно-оптимизированный */}
-                <div className="p-3 sm:p-4 md:p-6 bg-forest-800/20 border-t border-forest-700/30">
-                  <div className="relative">
-                    {/* Thumbnails container with proper overflow handling */}
-                    <div className="overflow-hidden smooth-scroll">
-                      <div
-                        className="flex gap-2 transition-transform duration-300 ease-in-out"
-                        style={{
-                          transform: `translateX(-${Math.max(0, (currentImageIndex - 2) * (56 + 8))}px)`
-                        }}
-                      >
-                        {selectedFeatureData.images.map((image, index) => (
-                          <button
-                            key={index}
-                            onClick={() => {
-                              setCurrentImageIndex(index)
-                              checkImageOrientation(selectedFeatureData.images[index])
-                            }}
-                            className={`relative w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 rounded-lg overflow-hidden border-2 transition-all duration-200 flex-shrink-0 touch-manipulation ${
-                              index === currentImageIndex
-                                ? "border-forest-400 scale-105 sm:scale-110 shadow-lg"
-                                : "border-forest-700/30 hover:border-forest-500/50 active:scale-95 sm:hover:scale-105"
-                            }`}
-                            title={`Фото ${index + 1} из ${selectedFeatureData.images.length}`}
-                          >
-                            <NextImage
-                              src={image || "/placeholder.svg"}
-                              alt={`${selectedFeatureData.title} thumbnail ${index + 1}`}
-                              fill
-                              className="object-cover"
-                              onError={(e) => {
-                                console.log(`Ошибка загрузки миниатюры: ${image}`)
-                              }}
-                            />
-                            {/* Номер изображения для больших галерей */}
-                            {selectedFeatureData.images.length > 10 && (
-                              <div className="absolute top-0.5 left-0.5 bg-forest-900/80 text-white text-xs px-1 rounded text-center leading-tight">
-                                {index + 1}
-                              </div>
-                            )}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Navigation arrows for thumbnails */}
-                    {selectedFeatureData.images.length > 5 && (
-                      <>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-forest-900/90 hover:bg-forest-800/95 text-stone-200 w-8 h-8 sm:w-9 sm:h-9 p-0 rounded-full shadow-lg touch-manipulation"
-                          onClick={() => {
-                            const newIndex = Math.max(0, currentImageIndex - 1)
-                            setCurrentImageIndex(newIndex)
-                            checkImageOrientation(selectedFeatureData.images[newIndex])
-                          }}
-                          disabled={currentImageIndex === 0}
-                        >
-                          <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-forest-900/90 hover:bg-forest-800/95 text-stone-200 w-8 h-8 sm:w-9 sm:h-9 p-0 rounded-full shadow-lg touch-manipulation"
-                          onClick={() => {
-                            const newIndex = Math.min(selectedFeatureData.images.length - 1, currentImageIndex + 1)
-                            setCurrentImageIndex(newIndex)
-                            checkImageOrientation(selectedFeatureData.images[newIndex])
-                          }}
-                          disabled={currentImageIndex === selectedFeatureData.images.length - 1}
-                        >
-                          <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
-                        </Button>
-                      </>
-                    )}
-                  </div>
-
-                  {/* Progress indicator and navigation hints */}
-                  <div className="mt-3 text-center space-y-2">
-                    {selectedFeatureData.images.length > 10 && (
-                      <div className="inline-flex items-center gap-2 text-xs text-stone-400">
-                        <span>Фото {currentImageIndex + 1} из {selectedFeatureData.images.length}</span>
-                        <div className="w-20 h-1 bg-forest-800/50 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-forest-400 transition-all duration-300"
-                            style={{ width: `${((currentImageIndex + 1) / selectedFeatureData.images.length) * 100}%` }}
-                          />
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Navigation hints - улучшенные для мобильных */}
-                    <div className="text-xs text-stone-500 space-y-1 text-center">
-                      <div className="hidden sm:block">
-                        Используйте стрелки ← → на клавиатуре для навигации
-                      </div>
-                      <div className="sm:hidden space-y-1">
-                        <div>📱 Свайпайте влево/вправо для переключения фото</div>
-                        <div>👆 Нажимайте на миниатюры для быстрого перехода</div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              
+              {/* Миниатюры - упрощенная версия */}
+              <div className="p-4 bg-forest-800/20 border-t border-forest-700/30 overflow-x-auto">
+                <div className="flex gap-2 min-w-max">
+                  {selectedFeatureData.images.map((image, index) => (
+                    <button
+                      key={index}
+                      className={`w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden ${
+                        index === currentImageIndex ? "ring-2 ring-forest-400" : "opacity-70"
+                      }`}
+                      onClick={() => setCurrentImageIndex(index)}
+                    >
+                      <NextImage
+                        src={image}
+                        alt={`${selectedFeatureData.title} миниатюра ${index + 1}`}
+                        width={64}
+                        height={64}
+                        className="object-cover w-full h-full"
+                      />
+                    </button>
+                  ))}
                 </div>
               </div>
             </>
@@ -1708,10 +1683,10 @@ export default function KareliaRetreatLanding() {
                 )}
 
                 <h4 className="font-semibold text-forest-400 mb-1 text-sm">Условия:</h4>
-                <ul className="text-xs text-stone-300 space-y-0.5">
-                  <li>• Предоплата 10 000 ₽ за человека</li>
-                  <li>• Отмена за 7 дней без штрафа</li>
-                  <li>• Всё включено: проживание, питание, трансфер</li>
+                <ul className="list-disc pl-4 text-xs text-stone-400">
+                  <li>Предоплата 10 000 ₽ за человека</li>
+                  <li>В стоимость включено: проживание, питание, трансфер, все активности</li>
+                  <li>Заезд с 14:00, выезд до 12:00</li>
                 </ul>
               </div>
 

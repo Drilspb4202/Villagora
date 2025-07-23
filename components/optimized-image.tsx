@@ -1,99 +1,93 @@
 "use client"
 
-import Image from "next/image"
-import { useState } from "react"
+import React from 'react';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface OptimizedImageProps {
-  src: string
-  alt: string
-  width?: number
-  height?: number
-  className?: string
-  priority?: boolean
-  placeholder?: string
-  onLoad?: () => void
-  loading?: "lazy" | "eager"
-  quality?: number
-  sizes?: string
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  fill?: boolean;
+  priority?: boolean;
+  quality?: number;
+  className?: string;
+  sizes?: string;
+  style?: React.CSSProperties;
+  onLoadingComplete?: () => void;
 }
 
-export function OptimizedImage({
+export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   src,
   alt,
   width,
   height,
-  className = "",
+  fill = false,
   priority = false,
-  placeholder,
-  onLoad,
-  loading = "lazy",
-  quality = 90,
-  sizes = "(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 60vw, 50vw",
-}: OptimizedImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [hasError, setHasError] = useState(false)
+  quality = 80,
+  className = '',
+  sizes = '100vw',
+  style,
+  onLoadingComplete,
+  ...props
+}) => {
+  // Создаем пути для WebP и оптимизированных версий
+  const baseSrc = src.replace(/\.(jpg|jpeg|png)$/, '');
+  const ext = src.match(/\.(jpg|jpeg|png)$/)?.[0] || '';
+  
+  // Определяем пути для разных форматов и размеров
+  const webpSrc = `${baseSrc}.webp`;
+  const optimizedSrc = `${baseSrc}-optimized${ext}`;
+  const previewSrc = `${baseSrc}-preview${ext}`;
+  
+  // Проверяем, существует ли оптимизированная версия
+  // Если нет, используем оригинальный путь
+  const imageSrc = src;
+  
+  // Создаем базовый placeholder для блюра
+  const blurDataURL = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMyMzM1MjkiLz48L3N2Zz4=";
 
-  const handleLoad = () => {
-    setIsLoaded(true)
-    onLoad?.()
-  }
-
-  const handleError = () => {
-    setHasError(true)
-  }
-
-  if (hasError) {
-    return (
-      <div className={`bg-gradient-to-br from-forest-800/20 to-forest-700/30 flex items-center justify-center ${className} border border-forest-600/20`}>
-        <div className="text-forest-400 text-center p-4">
-          <div className="text-3xl mb-2">🏞️</div>
-          <p className="text-sm font-medium">Скоро здесь будет фото</p>
-          <p className="text-xs text-forest-500 mt-1">Карельская природа</p>
-        </div>
-      </div>
-    )
+  // Проверяем наличие обязательных свойств width и height
+  if (!fill && (!width || !height)) {
+    // Если не указаны width и height и не используется fill, устанавливаем дефолтные значения
+    width = width || 1200;
+    height = height || 800;
+    console.warn(`Warning: Image with src "${src}" is missing width or height. Using defaults: ${width}x${height}`);
   }
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {/* Enhanced Skeleton with shimmer */}
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-800/10 via-forest-700/20 to-forest-800/10 rounded-lg">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
-        </div>
-      )}
-
-      {/* Low quality placeholder if provided */}
-      {placeholder && !isLoaded && (
-        <Image src={placeholder || "/placeholder.svg"} alt={alt} fill className="object-cover blur-sm" quality={10} />
-      )}
-
-      {/* Main image */}
-      <Image
-        src={src || "/placeholder.svg"}
-        alt={alt}
-        width={width}
-        height={height}
-        fill={!width && !height}
-        className={`object-cover transition-all duration-500 mobile-image ${
-          isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
-        }`}
-        priority={priority}
-        quality={quality}
-        loading={priority ? "eager" : loading}
-        onLoad={handleLoad}
-        onError={handleError}
-        sizes={sizes}
-        placeholder="blur"
-        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-      />
-
-      {/* Loading indicator */}
-      {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-6 h-6 border-2 border-forest-400 border-t-transparent rounded-full animate-spin"></div>
-        </div>
+    <div className={cn('relative', className)} style={style}>
+      {fill ? (
+        <Image
+          src={imageSrc}
+          alt={alt}
+          fill={true}
+          priority={priority}
+          quality={quality}
+          sizes={sizes}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          onLoadingComplete={onLoadingComplete}
+          {...props}
+        />
+      ) : (
+        <Image
+          src={imageSrc}
+          alt={alt}
+          width={width}
+          height={height}
+          priority={priority}
+          quality={quality}
+          sizes={sizes}
+          placeholder="blur"
+          blurDataURL={blurDataURL}
+          onLoadingComplete={onLoadingComplete}
+          {...props}
+        />
       )}
     </div>
-  )
-}
+  );
+};
+
+export default OptimizedImage;
