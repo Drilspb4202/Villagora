@@ -126,8 +126,8 @@ export default function KareliaRetreatLanding() {
 
   // Функция для форматирования цены
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('ru-RU').format(price) + ' ₽'
-  }
+    return `${price.toLocaleString('ru-RU')} ₽`;
+  };
 
   const [imagesLoaded, setImagesLoaded] = useState(false)
 
@@ -673,6 +673,11 @@ export default function KareliaRetreatLanding() {
       setIsSubmitting(false)
     }
   }
+
+  const openBookingModal = (packageName: string) => {
+    setSelectedPackage(packageName);
+    setIsBookingOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-forest-950 via-forest-900 to-slate-900 overflow-x-hidden">
