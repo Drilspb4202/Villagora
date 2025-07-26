@@ -658,7 +658,13 @@ export default function KareliaRetreatLanding() {
       }, 3000)
       
       // Трекинг успешной отправки формы
-      trackBookingFormSubmitted()
+      trackBookingFormSubmitted({
+        package: selectedPackage,
+        guests: parseInt(formData.guests),
+        checkIn: checkInDate?.toISOString(),
+        checkOut: checkOutDate?.toISOString(),
+        totalPrice: calculateTotalPrice()
+      })
       
     } catch (error) {
       console.error('Error submitting booking form:', error)
