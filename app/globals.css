@@ -10,25 +10,31 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
+    --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
+    --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
+    --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --forest-50: 100 100% 98%;
+    --forest-100: 100 100% 95%;
+    --forest-200: 100 100% 90%;
+    --forest-300: 100 100% 80%;
+    --forest-400: 100 100% 70%;
+    --forest-500: 100 100% 60%;
+    --forest-600: 100 100% 50%;
+    --forest-700: 100 100% 40%;
+    --forest-800: 100 100% 30%;
+    --forest-900: 100 100% 20%;
+    --forest-950: 100 100% 10%;
   }
 
   .dark {
@@ -38,7 +44,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -50,12 +56,18 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --ring: 224.3 76.3% 48%;
+    --forest-50: 100 100% 98%;
+    --forest-100: 100 100% 95%;
+    --forest-200: 100 100% 90%;
+    --forest-300: 100 100% 80%;
+    --forest-400: 100 100% 70%;
+    --forest-500: 100 100% 60%;
+    --forest-600: 100 100% 50%;
+    --forest-700: 100 100% 40%;
+    --forest-800: 100 100% 30%;
+    --forest-900: 100 100% 20%;
+    --forest-950: 100 100% 10%;
   }
 }
 
@@ -68,504 +80,156 @@
   }
 }
 
-@layer utilities {
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-  }
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-
-  .shadow-3xl {
-    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
-  }
+/* Стили для скрытия стандартного скроллбара */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-/* Enhanced animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-10px) rotate(5deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(0deg);
-  }
-  75% {
-    transform: translateY(-10px) rotate(-5deg);
-  }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari и Opera */
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* Улучшенные стили для галереи */
+.gallery-image {
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Wave animations */
-@keyframes wave {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+.gallery-image.active {
+  transform: scale(1.02);
 }
 
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.3), transparent);
-  animation: wave 8s linear infinite;
+/* Анимация загрузки изображений */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.wave1 {
-  animation-delay: 0s;
+.image-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.wave2 {
-  animation-delay: 2s;
-  background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.2), transparent);
-}
-
-.wave3 {
-  animation-delay: 4s;
-  background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.1), transparent);
-}
-
-/* Mist/fog animation */
-@keyframes mist {
-  0%,
-  100% {
-    opacity: 0.1;
-    transform: translateX(-50px) scale(1);
-  }
-  50% {
-    opacity: 0.3;
-    transform: translateX(50px) scale(1.1);
-  }
-}
-
-.mist {
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: mist 15s ease-in-out infinite;
-}
-
-.mist1 {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.mist2 {
-  top: 60%;
-  right: 20%;
-  animation-delay: 5s;
-  animation-duration: 20s;
-}
-
-.mist3 {
-  bottom: 30%;
-  left: 60%;
-  animation-delay: 10s;
-  animation-duration: 18s;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom gradient text animation */
-@keyframes gradient {
-  0%,
-  100% {
-    background-size: 200% 200%;
-    background-position: left center;
-  }
-  50% {
-    background-size: 200% 200%;
-    background-position: right center;
-  }
-}
-
-.animate-gradient {
-  animation: gradient 3s ease infinite;
-}
-
-/* Enhanced floating animation for nature elements */
-@keyframes floatNature {
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-15px) translateX(5px) rotate(2deg);
-  }
-  50% {
-    transform: translateY(-25px) translateX(-3px) rotate(-1deg);
-  }
-  75% {
-    transform: translateY(-10px) translateX(8px) rotate(3deg);
-  }
-}
-
-.animate-float-nature {
-  animation: floatNature 8s ease-in-out infinite;
-}
-
-/* Breathing animation for organic elements */
-@keyframes breathe {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-}
-
-.animate-breathe {
-  animation: breathe 4s ease-in-out infinite;
-}
-
-/* Shimmer effect for water-like elements */
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent 25%, rgba(255, 255, 255, 0.2) 50%, transparent 75%);
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-}
-
-/* Image loading optimizations */
-.image-loading {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: loading 1.5s infinite;
-}
-
-@keyframes loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-/* Blur-up effect for images */
-.blur-up {
-  filter: blur(5px);
-  transition: filter 0.3s;
-}
-
-.blur-up.loaded {
-  filter: blur(0);
-}
-
-/* Optimized background loading */
-.hero-bg {
-  background-attachment: fixed;
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* Skeleton loading for cards */
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.1) 25%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.1) 75%
-  );
-  background-size: 200% 100%;
-  animation: skeleton-loading 1.5s infinite;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-/* Pulsing glow effect */
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(74, 124, 89, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(74, 124, 89, 0.6);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Улучшенные стили для миниатюр галереи */
-.gallery-thumbnails {
-  display: flex;
-  gap: 8px;
-  padding: 8px 4px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.gallery-thumbnail {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
+/* Стили для полосы прокрутки */
+.custom-scrollbar {
   position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-.gallery-thumbnail.active {
-  box-shadow: 0 0 0 2px #4a7c59, 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: scale(1.1);
-}
-
-.gallery-thumbnail:not(.active):hover {
-  transform: scale(1.05);
-}
-
-.gallery-thumbnail:active {
-  transform: scale(0.95);
-}
-
-.gallery-thumbnail-number {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  background-color: rgba(35, 53, 41, 0.8);
-  color: white;
-  font-size: 10px;
-  padding: 2px 4px;
+  height: 8px;
+  background-color: rgba(30, 64, 30, 0.2);
   border-radius: 4px;
-  line-height: 1;
+  margin: 10px 0;
+  cursor: pointer;
 }
 
-/* Улучшенные стили для навигации по галерее */
-.gallery-navigation-button {
+.custom-scrollbar-thumb {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(35, 53, 41, 0.8);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 10;
+  height: 100%;
+  background-color: rgba(76, 175, 80, 0.6);
+  border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
-.gallery-navigation-button:hover {
-  background-color: rgba(35, 53, 41, 0.9);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.gallery-navigation-button:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.gallery-navigation-button.prev {
-  left: 8px;
-}
-
-.gallery-navigation-button.next {
-  right: 8px;
-}
-
-/* Улучшенные стили для индикатора текущего изображения */
-.gallery-indicator {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(35, 53, 41, 0.8);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 10;
-}
-
-@media (max-width: 640px) {
-  .gallery-navigation-button {
-    width: 36px;
-    height: 36px;
-  }
-  
-  .gallery-thumbnail {
-    width: 60px !important;
-    height: 60px !important;
-  }
-}
-
-/* Добавляем стили для скроллбара миниатюр */
-.scrollbar-thin {
-  scrollbar-width: thin;
-}
-
-.scrollbar-thumb-forest-600::-webkit-scrollbar-thumb {
-  background-color: rgba(67, 96, 76, 0.6);
-  border-radius: 9999px;
-}
-
-.scrollbar-thumb-forest-600::-webkit-scrollbar {
-  height: 6px;
-  width: 6px;
-}
-
-.scrollbar-track-transparent::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-/* Плавный скролл для контейнеров с прокруткой */
-.smooth-scroll {
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+.custom-scrollbar-thumb:hover,
+.custom-scrollbar-thumb:active {
+  background-color: rgba(76, 175, 80, 0.8);
 }
 
 /* Оптимизация для мобильных устройств */
-.touch-manipulation {
-  touch-action: manipulation;
-}
-
-.touch-friendly {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-.mobile-optimized {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.mobile-modal {
-  overscroll-behavior: contain;
-}
-
-/* Анимации для элементов */
-@keyframes float-nature {
-  0%, 100% {
-    transform: translateY(0);
+@media (max-width: 640px) {
+  .mobile-text {
+    font-size: 16px; /* Предотвращает масштабирование на iOS */
   }
-  50% {
-    transform: translateY(-5px);
+  
+  .touch-friendly {
+    min-height: 44px; /* Минимальная высота для сенсорных элементов */
+  }
+  
+  .no-zoom {
+    font-size: 16px; /* Предотвращает масштабирование на iOS */
   }
 }
 
-.animate-float-nature {
-  animation: float-nature 3s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
-}
-
-.animate-breathe {
-  animation: breathe 4s ease-in-out infinite;
+/* Улучшенные анимации */
+.animate-shimmer {
+  animation: shimmer 3s infinite linear;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
 }
 
 @keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .animation-delay-2000 {
   animation-delay: 2s;
 }
 
-/* Градиенты для загрузки */
-.loading-gradient {
-  background: linear-gradient(90deg, rgba(35, 53, 41, 0.3) 0%, rgba(35, 53, 41, 0.6) 50%, rgba(35, 53, 41, 0.3) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+/* Улучшения для изображений галереи */
+.gallery-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
 }
 
-/* Анимация для появления контента */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.gallery-image-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 0.5s ease-out forwards;
+.gallery-navigation-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  z-index: 10;
 }
 
-/* Улучшения для мобильных форм */
-@media (max-width: 640px) {
-  .no-zoom {
-    font-size: 16px !important;
-  }
-  
-  .mobile-text {
-    font-size: 16px !important;
-  }
-  
-  .mobile-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+.gallery-navigation-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-navigation-button.prev {
+  left: 10px;
+}
+
+.gallery-navigation-button.next {
+  right: 10px;
+}
+
+.gallery-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  z-index: 10;
+}
+
+/* Плавная анимация для смены изображений */
+.gallery-image-transition {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }

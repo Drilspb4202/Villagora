@@ -41,9 +41,11 @@ import {
   ChevronLeft,
   ChevronRight,
   FileText,
+  Flower,
+  Flame as FlameIcon,
 } from "lucide-react"
 import NextImage from "next/image"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { format } from "date-fns"
 import { ru } from "date-fns/locale"
 import { OptimizedImage } from "@/components/optimized-image"
@@ -86,6 +88,12 @@ export default function KareliaRetreatLanding() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const [isMapOpen, setIsMapOpen] = useState(false)
+  const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({})
+  const [isGalleryScrolling, setIsGalleryScrolling] = useState(false)
+  
+  // Ref для полосы прокрутки
+  const scrollbarRef = useRef<HTMLDivElement>(null)
+  const galleryContainerRef = useRef<HTMLDivElement>(null)
 
   // Обработчики для календарей
   const handleCheckInSelect = (date: Date | undefined) => {
@@ -136,32 +144,22 @@ export default function KareliaRetreatLanding() {
     // Preload other critical images
     const preloadImages = [
       "/images/hero/hero.jpg", // Hero background
+      "/images/syamozero/syamozero-1.jpg",
+      "/images/accommodation/house-1.jpg",
+      "/images/ecotours/karelian-forest-1.jpg",
     ]
 
     preloadImages.forEach((src) => {
       const img = new window.Image()
       img.src = src
+      img.onload = () => {
+        setLoadedImages(prev => ({...prev, [src]: true}))
+      }
     })
 
     // Инициализация Яндекс.Метрики трекинга
     initYandexMetrikaTracking()
   }, [])
-
-  const preloadImageBatch = (imageUrls: string[]) => {
-    let loadedCount = 0
-    const totalImages = imageUrls.length
-
-    imageUrls.forEach((url) => {
-      const img = new window.Image()
-      img.onload = () => {
-        loadedCount++
-        if (loadedCount === totalImages) {
-          setImagesLoaded(true)
-        }
-      }
-      img.src = url
-    })
-  }
 
   const packages = [
     {
@@ -297,25 +295,20 @@ export default function KareliaRetreatLanding() {
     },
     {
       id: "aromatherapy",
-      icon: <Droplets className="h-6 w-6 sm:h-8 sm:w-8" />,
+      icon: <Flower className="h-6 w-6 sm:h-8 sm:w-8" />,
       title: "Ароматерапия",
       description: "Эфирные масла и аромаритуалы для восстановления",
-      color: "from-forest-300 to-forest-500",
-      images: [
-        "/images/wellness/essential-oils.jpg",
-        "/images/wellness/aromatherapy-session.jpg",
-        "/images/wellness/aroma-diffuser.jpg",
-        "/images/wellness/relaxation-aromatherapy.jpg",
-      ],
+      color: "from-pink-500 to-pink-700",
+      images: [],
       fullDescription:
-        "Профессиональные сеансы ароматерапии с использованием натуральных эфирных масел. Индивидуальный подбор ароматов для каждого гостя, обучение основам ароматерапии, создание персональных аромакомпозиций для домашнего использования.",
+        "Сеансы ароматерапии с использованием натуральных эфирных масел карельских трав и деревьев. Специальные аромаритуалы помогут расслабиться, снять стресс и восстановить силы. Индивидуальный подход к каждому гостю с учетом его предпочтений и потребностей.",
     },
     {
       id: "sauna",
-      icon: <Flame className="h-6 w-6 sm:h-8 sm:w-8" />,
+      icon: <FlameIcon className="h-6 w-6 sm:h-8 sm:w-8" />,
       title: "Баня на дровах",
       description: "Прогревание тела и расслабление под звёздами",
-      color: "from-orange-500 to-red-600",
+      color: "from-amber-600 to-red-700",
       images: [
         "/images/wellness/sauna-1.jpg",
         "/images/wellness/sauna-2.JPG",
@@ -330,11 +323,11 @@ export default function KareliaRetreatLanding() {
       id: "transfer",
       icon: <CreditCard className="h-6 w-6 sm:h-8 sm:w-8" />,
       title: "Трансфер",
-      description: "Комфортная доставка от вокзала до места отдыха",
+      description: "Комфортабельный трансфер от вокзала до места отдыха и обратно",
       color: "from-blue-500 to-blue-700",
       images: [],
       fullDescription:
-        "Организуем комфортный трансфер от железнодорожного вокзала или аэропорта до места проведения ретрита. Современный транспорт, опытные водители, возможность остановок по пути для покупки необходимых вещей.",
+        "Удобный трансфер туда и обратно — от вокзала до базы отдыха\n✅ Встретим, отвезём, и с теплом проводим обратно",
     },
     {
       id: "karaoke",
@@ -358,102 +351,100 @@ export default function KareliaRetreatLanding() {
     },
   ]
 
-  const sendToTelegram = async (bookingData: any) => {
-    try {
-      const response = await fetch('/api/telegram', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(bookingData),
-      })
+  // Улучшенная функция для предзагрузки изображений
+  const preloadImageBatch = (imageUrls: string[]) => {
+    let loadedCount = 0
+    const totalImages = imageUrls.length
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        console.error('API error:', errorData)
-        throw new Error(errorData.error || 'Failed to send message to Telegram')
+    imageUrls.forEach((url) => {
+      // Если изображение уже загружено, просто увеличиваем счетчик
+      if (loadedImages[url]) {
+        loadedCount++
+        if (loadedCount === totalImages) {
+          setImagesLoaded(true)
+        }
+        return
       }
 
-      return true
-    } catch (error) {
-      console.error('Error sending to Telegram:', error)
-      return false
-    }
-  }
-
-  const handleBookingSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    const bookingData = {
-      ...formData,
-      package: selectedPackage,
-      checkIn: checkInDate,
-      checkOut: checkOutDate,
-    }
-
-    try {
-      const success = await sendToTelegram(bookingData)
-
-      if (success) {
-        // Трекинг успешной отправки формы
-        trackBookingFormSubmitted({
-          package: selectedPackage,
-          guests: parseInt(formData.guests) || 0,
-          checkIn: checkInDate?.toISOString(),
-          checkOut: checkOutDate?.toISOString(),
-          totalPrice: calculateTotalPrice()
-        })
-
-        setShowSuccessMessage(true)
-        // Очистить форму
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          guests: "1",
-          message: "",
-        })
-        setSelectedPackage("")
-        setCheckInDate(undefined)
-        setCheckOutDate(undefined)
-        setCheckInOpen(false)
-        setCheckOutOpen(false)
-
-        // Закрыть модальное окно через 3 секунды
-        setTimeout(() => {
-          setIsBookingOpen(false)
-          setShowSuccessMessage(false)
-        }, 3000)
-      } else {
-        alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.')
+      const img = new window.Image()
+      img.onload = () => {
+        loadedCount++
+        // Сохраняем информацию о загруженном изображении
+        setLoadedImages(prev => ({...prev, [url]: true}))
+        if (loadedCount === totalImages) {
+          setImagesLoaded(true)
+        }
       }
-    } catch (error) {
-      console.error('Error submitting booking:', error)
-      alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.')
-    } finally {
-      setIsSubmitting(false)
-    }
+      img.src = url
+    })
   }
 
-  const openBookingModal = (packageName: string) => {
-    setSelectedPackage(packageName)
-    setIsBookingOpen(true)
-  }
-
-  const openFeatureGallery = (featureId: string) => {
-    setSelectedFeature(featureId)
-    setCurrentImageIndex(0)
-    // Определяем ориентацию первого изображения
+  // Функция для предзагрузки изображений выбранной галереи и соседних
+  const preloadGalleryImages = (featureId: string) => {
     const feature = features.find(f => f.id === featureId)
-    if (feature && feature.images[0]) {
-      checkImageOrientation(feature.images[0])
+    if (!feature || !feature.images.length) return
+
+    // Загружаем все изображения текущей галереи
+    preloadImageBatch(feature.images)
+
+    // Находим индекс текущей галереи и предзагружаем соседние
+    const featureIndex = features.findIndex(f => f.id === featureId)
+    
+    // Предзагружаем первые изображения предыдущей и следующей галереи
+    if (featureIndex > 0) {
+      const prevFeature = features[featureIndex - 1]
+      if (prevFeature.images.length > 0) {
+        preloadImageBatch([prevFeature.images[0]])
+      }
+    }
+    
+    if (featureIndex < features.length - 1) {
+      const nextFeature = features[featureIndex + 1]
+      if (nextFeature.images.length > 0) {
+        preloadImageBatch([nextFeature.images[0]])
+      }
     }
   }
+
+  // Обновление полосы прокрутки при изменении текущего изображения
+  useEffect(() => {
+    if (selectedFeature && scrollbarRef.current) {
+      const feature = features.find(f => f.id === selectedFeature)
+      if (!feature) return
+      
+      const totalImages = feature.images.length
+      if (totalImages <= 1) return
+      
+      const scrollbarWidth = scrollbarRef.current.offsetWidth
+      const thumbWidth = scrollbarWidth / totalImages
+      const scrollPosition = (currentImageIndex / (totalImages - 1)) * (scrollbarWidth - thumbWidth)
+      
+      if (scrollbarRef.current.querySelector('.scrollbar-thumb')) {
+        const thumbElement = scrollbarRef.current.querySelector('.scrollbar-thumb') as HTMLElement
+        thumbElement.style.width = `${thumbWidth}px`
+        thumbElement.style.transform = `translateX(${scrollPosition}px)`
+      }
+    }
+  }, [currentImageIndex, selectedFeature])
 
   // Функция для определения ориентации изображения
   const checkImageOrientation = (imageSrc: string) => {
     if (!imageSrc) return
+
+    // Если у нас уже есть информация о загруженном изображении
+    if (loadedImages[imageSrc]) {
+      const img = new Image()
+      img.src = imageSrc
+      const aspectRatio = img.width / img.height
+      if (aspectRatio > 1.2) {
+        setImageOrientation('landscape')
+      } else if (aspectRatio < 0.8) {
+        setImageOrientation('portrait')
+      } else {
+        setImageOrientation('square')
+      }
+      return
+    }
 
     const img = new Image()
     img.onload = () => {
@@ -465,13 +456,28 @@ export default function KareliaRetreatLanding() {
       } else {
         setImageOrientation('square')
       }
+      // Сохраняем информацию о загруженном изображении
+      setLoadedImages(prev => ({...prev, [imageSrc]: true}))
     }
     img.src = imageSrc
+  }
+
+  const openFeatureGallery = (featureId: string) => {
+    setSelectedFeature(featureId)
+    setCurrentImageIndex(0)
+    
+    const feature = features.find((f) => f.id === featureId)
+    if (feature && feature.images.length > 0) {
+      // Предзагружаем изображения галереи и соседних галерей
+      preloadGalleryImages(featureId)
+      checkImageOrientation(feature.images[0])
+    }
   }
 
   const closeFeatureGallery = () => {
     setSelectedFeature(null)
     setCurrentImageIndex(0)
+    setIsGalleryScrolling(false)
   }
 
   const nextImage = () => {
@@ -480,6 +486,15 @@ export default function KareliaRetreatLanding() {
       const newIndex = (currentImageIndex + 1) % feature.images.length
       setCurrentImageIndex(newIndex)
       checkImageOrientation(feature.images[newIndex])
+      
+      // Предзагружаем следующее изображение
+      const nextNextIndex = (newIndex + 1) % feature.images.length
+      const imgToPreload = feature.images[nextNextIndex]
+      if (!loadedImages[imgToPreload]) {
+        const img = new Image()
+        img.src = imgToPreload
+        img.onload = () => setLoadedImages(prev => ({...prev, [imgToPreload]: true}))
+      }
     }
   }
 
@@ -489,7 +504,72 @@ export default function KareliaRetreatLanding() {
       const newIndex = (currentImageIndex - 1 + feature.images.length) % feature.images.length
       setCurrentImageIndex(newIndex)
       checkImageOrientation(feature.images[newIndex])
+      
+      // Предзагружаем предыдущее изображение
+      const prevPrevIndex = (newIndex - 1 + feature.images.length) % feature.images.length
+      const imgToPreload = feature.images[prevPrevIndex]
+      if (!loadedImages[imgToPreload]) {
+        const img = new Image()
+        img.src = imgToPreload
+        img.onload = () => setLoadedImages(prev => ({...prev, [imgToPreload]: true}))
+      }
     }
+  }
+
+  // Обработчик клика на полосу прокрутки
+  const handleScrollbarClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!selectedFeature || isGalleryScrolling) return
+    
+    const feature = features.find(f => f.id === selectedFeature)
+    if (!feature || feature.images.length <= 1) return
+    
+    const scrollbar = scrollbarRef.current
+    if (!scrollbar) return
+    
+    const scrollbarRect = scrollbar.getBoundingClientRect()
+    const clickPosition = e.clientX - scrollbarRect.left
+    const scrollbarWidth = scrollbarRect.width
+    
+    // Вычисляем новый индекс на основе позиции клика
+    const totalImages = feature.images.length
+    let newIndex = Math.floor((clickPosition / scrollbarWidth) * totalImages)
+    newIndex = Math.max(0, Math.min(newIndex, totalImages - 1))
+    
+    setCurrentImageIndex(newIndex)
+    checkImageOrientation(feature.images[newIndex])
+  }
+
+  // Обработчик начала перетаскивания полосы прокрутки
+  const handleScrollbarDragStart = () => {
+    setIsGalleryScrolling(true)
+  }
+
+  // Обработчик окончания перетаскивания полосы прокрутки
+  const handleScrollbarDragEnd = () => {
+    setIsGalleryScrolling(false)
+  }
+
+  // Обработчик перетаскивания полосы прокрутки
+  const handleScrollbarDrag = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!selectedFeature || !isGalleryScrolling) return
+    
+    const feature = features.find(f => f.id === selectedFeature)
+    if (!feature || feature.images.length <= 1) return
+    
+    const scrollbar = scrollbarRef.current
+    if (!scrollbar) return
+    
+    const scrollbarRect = scrollbar.getBoundingClientRect()
+    const dragPosition = e.clientX - scrollbarRect.left
+    const scrollbarWidth = scrollbarRect.width
+    
+    // Вычисляем новый индекс на основе позиции перетаскивания
+    const totalImages = feature.images.length
+    let newIndex = Math.floor((dragPosition / scrollbarWidth) * totalImages)
+    newIndex = Math.max(0, Math.min(newIndex, totalImages - 1))
+    
+    setCurrentImageIndex(newIndex)
+    checkImageOrientation(feature.images[newIndex])
   }
 
   // Keyboard navigation for gallery
@@ -508,9 +588,85 @@ export default function KareliaRetreatLanding() {
 
     window.addEventListener('keydown', handleKeyPress)
     return () => window.removeEventListener('keydown', handleKeyPress)
-  }, [selectedFeature])  // eslint-disable-line react-hooks/exhaustive-deps
+  }, [selectedFeature, currentImageIndex])  // eslint-disable-line react-hooks/exhaustive-deps
 
   const selectedFeatureData = features.find((f) => f.id === selectedFeature)
+
+  // Функция для отправки данных бронирования в Telegram
+  const sendToTelegram = async (bookingData: any) => {
+    try {
+      const response = await fetch('/api/telegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message to Telegram')
+      }
+
+      return await response.json()
+    } catch (error) {
+      console.error('Error sending to Telegram:', error)
+      throw error
+    }
+  }
+
+  // Обработчик отправки формы бронирования
+  const handleBookingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!formData.name || !formData.phone || !formData.email) {
+      alert('Пожалуйста, заполните все обязательные поля')
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const bookingData = {
+        ...formData,
+        package: selectedPackage,
+        checkIn: checkInDate ? checkInDate.toISOString() : null,
+        checkOut: checkOutDate ? checkOutDate.toISOString() : null,
+        totalPrice: calculateTotalPrice(),
+      }
+
+      await sendToTelegram(bookingData)
+      
+      // Успешная отправка
+      setShowSuccessMessage(true)
+      
+      // Автоматическое закрытие модального окна через 3 секунды
+      setTimeout(() => {
+        setShowSuccessMessage(false)
+        setIsBookingOpen(false)
+        
+        // Сбросить форму
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          guests: "1",
+          message: "",
+        })
+        setSelectedPackage("")
+        setCheckInDate(undefined)
+        setCheckOutDate(undefined)
+      }, 3000)
+      
+      // Трекинг успешной отправки формы
+      trackBookingFormSubmitted()
+      
+    } catch (error) {
+      console.error('Error submitting booking form:', error)
+      alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-forest-950 via-forest-900 to-slate-900 overflow-x-hidden">
@@ -641,7 +797,7 @@ export default function KareliaRetreatLanding() {
             <p className="text-lg sm:text-xl text-stone-300 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto px-4">
               Ты чувствуешь, что пора перезагрузиться? Отпустить суету и, наконец, услышать себя?
               <br />
-              ПриглашаЕМ тебя на <span className="font-semibold text-amber-300">КАМЕРНЫЙ РЕТРИТ В ЗАГОРОДНЫЙ ДОМ ВИЛЛАГОРЕ</span> — живописной деревне на берегу ламбушки, в окружении карельских лесов и озёр.
+              Приглашаем тебя на <span className="font-semibold text-amber-300">КАМЕРНЫЙ РЕТРИТ В ЗАГОРОДНЫЙ ДОМ ВИЛЛАГОРЕ</span> — живописной деревне на берегу ламбушки, в окружении карельских лесов и озёр.
             </p>
           </div>
 
@@ -739,6 +895,7 @@ export default function KareliaRetreatLanding() {
                 { icon: "🏀", text: "Большой батут" },
                 { icon: Flame, text: "Мангал для дневных и вечерних посиделок" },
                 { icon: "📶", text: "Безлимитный Wi-Fi" },
+                { icon: "☕", text: "Чаепитие из настоящего самовара" },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -1438,23 +1595,69 @@ export default function KareliaRetreatLanding() {
                 </div>
               </div>
               
-              {/* Миниатюры - упрощенная версия */}
-              <div className="p-4 bg-forest-800/20 border-t border-forest-700/30 overflow-x-auto">
-                <div className="flex gap-2 min-w-max">
+              {/* Миниатюры - улучшенная версия с кастомным скроллбаром */}
+              <div className="p-4 bg-forest-800/20 border-t border-forest-700/30">
+                {/* Кастомный скроллбар */}
+                <div 
+                  ref={scrollbarRef}
+                  className="w-full h-2 bg-forest-700/30 rounded-full mb-4 relative cursor-pointer"
+                  onClick={handleScrollbarClick}
+                  onMouseMove={isGalleryScrolling ? handleScrollbarDrag : undefined}
+                >
+                  <div 
+                    className="scrollbar-thumb absolute top-0 h-full bg-forest-400/70 hover:bg-forest-400 rounded-full transition-colors duration-200"
+                    style={{
+                      width: `${100 / selectedFeatureData.images.length}%`,
+                      transform: `translateX(${(currentImageIndex / (selectedFeatureData.images.length - 1)) * 100 * (1 - 1/selectedFeatureData.images.length)}%)`,
+                      transition: isGalleryScrolling ? 'none' : 'transform 0.3s ease-out'
+                    }}
+                    onMouseDown={handleScrollbarDragStart}
+                    onMouseUp={handleScrollbarDragEnd}
+                    onMouseLeave={handleScrollbarDragEnd}
+                  />
+                </div>
+                
+                {/* Контейнер для миниатюр с плавной прокруткой */}
+                <div 
+                  ref={galleryContainerRef}
+                  className="flex gap-2 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-2"
+                  style={{
+                    scrollBehavior: 'smooth',
+                    WebkitOverflowScrolling: 'touch',
+                    scrollSnapType: 'x mandatory',
+                  }}
+                >
                   {selectedFeatureData.images.map((image, index) => (
                     <button
                       key={index}
-                      className={`w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden ${
-                        index === currentImageIndex ? "ring-2 ring-forest-400" : "opacity-70"
-                      }`}
-                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-lg overflow-hidden snap-center ${
+                        index === currentImageIndex ? "ring-2 ring-forest-400 scale-105" : "opacity-70 hover:opacity-100"
+                      } transition-all duration-200`}
+                      onClick={() => {
+                        setCurrentImageIndex(index);
+                        // Прокручиваем к выбранной миниатюре
+                        if (galleryContainerRef.current) {
+                          const container = galleryContainerRef.current;
+                          const thumbnail = container.children[index] as HTMLElement;
+                          const containerWidth = container.clientWidth;
+                          const thumbnailLeft = thumbnail.offsetLeft;
+                          const thumbnailWidth = thumbnail.clientWidth;
+                          
+                          // Центрируем миниатюру в контейнере
+                          container.scrollLeft = thumbnailLeft - (containerWidth / 2) + (thumbnailWidth / 2);
+                        }
+                      }}
                     >
                       <NextImage
                         src={image}
                         alt={`${selectedFeatureData.title} миниатюра ${index + 1}`}
-                        width={64}
-                        height={64}
-                        className="object-cover w-full h-full"
+                        width={80}
+                        height={80}
+                        className={`object-cover w-full h-full transition-transform duration-300 ${
+                          index === currentImageIndex ? "scale-110" : "scale-100 hover:scale-110"
+                        }`}
+                        loading="eager"
+                        priority={index === currentImageIndex || index === currentImageIndex + 1 || index === currentImageIndex - 1}
                       />
                     </button>
                   ))}

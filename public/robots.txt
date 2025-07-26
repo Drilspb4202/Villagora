@@ -1,34 +1,20 @@
-# Robots.txt для Ретрит Карелия
-# https://www.villagora.ru
-
+# Разрешаем индексацию всем поисковым роботам
 User-agent: *
 Allow: /
 
-# Основные страницы
-Allow: /
-Allow: /images/
-Allow: /favicon.ico
-Allow: /manifest.json
-
-# Запрещаем индексацию служебных файлов
-Disallow: /api/
+# Запрещаем индексацию служебных директорий
 Disallow: /_next/
-Disallow: /admin/
-Disallow: /.well-known/
-Disallow: /test-*
+Disallow: /api/
 
-# Разрешаем изображения для поисковых систем
-User-agent: Googlebot-Image
-Allow: /images/
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
-# Sitemap
+# Указываем расположение карты сайта
 Sitemap: https://www.villagora.ru/sitemap.xml
 
-# Время задержки между запросами (в секундах)
-Crawl-delay: 1
+# Специфичные настройки для Яндекс.Бота
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+# Специфичные настройки для Google
+User-agent: Googlebot
+Allow: /
+

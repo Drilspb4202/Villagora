@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Главная страница -->
+  <url>
+    <loc>https://www.villagora.ru/</loc>
+    <lastmod>2024-06-01T12:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.villagora.ru/images/hero/hero.jpg</image:loc>
+      <image:title>Камерный ретрит в Карелии | Виллагора</image:title>
+      <image:caption>Отдых в Карелии в загородном доме Виллагора у озера Сямозеро</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.villagora.ru/images/syamozero/syamozero-1.jpg</image:loc>
+      <image:title>Озеро Сямозеро, Карелия</image:title>
+      <image:caption>Живописное озеро Сямозеро в Карелии</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Мобильная версия главной страницы -->
+  <url>
+    <loc>https://www.villagora.ru/?mobile=1</loc>
+    <lastmod>2024-06-01T12:00:00+03:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+</urlset> 

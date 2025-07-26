@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     'отдых на сямозере', 'дом у озера карелия', 'аренда дома карелия', 'коттедж карелия',
     'отдых с баней карелия', 'эко дом карелия', 'retreat house karelia', 'карелия отпуск'
   ],
-  authors: [{ name: 'Радмила Яковлева', url: 'https://t.me/RadmilaYakovleva' }],
+  authors: [{ name: 'Радмила Яковлева', url: 'https://t.me/RadmilaYaковлева' }],
   creator: 'Радмила Яковлева',
   publisher: 'Ретрит Карелия',
   formatDetection: {
@@ -74,14 +74,26 @@ export const metadata: Metadata = {
     title: 'Камерный ретрит в Карелии | Виллагора у озера Сямозеро',
     description: 'Камерный ретрит в сердце Карелии - перезагрузка души в окружении леса. Насыщенный отдых на природе с баней на дровах. Бронирование от 13,000₽.',
     images: ['/images/hero/hero.jpg'],
-    creator: '@RadmilaYakovleva',
+    creator: '@RadmilaYаковлева',
     site: '@VillagoraRetreat',
   },
   alternates: {
     canonical: 'https://www.villagora.ru',
   },
   category: 'travel',
+  verification: {
+    google: 'googleverification',
+    yandex: 'yandexverification',
+  },
+  appleWebApp: {
+    capable: true,
+    title: 'Ретрит Карелия',
+    statusBarStyle: 'black-translucent',
+  },
 }
+
+// Импортируем клиентский компонент StagewiseToolbarClient
+import StagewiseToolbarClient from './stagewise-toolbar-client'
 
 export default function RootLayout({
   children,
@@ -92,12 +104,13 @@ export default function RootLayout({
     <html lang="ru" suppressHydrationWarning>
       <head>
         {/* Мобильная оптимизация */}
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
         <meta name="format-detection" content="telephone=yes" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="theme-color" content="#1a2e05" />
+        <meta name="theme-color" content="#1a2e05" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0f1a03" media="(prefers-color-scheme: dark)" />
         <meta name="msapplication-navbutton-color" content="#1a2e05" />
         <meta name="apple-mobile-web-app-title" content="Ретрит Карелия" />
 
@@ -132,7 +145,7 @@ export default function RootLayout({
         <meta name="twitter:description" content="Камерный ретрит в сердце Карелии - перезагрузка души в окружении леса. Насыщенный отдых на природе с баней на дровах." />
         <meta name="twitter:image" content={`https://www.villagora.ru/images/hero/hero.jpg?v=${Date.now()}`} />
         <meta name="twitter:image:alt" content="Камерный ретрит в Карелии - отдых на природе" />
-        <meta name="twitter:creator" content="@RadmilaYakovleva" />
+        <meta name="twitter:creator" content="@RadmilaYаковлева" />
         <meta name="twitter:site" content="@VillagoraRetreat" />
 
         {/* Дополнительные SEO метатеги */}
@@ -185,7 +198,7 @@ export default function RootLayout({
         <meta name="vk:description" content="Камерный ретрит в сердце Карелии - перезагрузка души в окружении леса" />
 
         {/* Метатеги для мессенджеров */}
-        <meta name="telegram:channel" content="@RadmilaYakovleva" />
+        <meta name="telegram:channel" content="@RadmilaYаковлева" />
         <meta name="whatsapp:title" content="Камерный ретрит в Карелии" />
         <meta name="whatsapp:description" content="Камерный ретрит в сердце Карелии - перезагрузка души в окружении леса" />
 
@@ -218,6 +231,12 @@ export default function RootLayout({
         {/* Prefetch для изображений, которые скоро понадобятся */}
         <link rel="prefetch" as="image" href="/images/wellness/sauna-1.jpg" />
         <link rel="prefetch" as="image" href="/images/ecotours/karelian-forest-1.jpg" />
+
+        {/* Шрифты с display=swap для быстрой загрузки */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+        />
 
         {/* Yandex.Metrika counter */}
         <script
@@ -278,7 +297,7 @@ export default function RootLayout({
                 "description": "Отдых в Карелии в загородном доме-ретрите Виллагора у озера Сямозеро. Аренда уютного дома с баней на дровах, карельской кухней и экотурами для восстановления сил на природе.",
                 "url": "https://www.villagora.ru",
                 "sameAs": [
-                  "https://t.me/RadmilaYakovleva"
+                  "https://t.me/RadmilaYаковлева"
                 ],
                 "image": [
                   "https://www.villagora.ru/images/hero/hero.jpg",
@@ -346,7 +365,7 @@ export default function RootLayout({
                 "provider": {
                   "@type": "Person",
                   "name": "Радмила Яковлева",
-                  "url": "https://t.me/RadmilaYakovleva"
+                  "url": "https://t.me/RadmilaYаковлева"
                 },
                 "keywords": "отдых карелия, дом ретрит, карелия отдых, загородный дом, баня на дровах, озеро сямозеро"
               },
@@ -376,15 +395,38 @@ export default function RootLayout({
                   "Ароматерапия",
                   "Доступ к озеру"
                 ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Как добраться до ретрита в Виллагоре?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Мы организуем комфортабельный трансфер от вокзала до места отдыха и обратно. Встретим, отвезём и с теплом проводим обратно."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Что включено в стоимость ретрита?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "В стоимость включено: проживание, питание, трансфер, баня на дровах, экотуры и ароматерапия (в зависимости от выбранного пакета)."
+                    }
+                  }
+                ]
               }
             ])
           }}
         />
       </head>
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className="overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
-          {/* StagewiseToolbar будет загружен из клиентского компонента */}
+          {/* Добавляем StagewiseToolbar через клиентский компонент */}
+          {process.env.NODE_ENV === 'development' && <StagewiseToolbarClient />}
         </ThemeProvider>
       </body>
     </html>
