@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     const bookingData = await request.json()
     
     const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
-    const CHAT_ID = process.env.TELEGRAM_CHAT_ID
+    const CHAT_ID = process.env.TELEGRAM_USER_ID // Изменено с TELEGRAM_CHAT_ID на TELEGRAM_USER_ID
     
     if (!BOT_TOKEN || !CHAT_ID || BOT_TOKEN === "YOUR_BOT_TOKEN_HERE" || CHAT_ID === "YOUR_CHAT_ID_HERE") {
       return NextResponse.json(
